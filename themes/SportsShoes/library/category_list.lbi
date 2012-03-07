@@ -1,0 +1,28 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+function $(element) {
+ return document.getElementById(element);
+}
+function showMenu(menuID,index) {
+ $(menuID).style.display=(index==0?"none":"block");
+}
+
+</script>
+<div class="category_list">
+ <div class="list_t"><span class="f_l">软件分类目录</span> <div class="f_r fwhite"><a href="#">全部分类</a>&nbsp;<a href="#">所有软件</a></div></div>
+ <ul>
+     <!--{foreach name=parent-cat from=$categories item=cat}-->
+    <li>
+    	<div class="stair f_l"><a href="{$cat.url}">{$cat.name|escape:html}</a></div>
+       <!--{if $cat.cat_id}-->
+       <div class="second">
+       <!--{foreach name=cat_child  from=$cat.cat_id item=child}-->
+        &nbsp;&nbsp;<a href="{$child.url}" class="ChildrenLi">{$child.name|escape:html}</a>
+       <!--{/foreach}-->
+       </div> 
+       <!--{/if}-->     
+     </li>
+   <!--{/foreach}-->
+  </ul>
+</div>
+<div class="blank10"></div>

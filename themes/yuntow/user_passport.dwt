@@ -1,0 +1,445 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable --><!-- TemplateBeginEditable name="head" --><!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,user.js,transport.js,region.js'}
+<script type="text/javascript" src="js/action.js"></script>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+
+<div class="blank"></div>
+<!--#登录界面 start-->
+<!-- {if $action eq 'login'} -->
+<div class="usBox clearfix">
+  <div class="usBox_1 f_l f3">
+   <div><img src="images/no1.gif" />&nbsp;已经是会员，请登录</div>
+   <form name="formLogin" action="user.php" method="post" onSubmit="return userLogin()">
+        <table width="100%" border="0" align="left" cellpadding="3" cellspacing="5">
+          <tr>
+            <td width="15%" align="right">{$lang.label_username}</td>
+            <td width="85%"><input name="username" type="text" size="25" class="inputBg" /></td>
+          </tr>
+          <tr>
+            <td align="right">密&nbsp;&nbsp;码</td>
+            <td>
+            <input name="password" type="password" size="25"  class="inputBg"/>
+            </td>
+          </tr>
+          <!-- 判断是否启用验证码{if $enabled_captcha} -->
+          <tr>
+            <td align="right">{$lang.comment_captcha}</td>
+            <td><input type="text" size="8" name="captcha" class="inputBg" />
+            <img src="captcha.php?is_login=1&{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" /> </td>
+          </tr>
+          <!--{/if}-->
+          <tr>
+            <td colspan="2"><input type="checkbox" value="1" name="remember" id="remember" /><label for="remember">{$lang.remember}</label></td>
+          </tr>
+          <tr>
+            <td>&nbsp;</td>
+            <td align="left">
+            <input type="hidden" name="act" value="act_login" />
+            <input type="hidden" name="back_act" value="{$back_act}" />
+            <input type="submit" name="submit" value="" class="us_Submit" />
+            <a href="user.php?act=get_password" class="f6">{$lang.get_password_by_mail}</a>
+            </td>
+          </tr>
+      </table>
+    </form>
+  </div>
+  <div class="usTxt f3">
+    <div><img src="images/no2.gif" />&nbsp;{$lang.user_reg_info[0]}</div>
+    <!-- {if $car_off eq 1} -->
+    {$lang.user_reg_info[2]}<br />
+    <!--{/if}-->
+    <!-- {if $car_off eq 0} -->
+    {$lang.user_reg_info[8]}<br />
+    <!--{/if}-->
+    {$lang.user_reg_info[3]}：<br />
+    1. {$lang.user_reg_info[4]}<br />
+    2. {$lang.user_reg_info[5]}<br />
+    3. {$lang.user_reg_info[6]}<br />
+    4. {$lang.user_reg_info[7]}  <br />
+    <a href="user.php?act=register" class="f6">我要注册？</a>
+  </div>
+</div>
+<!--{/if}-->
+<!--#登录界面 end-->
+
+
+
+
+
+<!--*会员注册界面 start-->
+    <!--{if $action eq 'register'}-->
+    <!-- {if $shop_reg_closed eq 1} -->
+    <div class="regBox">
+    <table width="100%"  border="0" cellpadding="0" cellspacing="0">
+        <tr>
+          <td width="30" class="tl"></td>
+          <td height="30" class="tc"></td>
+          <td width="30" class="tr"></td>
+        </tr>
+        <tr>
+          <td width="30" class="ml"></td>
+          <td class="mc">
+          {$lang.shop_register_closed}
+          </td>
+          <td width="30" class="mr"></td>
+        </tr>
+        <tr>
+          <td width="30" class="bl"></td>
+          <td height="30" class="bc"></td>
+          <td width="30" class="br"></td>
+        </tr>
+    </table>
+    </div>
+    <!-- {else} -->
+    {insert_scripts files='utils.js'}
+<div class="regBox">
+<div><img src="images/reg_load.gif" /></div>
+<table width="100%"  border="0" cellpadding="0" cellspacing="0">
+    <tr>
+      <td width="30" class="t_l"></td>
+      <td height="30" class="t_c"></td>
+      <td width="30" class="t_r"></td>
+    </tr>
+    <tr>
+      <td width="30" class="m_l"></td>
+      <td class="m_c">
+      <div class="reg_t">您好！成为云通科技会员，让我们更好的为您服务！</div>
+      <form action="user.php" method="post" name="formUser" onsubmit="return register();">
+      <table width="100%"  border="0" align="left" cellpadding="5" cellspacing="3">
+        <tr>
+          <td width="20%" align="right">{$lang.label_username}</td>
+          <td width="80%"><input name="username" type="text" size="25" id="username" onblur="is_registered(this.value);" class="inputBg"/>
+            <span id="username_notice" style="color:#FF0000"> *</span>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">密&nbsp;&nbsp;码</td>
+          <td><input name="password" type="password" id="password1" onblur="check_password(this.value);" onkeyup="checkIntensity(this.value)" class="inputBg" style="width:179px;" />
+            <span style="color:#FF0000" id="password_notice"> *</span>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">{$lang.label_confirm_password}</td>
+          <td><input name="confirm_password" type="password" id="confirm_password" onblur="check_confirm_password(this.value);"  class="inputBg" style="width:179px;"/>
+            <span style="color:#FF0000" id="confirm_password_notice"> *</span>
+          </td>
+        </tr>
+        <tr>
+          <td align="right">电子邮件</td>
+          <td>
+          <input name="email" type="text" size="25" id="email" onblur="checkEmail(this.value);"  class="inputBg"/>
+            <span id="email_notice" style="color:#FF0000"> *</span>
+          </td>
+        </tr>
+        
+        
+        	<tr>
+        
+        
+<script type="text/javascript">   
+<!--
+	function setTab(name,cursel,n){
+	for(i=1;i<=n;i++){
+	var menu=document.getElementById(name+i);
+	var con=document.getElementById("con_"+name+"_"+i);
+	menu.className=i==cursel?"hover":"";
+	con.style.display=i==cursel?"block":"none";
+	}
+	}
+	//-->
+</script> 
+    	<tr>
+          <td align="right">会员类型</td>
+          <td>
+          <label for="r1"><input name="user_type" id="r1" type="radio" value="1" checked="checked" onclick="setTab('r',1,2);"/>个人会员</label>
+          <label for="r2"><input name="user_type" id="r2" type="radio" value="2" onclick="setTab('r',2,2);" />企业会员</label>
+          </td>
+        </tr>
+        <tr>
+        <td colspan="2">
+        <div id="con_r_1" class="none" ></div>
+        <div id="con_r_2" class="none">
+        <div class="reg_b_t">企业信息</div>
+        <table width="100%"  border="0" align="left" cellpadding="5" cellspacing="3">
+        <tr>
+            	<td width="20%" align="right">企业名称</td>
+                <td width="80%"><input name="CompanyName" type="text" size="24" class="inputBg" maxlengt='20'/><font class="red" color="#FF0000">*</font></td>
+            </tr>
+          
+                
+                  <!-- {foreach from=$consignee_list item=consignee key=sn} -->
+                    <tr>
+            	<td width="20%" align="right">企业地址</td>
+                <td width="80%">
+                  
+                        <select name="country" id="selCountries_{$sn}" onchange="region.changed(this, 1, 'selProvinces_{$sn}')">
+                      <option value="0">{$lang.please_select}{$name_of_region[0]}</option>
+                      <!-- {foreach from=$country_list item=country} -->
+                      <option value="{$country.region_id}" {if $consignee.country eq $country.region_id}selected{/if}>{$country.region_name}</option>
+                      <!-- {/foreach} -->
+                    </select>
+                    <select name="province" id="selProvinces_{$sn}" onchange="region.changed(this, 2, 'selCities_{$sn}')">
+                      <option value="0">{$lang.please_select}{$name_of_region[1]}</option>
+                      <!-- {foreach from=$province_list.$sn item=province} -->
+                      <option value="{$province.region_id}" {if $consignee.province eq $province.region_id}selected{/if}>{$province.region_name}</option>
+                      <!-- {/foreach} -->
+                    </select>
+                    <select name="city" id="selCities_{$sn}" onchange="region.changed(this, 3, 'selDistricts_{$sn}')">
+                      <option value="0">{$lang.please_select}{$name_of_region[2]}</option>
+                      <!-- {foreach from=$city_list.$sn item=city} -->
+                      <option value="{$city.region_id}" {if $consignee.city eq $city.region_id}selected{/if}>{$city.region_name}</option>
+                      <!-- {/foreach} -->
+                    </select>
+                    <select name="district" id="selDistricts_{$sn}" {if !$district_list.$sn}style="display:none"{/if}>
+                      <option value="0">{$lang.please_select}{$name_of_region[3]}</option>
+                      <!-- {foreach from=$district_list.$sn item=district} -->
+                      <option value="{$district.region_id}" {if $consignee.district eq $district.region_id}selected{/if}>{$district.region_name}</option>
+                      <!-- {/foreach} -->
+                    </select><font class="red" color="#FF0000">*</font>
+                    </td>
+                    </tr>
+                    <tr>
+                     
+                <td width="20%" align="right"> 企业详细地址：</td><td width="80%"><input name="address" type="text" value="" size="36" />
+                    <font class="red" color="#FF0000">*</font>
+                         
+                      
+                </td>
+            </tr>
+              <!-- {/foreach} -->  
+            <tr>
+            	<td width="20%" align="right">经营模式</td>
+                <td width="80%">
+                
+                <select id="cardtype" name="cardtype">
+                            <option value="0" >请选择经营模式</option>
+                            <option value="1" >生产加工</option>
+                            <option value="2" >经销批发</option>
+                            <option value="3" >招商代理</option>
+                            <option value="4" >商业服务</option>
+                            <option value="5" >其他模式</option>
+                
+                           
+                        </select>
+               <font class="red" color="#FF0000">*</font>
+                </td>
+            </tr>
+        </table>
+        </div>
+        </td>
+        </tr>
+      <!-- 判断是否启用验证码{if $enabled_captcha} -->
+      <tr>
+      <td align="right">{$lang.comment_captcha}</td>
+      <td><input type="text" size="7" name="captcha" class="inputBg" />
+      <img src="captcha.php?{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?'+Math.random()" /> <font class="red" color="#FF0000">*</font></td>
+      </tr>
+      <!--{/if}-->
+        <tr>
+          <td>&nbsp;</td>
+          <td><label>
+            <input name="agreement" type="checkbox" value="1" checked="checked" />
+            {$lang.agreement}</label></td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td align="left">
+          <input name="act" type="hidden" value="act_register" >
+          <input type="hidden" name="back_act" value="{$back_act}" />
+          <input name="Submit" type="submit" value="" class="us_Submit_reg">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">&nbsp;</td>
+        </tr>
+        <tr>
+          <td>&nbsp;</td>
+          <td class="actionSub">
+          <a href="user.php?act=login">{$lang.want_login}</a><br />
+          <a href="user.php?act=get_password">{$lang.forgot_password}</a>
+          </td>
+        </tr>
+      </table>
+    </form>
+      </td>
+      <td width="30" class="m_r"></td>
+    </tr>
+    <tr>
+      <td width="30" class="b_l"></td>
+      <td height="30" class="b_c"></td>
+      <td width="30" class="b_r"></td>
+    </tr>
+</table>
+</div>
+<!--{/if}-->
+<!--{/if}-->
+<!--#会员注册界面 end-->
+
+
+
+
+
+
+<!--*找回密码界面 -->
+    <!--{if $action eq 'get_password'} -->
+    {insert_scripts files='utils.js'}
+    <script type="text/javascript">
+    {foreach from=$lang.password_js item=item key=key}
+      var {$key} = "{$item}";
+    {/foreach}
+    </script>
+<div class="usBox">
+  <div class="usBox_2 clearfix">
+    <form action="user.php" method="post" name="getPassword" onsubmit="return submitPwdInfo();">
+        <br />
+        <table width="80%" border="0" align="center">
+          <tr>
+            <td colspan="2" align="center"><strong>{$lang.username_and_email}</strong></td>
+          </tr>
+          <tr>
+            <td width="29%" align="right">{$lang.username}</td>
+            <td width="61%"><input name="user_name" type="text" size="30" class="inputBg" /></td>
+          </tr>
+          <tr>
+            <td align="right">{$lang.email}</td>
+            <td><input name="email" type="text" size="30" class="inputBg" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="hidden" name="act" value="send_pwd_email" />
+              <input type="submit" name="submit" value="{$lang.submit}" class="bnt_blue" style="border:none;" />
+              <input name="button" type="button" onclick="history.back()" value="{$lang.back_page_up}" style="border:none;" class="bnt_blue_1" />
+	    </td>
+          </tr>
+        </table>
+        <br />
+      </form>
+  </div>
+</div>
+<!--{/if}-->
+
+<!--*通过问题找回密码的确认找回账号界面 -->
+    <!--{if $action eq 'qpassword_name'} -->
+<div class="usBox">
+  <div class="usBox_2 clearfix">
+    <form action="user.php" method="post">
+        <br />
+        <table width="70%" border="0" align="center">
+          <tr>
+            <td colspan="2" align="center"><strong>{$lang.get_question_username}</strong></td>
+          </tr>
+          <tr>
+            <td width="29%" align="right">{$lang.username}</td>
+            <td width="61%"><input name="user_name" type="text" size="30" class="inputBg" /></td>
+          </tr>
+          <tr>
+            <td></td>
+            <td><input type="hidden" name="act" value="get_passwd_question" />
+              <input type="submit" name="submit" value="{$lang.submit}" class="bnt_blue" style="border:none;" />
+              <input name="button" type="button" onclick="history.back()" value="{$lang.back_page_up}" style="border:none;" class="bnt_blue_1" />
+	    </td>
+          </tr>
+        </table>
+        <br />
+      </form>
+  </div>
+</div>
+<!--{/if}-->
+
+<!--*根据输入账号显示密码问题界面 -->
+    <!--{if $action eq 'get_passwd_question'} -->
+<div class="usBox">
+  <div class="usBox_2 clearfix">
+    <form action="user.php" method="post">
+        <br />
+        <table width="70%" border="0" align="center">
+          <tr>
+            <td colspan="2" align="center"><strong>{$lang.input_answer}</strong></td>
+          </tr>
+          <tr>
+            <td width="29%" align="right">{$lang.passwd_question}：</td>
+            <td width="61%">{$passwd_question}</td>
+          </tr>
+          <tr>
+            <td align="right">{$lang.passwd_answer}：</td>
+            <td><input name="passwd_answer" type="text" size="20" class="inputBg" /></td>
+          </tr>
+          <!-- 判断是否启用验证码{if $enabled_captcha} -->
+          <tr>
+            <td align="right">{$lang.comment_captcha}</td>
+            <td><input type="text" size="8" name="captcha" class="inputBg" />
+            <img src="captcha.php?is_login=1&{$rand}" alt="captcha" style="vertical-align: middle;cursor: pointer;" onClick="this.src='captcha.php?is_login=1&'+Math.random()" /> </td>
+          </tr>
+          <!--{/if}-->
+          <tr>
+            <td></td>
+            <td><input type="hidden" name="act" value="check_answer" />
+              <input type="submit" name="submit" value="{$lang.submit}" class="bnt_blue" style="border:none;" />
+              <input name="button" type="button" onclick="history.back()" value="{$lang.back_page_up}" style="border:none;" class="bnt_blue_1" />
+	    </td>
+          </tr>
+        </table>
+        <br />
+      </form>
+  </div>
+</div>
+<!--{/if}-->
+
+<!-- {if $action eq 'reset_password'} -->
+    <script type="text/javascript">
+    {foreach from=$lang.password_js item=item key=key}
+      var {$key} = "{$item}";
+    {/foreach}
+    </script>
+<div class="usBox">
+  <div class="usBox_2 clearfix">
+    <form action="user.php" method="post" name="getPassword2" onSubmit="return submitPwd()">
+      <br />
+      <table width="80%" border="0" align="center">
+        <tr>
+          <td>{$lang.new_password}</td>
+          <td><input name="new_password" type="password" size="25" class="inputBg" /></td>
+        </tr>
+        <tr>
+          <td>{$lang.confirm_password}:</td>
+          <td><input name="confirm_password" type="password" size="25"  class="inputBg"/></td>
+        </tr>
+        <tr>
+          <td colspan="2" align="center">
+            <input type="hidden" name="act" value="act_edit_password" />
+            <input type="hidden" name="uid" value="{$uid}" />
+            <input type="hidden" name="code" value="{$code}" />
+            <input type="submit" name="submit" value="{$lang.confirm_submit}" />
+          </td>
+        </tr>
+      </table>
+      <br />
+    </form>
+  </div>
+</div>
+<!--{/if}-->
+<!--#找回密码界面 end-->
+<div class="blank"></div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+<script type="text/javascript">
+var process_request = "{$lang.process_request}";
+{foreach from=$lang.passport_js item=item key=key}
+var {$key} = "{$item}";
+{/foreach}
+var username_exist = "{$lang.username_exist}";
+</script>
+</html>

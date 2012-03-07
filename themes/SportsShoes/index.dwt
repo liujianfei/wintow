@@ -1,0 +1,86 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Strict//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-strict.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+<link rel="alternate" type="application/rss+xml" title="RSS|{$page_title}" href="{$feed_url}" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js,index.js'}
+<script type="text/javascript" src="js/action.js"></script>
+
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="block clearfix">
+	<div class="area_l">
+    	<div class="flashwid">
+			<!-- #BeginLibraryItem "/library/index_ad.lbi" --><!-- #EndLibraryItem -->
+        </div>
+        <div class="blank10"></div>
+        <!-- #BeginLibraryItem "/library/recommend_best.lbi" --><!-- #EndLibraryItem -->
+        <div class="blank10"></div>
+        <!-- #BeginLibraryItem "/library/category_list.lbi" --><!-- #EndLibraryItem -->
+    </div>
+    <div class="area_r">
+        <!-- #BeginLibraryItem "/library/new_articles.lbi" --><!-- #EndLibraryItem -->
+        <div class="blank10"></div>
+        <div class="ad280">
+        <!-- TemplateBeginEditable name="资讯下的右侧广告280" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+<div class="ads">
+{insert name='ads' id=$ads_id num=$ads_num}
+</div>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+        </div>
+        <div class="blank10"></div>
+        <!-- #BeginLibraryItem "/library/hot10.lbi" --><!-- #EndLibraryItem -->
+    </div>
+    <div class="blank10"></div>
+</div>
+
+<div class="ad960">
+<!-- TemplateBeginEditable name="分类下的横栏广告960" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+<div class="ads">
+{insert name='ads' id=$ads_id num=$ads_num}
+</div>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+</div>
+<div class="blank10"></div>
+<div class="block clearfix">
+	<div class="area_l">
+    	<!-- #BeginLibraryItem "/library/link.lbi" --><!-- #EndLibraryItem -->
+    </div>
+    <div class="area_r">
+    	<div class="ad290">
+        <!-- TemplateBeginEditable name="友情链接的右侧广告280" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+<div class="ads">
+{insert name='ads' id=$ads_id num=$ads_num}
+</div>
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+        </div>
+    </div>
+</div>
+<div class="blank10"></div>
+<div class="block">
+<!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
+</div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+</html>

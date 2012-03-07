@@ -1,0 +1,21 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+ <!-- {foreach from=$index_get_articles.articlercat item=article_cat} -->
+
+<div class="box_article">
+
+<div class="art_t">{$article_cat.cat_name}</div>
+<ul>
+  <!-- {foreach from=$index_get_articles.articles item=article} -->
+    {if $article.cat_id eq $article_cat.cat_id}
+	<li>. <a href="{$article.url}" class="f3"  > {$article.short_title}</a></li>
+    {/if}
+      <!-- {/foreach} -->
+   
+</ul>
+<div align="right"><a href="article_cat.php?id={$article_cat.cat_id}" class="f6">更多&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
+<br>
+
+ </div>
+  <!-- {/foreach} -->
+<div class="blank10"></div>
+

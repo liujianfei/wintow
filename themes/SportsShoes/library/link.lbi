@@ -1,0 +1,19 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<!--{if $img_links  or $txt_links }-->
+<div class="links clearfix">
+<h2></h2>
+
+  <!--开始图片类型的友情链接{foreach from=$img_links item=link}-->
+  <div class="link">
+ <a href="{$link.url}" target="_blank" title="{$link.name}"><img src="{$link.logo}" alt="{$link.name}" /></a><br>
+ <span><a href="{$link.url}" target="_blank" title="{$link.name}">{$link.name}</a></span>
+ </div>
+ <!--结束图片类型的友情链接{/foreach}-->
+
+ <!-- {if $txt_links} -->
+ <!--开始文字类型的友情链接{foreach from=$txt_links item=link}-->
+ <span>[<a href="{$link.url}" target="_blank" title="{$link.name}">{$link.name}</a>]</span>
+ <!--结束文字类型的友情链接{/foreach}-->
+ <!-- {/if} -->
+</div>
+<!--{/if}-->

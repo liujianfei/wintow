@@ -1,0 +1,281 @@
+<!-- $Id: user_info.htm 16854 2009-12-07 06:20:09Z sxc_shop $ -->
+{include file="pageheader.htm"}
+<script type="text/javascript" src="../js/regions.js"></script>
+<div class="main-div">
+<form method="post" action="users.php" name="theForm" onsubmit="return validate()">
+<table width="100%" >
+  <tr>
+    <td class="label">{$lang.username}:</td>
+    <td>{if $form_action eq "update"}{$user.user_name}<input type="hidden" name="username" value="{$user.user_name}" />{else}<input type="text" name="username" maxlength="60" value="{$user.user_name}" />{$lang.require_field}{/if}</td>
+  </tr>
+   <tr>
+    <td class="label">会员类型:</td>
+    <td>{if $user.user_type eq 1}个人会员{else}企业会员{/if}</td>
+  </tr>
+  {if $form_action eq "update"}
+  <tr>
+    <td class="label">{$lang.user_money}:</td>
+    <td>{$user.formated_user_money} <a href="account_log.php?act=list&user_id={$user.user_id}&account_type=user_money">[ {$lang.view_detail_account} ]</a> </td>
+  </tr>
+  <tr>
+    <td class="label">{$lang.frozen_money}:</td>
+    <td>{$user.formated_frozen_money} <a href="account_log.php?act=list&user_id={$user.user_id}&account_type=frozen_money">[ {$lang.view_detail_account} ]</a> </td>
+  </tr>
+  <tr>
+    <td class="label"><a href="javascript:showNotice('noticeRankPoints');" title="{$lang.form_notice}"><img src="images/notice.gif" width="16" height="16" border="0" alt="{$lang.form_notice}"></a> {$lang.rank_points}:</td>
+    <td>{$user.rank_points} <a href="account_log.php?act=list&user_id={$user.user_id}&account_type=rank_points">[ {$lang.view_detail_account} ]</a> <br /><span class="notice-span" {if $help_open}style="display:block" {else} style="display:none" {/if} id="noticeRankPoints">{$lang.notice_rank_points}</span></td>
+  </tr>
+  <tr>
+    <td class="label"><a href="javascript:showNotice('noticePayPoints');" title="{$lang.form_notice}"><img src="images/notice.gif" width="16" height="16" border="0" alt="{$lang.form_notice}" /></a> {$lang.pay_points}:</td>
+    <td>{$user.pay_points} <a href="account_log.php?act=list&user_id={$user.user_id}&account_type=pay_points">[ {$lang.view_detail_account} ]</a> <br />
+        <span class="notice-span" {if $help_open}style="display:block" {else} style="display:none" {/if} id="noticePayPoints">{$lang.notice_pay_points}</span></td>
+  </tr>
+  {/if}
+  <tr>
+    <td class="label">{$lang.email}:</td>
+    <td><input type="text" name="email" maxlength="60" size="40" value="{$user.email}" />{$lang.require_field}</td>
+  </tr>
+  {if $form_action eq "insert"}
+  <tr>
+    <td class="label">{$lang.password}:</td>
+    <td><input type="password" name="password" maxlength="20" size="20" />{$lang.require_field}</td>
+  </tr>
+  <tr>
+    <td class="label">{$lang.confirm_password}:</td>
+    <td><input type="password" name="confirm_password" maxlength="20" size="20" />{$lang.require_field}</td>
+  </tr>
+  {elseif  $form_action eq "update"}
+  <tr>
+    <td class="label">{$lang.newpass}:</td>
+    <td><input type="password" name="password" maxlength="20" size="20" /></td>
+  </tr>
+  <tr>
+    <td class="label">{$lang.confirm_password}:</td>
+    <td><input type="password" name="confirm_password" maxlength="20" size="20" /></td>
+  </tr>
+  {/if}
+  <tr>
+    <td class="label">{$lang.user_rank}:</td>
+    <td><select name="user_rank">
+      <option value="0">{$lang.not_special_rank}</option>
+      {html_options options=$special_ranks selected=$user.user_rank}
+    </select></td>
+  </tr>
+  <tr>
+    <td class="label">{$lang.gender}:</td>
+    <td>{html_radios name="sex" options=$lang.sex checked=$user.sex }</td>
+  </tr>
+  <tr>
+    <td class="label">{$lang.birthday}:</td>
+    <td>{html_select_date field_order="YMD" prefix="birthday" time=$user.birthday start_year="-60" end_year="+1" display_days=true month_format="%m"}</td>
+  </tr>
+  <tr>
+    <td class="label">{$lang.credit_line}:</td>
+    <td><input name="credit_line" type="text" id="credit_line" value="{$user.credit_line}" size="10" /></td>
+  </tr>
+  <tr>
+    <td class="label">真实姓名:</td>
+    <td>
+    <input name="real_name" type="text" size="40" class="inputBg" value="{$user.real_name}"/>
+    </td>
+  </tr>
+  
+  {foreach from=$extend_info_list item=field}
+  <tr>
+    <td class="label">{$field.reg_field_name}:</td>
+    <td>
+    <input name="extend_field{$field.id}" type="text" size="40" class="inputBg" value="{$field.content}"/>
+    </td>
+  </tr>
+   
+  {/foreach}
+  {if $user.user_type eq 2}
+    {insert_scripts files='../utils.js,../transport.js,../region.js,../shopping_flow.js,../user.js,../common.js'}
+            <script type="text/javascript">
+              region.isAdmin = false;
+              {foreach from=$lang.flow_js item=item key=key}
+              var {$key} = "{$item}";
+              {/foreach}
+              {literal}
+              onload = function() {
+                if (!document.all)
+                {
+                  document.forms['theForm'].reset();
+                }
+              }
+              {/literal}
+            </script>
+   <tr>
+    <td class="label">企业名称:</td>
+    <td>
+    <input name="company_name" type="text" size="40" class="inputBg" value="{$user.company_name}"/>
+    </td>
+  </tr>
+   <!-- {foreach from=$consignee_list item=consignee key=sn} -->
+   <tr>
+    <td class="label">企业地址:</td>
+    <td>
+    <select name="country" id="selCountries_{$sn}" onchange="region.changed(this, 1, 'selProvinces_{$sn}')">
+                      <option value="0">{$lang.please_select}{$name_of_region[0]}</option>
+                      <!-- {foreach from=$country_list item=country} -->
+                      <option value="{$country.region_id}" {if $consignee.country eq $country.region_id}selected{/if}>{$country.region_name}</option>
+                      <!-- {/foreach} -->
+                    </select>
+                    <select name="province" id="selProvinces_{$sn}" onchange="region.changed(this, 2, 'selCities_{$sn}')">
+                      <option value="0">{$lang.please_select}{$name_of_region[1]}</option>
+                      <!-- {foreach from=$province_list.$sn item=province} -->
+                      <option value="{$province.region_id}" {if $consignee.province eq $province.region_id}selected{/if}>{$province.region_name}</option>
+                      <!-- {/foreach} -->
+                    </select>
+                    <select name="city" id="selCities_{$sn}" onchange="region.changed(this, 3, 'selDistricts_{$sn}')">
+                      <option value="0">{$lang.please_select}{$name_of_region[2]}</option>
+                      <!-- {foreach from=$city_list.$sn item=city} -->
+                      <option value="{$city.region_id}" {if $consignee.city eq $city.region_id}selected{/if}>{$city.region_name}</option>
+                      <!-- {/foreach} -->
+                    </select>
+                    <select name="district" id="selDistricts_{$sn}" {if !$district_list.$sn}style="display:none"{/if}>
+                      <option value="0">{$lang.please_select}{$name_of_region[3]}</option>
+                      <!-- {foreach from=$district_list.$sn item=district} -->
+                      <option value="{$district.region_id}" {if $consignee.district eq $district.region_id}selected{/if}>{$district.region_name}</option>
+                       <!-- {/foreach} -->
+                       </select>
+                   
+    </td>
+  </tr>
+   
+   <tr>
+    <td class="label">企业详细地址:</td>
+    <td>
+    <input name="address" type="text" size="40" class="inputBg" value="{$user.address}"/>
+    </td>
+  </tr>
+   <!-- {/foreach} --> 
+  
+   <tr>
+    <td class="label">经营模式:</td>
+    <td>
+        <select id="" name="cardtype">
+                            <option value="0" {if $user.card_type eq 0} selected="selected" {/if}>请选择经营模式</option>
+                            <option value="1" {if $user.card_type eq 1} selected="selected" {/if}>生产加工</option>
+                            <option value="2" {if $user.card_type eq 2} selected="selected" {/if}>经销批发</option>
+                            <option value="3" {if $user.card_type eq 3} selected="selected" {/if}>招商代理</option>
+                            <option value="4" {if $user.card_type eq 4} selected="selected" {/if}>商业服务</option>
+                            <option value="5" {if $user.card_type eq 5} selected="selected" {/if}>其他模式</option>
+                        </select>
+
+    </td>
+  </tr>
+  
+  {/if}
+  
+  {if $user.parent_id}
+  <tr>
+    <td class="label">{$lang.parent_user}:</td>
+    <td><a href="users.php?act=edit&id={$user.parent_id}">{$user.parent_username}</a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="users.php?act=remove_parent&id={$user.user_id}">{$lang.parent_remove}</a></td>
+  </tr>
+  {/if}
+  {if $affiliate.on eq 1 && $affdb}
+  <tr>
+    <td class="label">{$lang.affiliate_user}:</td>
+    <td>[<a href="users.php?act=aff_list&auid={$user.user_id}">{$lang.show_affiliate_users}</a>][<a href="affiliate_ck.php?act=list&auid={$user.user_id}">{$lang.show_affiliate_orders}</a>]</td>
+  </tr>
+  <tr>
+    <td></td>
+    <td>   
+    <table border="0" cellspacing="1" style="background: #dddddd; width:30%;">
+    <tr>
+    <td bgcolor="#ffffff">{$lang.affiliate_lever}</td>
+    {foreach from=$affdb key=level item=val0}
+    <td bgcolor="#ffffff">{$level}</td>
+    {/foreach}
+    </tr>
+    <tr>
+    <td bgcolor="#ffffff">{$lang.affiliate_num}</td>
+    {foreach from=$affdb item=val}
+    <td bgcolor="#ffffff">{$val.num}</td>
+    {/foreach}
+    </tr>
+    </table>
+    </td>
+  </tr>
+  {/if}
+  <tr>
+    <td colspan="2" align="center">
+      <input type="submit" value="{$lang.button_submit}" class="button" />
+      <input type="reset" value="{$lang.button_reset}" class="button" />
+      <input type="hidden" name="act" value="{$form_action}" />
+       <input type="hidden" name="user_types" value="{$user.user_type}" />
+      <input type="hidden" name="id" value="{$user.user_id}" />    </td>
+  </tr>
+</table>
+
+</form>
+</div>
+{insert_scripts files="../js/utils.js,validator.js"}
+{literal}
+<script language="JavaScript">
+<!--
+
+if (document.forms['theForm'].elements['act'].value == "insert")
+{
+  document.forms['theForm'].elements['username'].focus();
+}
+else
+{
+  document.forms['theForm'].elements['email'].focus();
+}
+
+onload = function()
+{
+    // 开始检查订单
+    startCheckOrder();
+}
+
+/**
+ * 检查表单输入的数据
+ */
+function validate()
+{
+    validator = new Validator("theForm");
+    validator.isEmail("email", invalid_email, true);
+
+    if (document.forms['theForm'].elements['act'].value == "insert")
+    {
+        validator.required("username",  no_username);
+        validator.required("password", no_password);
+        validator.required("confirm_password", no_confirm_password);
+        validator.eqaul("password", "confirm_password", password_not_same);
+
+        var password_value = document.forms['theForm'].elements['password'].value;
+        if (password_value.length < 6)
+        {
+          validator.addErrorMsg(less_password);
+        }
+        if (/ /.test(password_value) == true)
+        {
+          validator.addErrorMsg(passwd_balnk);
+        }
+    }
+    else if (document.forms['theForm'].elements['act'].value == "update")
+    {
+        var newpass = document.forms['theForm'].elements['password'];
+        var confirm_password = document.forms['theForm'].elements['confirm_password'];
+        if(newpass.value.length > 0 || confirm_password.value.length)
+        {
+          if(newpass.value.length >= 6 || confirm_password.value.length >= 6)
+          {
+            validator.eqaul("password", "confirm_password", password_not_same);
+          }
+          else
+          {
+            validator.addErrorMsg(password_len_err);
+          }
+        }
+    }
+
+    return validator.passed();
+}
+//-->
+</script>
+{/literal}
+{include file="pagefooter.htm"}
