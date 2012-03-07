@@ -516,6 +516,9 @@ $_LANG['goods_filter'] = '商品筛选';
 /* 客户中心页 */
 $_LANG['contact'] = '客户中心';
 
+/* 客户中心页 */
+$_LANG['join'] = '加盟中心';
+
 /* cls_image类的语言项 */
 $_LANG['directory_readonly'] = '目录 % 不存在或不可写';
 $_LANG['invalid_upload_image_type'] = '不是允许的图片格式';

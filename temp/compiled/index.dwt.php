@@ -42,7 +42,7 @@
         <div class="blank10"></div>
         <div class="ad280">
         
-<?php $this->assign('ads_id','2'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php echo $this->fetch('library/ad_position.lbi'); ?>
 
         </div>
         <div class="blank10"></div>
@@ -51,7 +51,7 @@
     <div class="blank10"></div>
 <div class="ad960">
 
-<?php $this->assign('ads_id','1'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 </div>
 </div>
@@ -63,7 +63,7 @@
     <div class="area_r">
     	<div class="ad290">
         
-<?php $this->assign('ads_id','3'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php echo $this->fetch('library/ad_position.lbi'); ?>
 
         </div>
     </div>

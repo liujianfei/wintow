@@ -1,12 +1,12 @@
 <div class="foot">
  <div class="block cl"> 
    <?php if ($this->_var['navigator_list']['bottom']): ?>
-   <?php $_from = $this->_var['navigator_list']['bottom']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'nav_0_18753900_1331088269');$this->_foreach['nav_bottom_list'] = array('total' => count($_from), 'iteration' => 0);
+   <?php $_from = $this->_var['navigator_list']['bottom']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'nav_0_34598900_1331091969');$this->_foreach['nav_bottom_list'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['nav_bottom_list']['total'] > 0):
-    foreach ($_from AS $this->_var['nav_0_18753900_1331088269']):
+    foreach ($_from AS $this->_var['nav_0_34598900_1331091969']):
         $this->_foreach['nav_bottom_list']['iteration']++;
 ?>
-        <a href="<?php echo $this->_var['nav_0_18753900_1331088269']['url']; ?>" <?php if ($this->_var['nav_0_18753900_1331088269']['opennew'] == 1): ?> target="_blank" <?php endif; ?>><?php echo $this->_var['nav_0_18753900_1331088269']['name']; ?></a> 
+        <a href="<?php echo $this->_var['nav_0_34598900_1331091969']['url']; ?>" <?php if ($this->_var['nav_0_34598900_1331091969']['opennew'] == 1): ?> target="_blank" <?php endif; ?>><?php echo $this->_var['nav_0_34598900_1331091969']['name']; ?></a> 
         <?php if (! ($this->_foreach['nav_bottom_list']['iteration'] == $this->_foreach['nav_bottom_list']['total'])): ?>
          | 
         <?php endif; ?>

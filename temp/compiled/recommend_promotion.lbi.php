@@ -4,22 +4,22 @@
 <div class="b d1">
 <h2 class="box_tit"><span class="f8">促销抢购</span></h2>
 <div class="box_cont clearfix">
-	<a href="javascript:void(0)" class="up" onmouseup="ISL_StopUp()" onmousedown="ISL_GoUp()" onmouseout="ISL_StopUp()" ><img src="themes/yuntow/images/turnleft.gif" /></a>
-    <a href="javascript:void(0)" class="next" onmouseup="ISL_StopDown()" onmousedown="ISL_GoDown()" onmouseout="ISL_StopDown()" ><img src="themes/yuntow/images/turnright.gif" /></a>
+	<a href="javascript:void(0)" class="up" onMouseDown="ISL_GoDown()" onMouseUp="ISL_StopDown()" onMouseOut="ISL_StopDown()"><img src="themes/yuntow/images/turnleft.gif" /></a>
+    <a href="javascript:void(0)" class="next" onmousedown="ISL_GoUp()" onMouseUp="ISL_StopUp()" onMouseOut="ISL_StopUp()" ><img src="themes/yuntow/images/turnright.gif" /></a>
     <div class="sales clearfix">
         <div class="goodBox" id="ISL_Cont">
            <div class="ScrCont">
            	 <div id="List1">
-             <?php $_from = $this->_var['promotion_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'goods_0_18222200_1331088269');$this->_foreach['promotion_foreach'] = array('total' => count($_from), 'iteration' => 0);
+             <?php $_from = $this->_var['promotion_goods']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'goods_0_78772300_1331091970');$this->_foreach['promotion_foreach'] = array('total' => count($_from), 'iteration' => 0);
 if ($this->_foreach['promotion_foreach']['total'] > 0):
-    foreach ($_from AS $this->_var['goods_0_18222200_1331088269']):
+    foreach ($_from AS $this->_var['goods_0_78772300_1331091970']):
         $this->_foreach['promotion_foreach']['iteration']++;
 ?>
              <?php if (($this->_foreach['promotion_foreach']['iteration'] - 1) <= 3): ?>
                <div class="goodList">
-               <a href="<?php echo $this->_var['goods_0_18222200_1331088269']['url']; ?>"><img src="<?php echo $this->_var['goods_0_18222200_1331088269']['thumb']; ?>" border="0" alt="<?php echo htmlspecialchars($this->_var['goods_0_18222200_1331088269']['name']); ?>"/></a><br />
-                         <p><a href="<?php echo $this->_var['goods_0_18222200_1331088269']['url']; ?>" title="<?php echo htmlspecialchars($this->_var['goods_0_18222200_1331088269']['name']); ?>"><?php echo htmlspecialchars($this->_var['goods_0_18222200_1331088269']['short_name']); ?></a></p>
-               <?php echo $this->_var['lang']['promote_price']; ?><font class="f1"><?php echo $this->_var['goods_0_18222200_1331088269']['promote_price']; ?></font>
+               <a href="<?php echo $this->_var['goods_0_78772300_1331091970']['url']; ?>"><img src="<?php echo $this->_var['goods_0_78772300_1331091970']['thumb']; ?>" border="0" alt="<?php echo htmlspecialchars($this->_var['goods_0_78772300_1331091970']['name']); ?>"/></a><br />
+                         <p><a href="<?php echo $this->_var['goods_0_78772300_1331091970']['url']; ?>" title="<?php echo htmlspecialchars($this->_var['goods_0_78772300_1331091970']['name']); ?>"><?php echo htmlspecialchars($this->_var['goods_0_78772300_1331091970']['short_name']); ?></a></p>
+               <?php echo $this->_var['lang']['promote_price']; ?><font class="f1"><?php echo $this->_var['goods_0_78772300_1331091970']['promote_price']; ?></font>
                </div>
              <?php endif; ?>
              <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
@@ -38,7 +38,7 @@ if ($this->_foreach['promotion_foreach']['total'] > 0):
 //图片滚动列表 mengjia 070816
 var Speed = 10; //速度(毫秒)
 var Space = 10; //每次移动(px)
-var PageWidth = 167; //翻页宽度
+var PageWidth = 160; //翻页宽度
 var fill = 0; //整体移位
 var MoveLock = false;
 var MoveTimeObj;

@@ -35,7 +35,7 @@
     <?php echo $this->fetch('library/recommend_hot.lbi'); ?>
 <div class="ad730">
 
-<?php $this->assign('ads_id','4'); ?><?php $this->assign('ads_num','0'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 </div>
 </div>
@@ -43,7 +43,7 @@
         <div class="blank10"></div>
 	<?php echo $this->fetch('library/top10.lbi'); ?>
 
-<?php $this->assign('ads_id','5'); ?><?php $this->assign('ads_num','1'); ?><?php echo $this->fetch('library/ad_position.lbi'); ?>
+<?php echo $this->fetch('library/ad_position.lbi'); ?>
 
 
 <?php echo $this->fetch('library/free.lbi'); ?>

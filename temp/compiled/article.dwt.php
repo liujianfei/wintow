@@ -8,8 +8,6 @@
 
 <title><?php echo $this->_var['page_title']; ?></title>
 
-
-
 <link rel="shortcut icon" href="favicon.ico" />
 <link rel="icon" href="animated_favicon.gif" type="image/gif" />
 <link href="<?php echo $this->_var['ecs_css_path']; ?>" rel="stylesheet" type="text/css" />
@@ -19,48 +17,56 @@
 </head>
 <body>
 <?php echo $this->fetch('library/page_header.lbi'); ?>
+
 <div class="blank"></div>
 <div class="block clearfix">
   
   <div class="area_l">
-    
+  
      <div class="here">
       <?php echo $this->fetch('library/ur_here.lbi'); ?>
       <span class="here_r"></span>
       </div>
     <div class="blank"></div>
     
-    <div class="box">
-       <div class="list">
-        <div class="list_t"><span class="f7"><?php echo $this->_var['lang']['article_list']; ?></span></div>
-        <div class="boxCenterList list_c">
-          <table id="article" width="100%" border="0" cellpadding="5" cellspacing="1" >
-          <tr>
-            <th><?php echo $this->_var['lang']['article_title']; ?></th>
-              <th><?php echo $this->_var['lang']['article_author']; ?></th>
-              <th><?php echo $this->_var['lang']['article_add_time']; ?></th>
-            </tr>
-          <?php $_from = $this->_var['artciles_list']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'article');if (count($_from)):
-    foreach ($_from AS $this->_var['article']):
-?>
-          <tr>
-            <td class="row"><a href="<?php echo $this->_var['article']['url']; ?>" title="<?php echo htmlspecialchars($this->_var['article']['title']); ?>" class="f6"><?php echo $this->_var['article']['short_title']; ?></a></td>
-              <td><?php echo $this->_var['article']['author']; ?></td>
-              <td align="center"><?php echo $this->_var['article']['add_time']; ?></td>
-            </tr>
-          <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
-        </table>
-        <div class="blank5"></div>
-      	<?php echo $this->fetch('library/pages.lbi'); ?>
-        <div class="blank5"></div>
+     <div class="box">
+     <div class="list">
+        <div class="list_t">
+        	<span class="f7 f_l">行业资讯</span>
+            <span class="f_r">
+            <a href="article_cat.php?id=1" class="f6">返回资讯列表</a>&nbsp;
+            <a href="<?php echo $this->_var['next_article']['url']; ?>" class="f6"><?php echo $this->_var['lang']['next_article']; ?></a>&nbsp;
+            <a href="<?php echo $this->_var['prev_article']['url']; ?>" class="f6"><?php echo $this->_var['lang']['prev_article']; ?></a></span>
         </div>
-       </div>
+          <div class="list_c" style="padding:20px 50px;">
+             <div class="tc" style="padding:8px 20px; border-bottom:1px dashed #ccc;">
+             <font class="f5 f6"><?php echo htmlspecialchars($this->_var['article']['title']); ?></font><br /><font class="f3"><?php echo htmlspecialchars($this->_var['article']['author']); ?> / <?php echo $this->_var['article']['add_time']; ?></font>
+             </div>
+             <?php if ($this->_var['article']['content']): ?>
+              <?php echo $this->_var['article']['content']; ?>
+             <?php endif; ?>
+             <?php if ($this->_var['article']['open_type'] == 2 || $this->_var['article']['open_type'] == 1): ?><br />
+             <div><a href="<?php echo $this->_var['article']['file_url']; ?>" target="_blank"><?php echo $this->_var['lang']['relative_file']; ?></a></div>
+              <?php endif; ?>
+             <div style="padding:8px; margin-top:15px; text-align:left; border-top:1px solid #ccc;">
+             
+              <?php if ($this->_var['next_article']): ?>
+                <?php echo $this->_var['lang']['next_article']; ?>:<a href="<?php echo $this->_var['next_article']['url']; ?>" class="f6"><?php echo $this->_var['next_article']['title']; ?></a><br />
+              <?php endif; ?>
+              
+              <?php if ($this->_var['prev_article']): ?>
+                <?php echo $this->_var['lang']['prev_article']; ?>:<a href="<?php echo $this->_var['prev_article']['url']; ?>" class="f6"><?php echo $this->_var['prev_article']['title']; ?></a>
+              <?php endif; ?>
+             </div>
+          </div>
+        </div>
       </div>
+  <div class="blank"></div>
   </div>
   
   
   <div class="area_r">
-  <div class="article_search">
+<div class="article_search">
   	<form action="<?php echo $this->_var['search_url']; ?>" name="search_form" method="post">
         <input name="keywords" type="text" id="requirement" value="<?php echo $this->_var['search_value']; ?>" size="20" class="inputBg" />
         <input name="id" type="hidden" value="<?php echo $this->_var['cat_id']; ?>" />
@@ -77,7 +83,7 @@
 
     
     <?php echo $this->fetch('library/box_articles.lbi'); ?>
-  </div>  
+  </div>
   
 </div>
 <div class="blank5"></div>
@@ -101,7 +107,7 @@
     <?php $_from = $this->_var['txt_links']; if (!is_array($_from) && !is_object($_from)) { settype($_from, 'array'); }; $this->push_vars('', 'link');if (count($_from)):
     foreach ($_from AS $this->_var['link']):
 ?>
-    [<a href="<?php echo $this->_var['link']['url']; ?>" target="_blank" title="<?php echo $this->_var['link']['name']; ?>"><?php echo $this->_var['link']['name']; ?></a>] 
+    [<a href="<?php echo $this->_var['link']['url']; ?>" target="_blank" title="<?php echo $this->_var['link']['name']; ?>"><?php echo $this->_var['link']['name']; ?></a>]
     <?php endforeach; endif; unset($_from); ?><?php $this->pop_vars();; ?>
     <?php endif; ?>
   </div>
@@ -112,7 +118,4 @@
 <div class="blank"></div>
 <?php echo $this->fetch('library/page_footer.lbi'); ?>
 </body>
-<script type="text/javascript">
-document.getElementById('cur_url').value = window.location.href;
-</script>
 </html>

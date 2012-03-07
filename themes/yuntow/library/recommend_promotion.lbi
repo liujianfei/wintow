@@ -5,8 +5,8 @@
 <div class="b d1">
 <h2 class="box_tit"><span class="f8">促销抢购</span></h2>
 <div class="box_cont clearfix">
-	<a href="javascript:void(0)" class="up" onmouseup="ISL_StopUp()" onmousedown="ISL_GoUp()" onmouseout="ISL_StopUp()" ><img src="images/turnleft.gif" /></a>
-    <a href="javascript:void(0)" class="next" onmouseup="ISL_StopDown()" onmousedown="ISL_GoDown()" onmouseout="ISL_StopDown()" ><img src="images/turnright.gif" /></a>
+	<a href="javascript:void(0)" class="up" onMouseDown="ISL_GoDown()" onMouseUp="ISL_StopDown()" onMouseOut="ISL_StopDown()"><img src="images/turnleft.gif" /></a>
+    <a href="javascript:void(0)" class="next" onmousedown="ISL_GoUp()" onMouseUp="ISL_StopUp()" onMouseOut="ISL_StopUp()" ><img src="images/turnright.gif" /></a>
     <div class="sales clearfix">
         <div class="goodBox" id="ISL_Cont">
            <div class="ScrCont">
@@ -35,7 +35,7 @@
 //图片滚动列表 mengjia 070816
 var Speed = 10; //速度(毫秒)
 var Space = 10; //每次移动(px)
-var PageWidth = 167; //翻页宽度
+var PageWidth = 160; //翻页宽度
 var fill = 0; //整体移位
 var MoveLock = false;
 var MoveTimeObj;

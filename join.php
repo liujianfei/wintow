@@ -1,7 +1,7 @@
 <?php
 
 /**
- * ECSHOP 留言板
+ * ECSHOP 加盟中心
  * ============================================================================
  * 版权所有 2005-2010 上海商派网络科技有限公司，并保留所有权利。
  * 网站地址: http://www.ecshop.com；
@@ -103,7 +103,7 @@ if ($action == 'act_add_message')
 if ($action == 'default')
 {
     assign_template();
-    $position = assign_ur_here(0, $_LANG['message_board']);
+    $position = assign_ur_here('join');
     $smarty->assign('page_title', $position['title']);    // 页面标题
     $smarty->assign('ur_here',    $position['ur_here']);  // 当前位置
     $smarty->assign('helps',      get_shop_help());       // 网店帮助

@@ -243,6 +243,15 @@ function assign_ur_here($cat = 0, $str = '')
                 $ur_here   .= ' <code>&gt;</code> <a href="contact.php">' .
                                 $GLOBALS['_LANG']['contact'] . '</a>';
             }
+			  /* 加盟中心 */
+            elseif ('join' == $filename)
+            {
+                $page_title = $GLOBALS['_LANG']['join'] . '_' . $page_title;
+                $args       = array('wsid' => '0');
+                $ur_here   .= ' <code>&gt;</code> <a href="join.php">' .
+                                $GLOBALS['_LANG']['join'] . '</a>';
+            }
+			
             /* 其他的在这里补充 */
         }
     }
