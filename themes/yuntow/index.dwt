@@ -25,7 +25,7 @@
 			<!-- #BeginLibraryItem "/library/index_ad.lbi" --><!-- #EndLibraryItem -->
         </div>
         <div class="blank10"></div>
-        <!-- #BeginLibraryItem "/library/recommend_best.lbi" --><!-- #EndLibraryItem -->
+        <!-- #BeginLibraryItem "/library/recommend_hot.lbi" --><!-- #EndLibraryItem -->
         <div class="blank10"></div>
         <!-- #BeginLibraryItem "/library/category_list.lbi" --><!-- #EndLibraryItem -->
     </div>
@@ -60,10 +60,13 @@
     <div class="area_r">
     	<div class="ad290">
         <!-- TemplateBeginEditable name="友情链接的右侧广告280" -->
+<<<<<<< HEAD
 <!-- #BeginLibraryItem "/library/ad_position.lbi" -->
 
 {insert name='ads' id=$ads_id num=$ads_num}
  <!-- #EndLibraryItem -->
+=======
+>>>>>>> da7650171ea1a4ac8a2e02b5a1468eb6f6240a72
 <!-- TemplateEndEditable -->
         </div>
     </div>
