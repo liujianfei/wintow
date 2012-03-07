@@ -46,6 +46,66 @@ function userEdit()
 	}
   }
 
+var myReg = /([\w-\.]+)@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.)|(([\w-]+\.)+))([a-zA-Z]{2,4}|[0-9]{1,3})(\]?)/;
+if(frm.elements['extend_field1'].value.length>0)
+{
+	if(myReg.test(frm.elements['extend_field1'].value))
+	{}
+	else
+	{
+		msg +='您输入的MSN格式不正确\n';
+	 }
+}
+
+ myReg =/^[1-9]\d{4,9}$/;
+if(frm.elements['extend_field2'].value.length>0)
+{
+if(myReg.test(frm.elements['extend_field2'].value))
+{}
+else
+{ 
+   msg +='您输入的QQ格式不正确\n';
+}
+}
+					
+
+
+
+ myReg =/^[+]{0,1}(\d){1,3}[ ]?([-]?((\d)|[ ]){1,12})+$/;
+if(frm.elements['extend_field3'].value.length>0)
+{
+if(myReg.test(frm.elements['extend_field3'].value))
+{}
+else
+{
+  msg +='您输入的办公电话格式不正确\n';	
+}
+}
+
+ myReg =/^[+]{0,1}(\d){1,3}[ ]?([-]?((\d)|[ ]){1,12})+$/;
+if(frm.elements['extend_field4'].value.length>0)
+{
+if(myReg.test(frm.elements['extend_field4'].value))
+{}
+else
+{
+  msg +='您输入的家庭电话格式不正确\n';	
+}
+}
+
+
+ myReg =/^((\(\d{3}\))|(\d{3}\-))?1[3,5]\d{9}$/;
+if(frm.elements['extend_field5'].value.length>0)
+{
+if(myReg.test(frm.elements['extend_field5'].value))
+{}
+else
+{
+	msg +='您输入的手机号码格式不正确\n';	
+}
+}
+
+
   if (msg.length > 0)
   {
     alert(msg);
