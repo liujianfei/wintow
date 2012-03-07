@@ -34,10 +34,6 @@
     <!-- #BeginLibraryItem "/library/recommend_hot.lbi" --><!-- #EndLibraryItem -->
 <div class="ad730">
 <!-- TemplateBeginEditable name="热门商品下的广告730" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
-{insert name='ads' id=$ads_id num=$ads_num}
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 </div>
 </div>
@@ -45,10 +41,6 @@
         <div class="blank10"></div>
 	<!-- #BeginLibraryItem "/library/top10.lbi" --><!-- #EndLibraryItem -->
 <!-- TemplateBeginEditable name="热门排行下的广告200" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
-{insert name='ads' id=$ads_id num=$ads_num}
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 
 <!-- #BeginLibraryItem "/library/free.lbi" --><!-- #EndLibraryItem -->
