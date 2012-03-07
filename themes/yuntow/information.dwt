@@ -1,0 +1,171 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<meta name="Keywords" content="{$keywords}" />
+<meta name="Description" content="{$description}" />
+<!-- TemplateBeginEditable name="doctitle" -->
+<title>{$page_title}</title>
+<!-- TemplateEndEditable -->
+<!-- TemplateBeginEditable name="head" -->
+<!-- TemplateEndEditable -->
+<link rel="shortcut icon" href="favicon.ico" />
+<link rel="icon" href="animated_favicon.gif" type="image/gif" />
+<link href="{$ecs_css_path}" rel="stylesheet" type="text/css" />
+{* 包含脚本文件 *}
+{insert_scripts files='common.js'}
+<script type="text/javascript" src="js/action.js"></script>
+</head>
+<body>
+<!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<div class="blank"></div>
+<div class="block clearfix">
+  <!--left start-->
+  <div class="area_l">
+    <!--当前位置 start-->
+     <div class="here">
+      <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+      <span class="here_r"></span>
+      </div>
+    <div class="blank"></div>
+    <!--当前位置 end-->
+    <div class="box_new">
+    	<div class="box_new_tit"><span class="f8 tit">今日新闻</span></div>
+        <div class="box_new_con clearfix">
+        	<a href="#" class="f_l"><img src="images/ad_1.gif" class="img" width="184" height="116" /></a>
+        	<div class="f_l item_new">
+            	<div class="f8" style="padding:5px 10px;">风云七种“武器朱一笔置产</div>
+                <p style="text-indent:2em; line-height:20px;">风云七种”武器知道可怜网络。风云七种武器只打进了可谓精品佛额为放空间是离开房间恶劣违反饥饿王府井。关系将拉开机房里开始减肥微积分文件方式离开房间来思考几分。ddha会计分录客机平稳资讯中心是地方法律文件诶哦废品我饿繁荣尾盘日尾盘的方式对方的身份。。。。</p>
+            </div>
+        </div>
+    </div>
+    <div class="blank10"></div>
+    <div class="box_new">
+    	<img class="new_hot_img" src="images/new_hot_t.gif" />
+    	<div class="box_new_tit"><span class="f8 tit">热门话题</span></div>
+        <div class="box_new_con clearfix">
+        	<ul class="item_list">
+            	<li>·<a href="#">我国企业首次获得国际3A质量批量IT信用</a></li>
+                <li>·<a href="#">我国企业首次获得国际3A质量批量IT信用</a></li>
+                <li>·<a href="#">我国企业首次获得国际3A质量批量IT信用</a></li>
+                <li>·<a href="#">我国企业首次获得国际3A质量批量IT信用</a></li>
+                <li>·<a href="#">我国企业首次获得国际3A质量批量IT信用</a></li>
+            </ul>
+            <ul class="item_list">
+            	<li>·<a href="#">我国企业首次获得国际3A质量批量IT信用</a></li>
+                <li>·<a href="#">我国企业首次获得国际3A质量批量IT信用</a></li>
+                <li>·<a href="#">我国企业首次获得国际3A质量批量IT信用</a></li>
+                <li>·<a href="#">我国企业首次获得国际3A质量批量IT信用</a></li>
+                <li>·<a href="#">我国企业首次获得国际3A质量批量IT信用</a></li>
+            </ul>
+            <div class=""><a href="#" class="f_r f6">更多&nbsp;&gt;&gt;&nbsp;&nbsp;</a></div>
+        </div>
+    </div>
+    <div class="blank10"></div>
+    <!-- TemplateBeginEditable name="右边广告区域640" -->
+<!-- TemplateEndEditable -->
+<div class="blank10"></div>
+    <div class="box_new">
+    	<div class="box_new_tit"><span class="f8 tit f_l">互联网动态</span><span class="f_r"><a href="#" class="f6">更多&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;</a></span></div>
+        <div class="box_new_con clearfix">
+        	<ul class="item_hot">
+            	<li class="cur">
+                	<div class="first">·<a href="">我国企业首次获得国际3A质量批量IT信用</a></div>
+                    <div class="last clearfix">
+                    	<a href="#" class="f_l"><img src="images/ad_1.gif" class="img" width="125" height="90" /></a>
+                        <div class="f_l " style="width:120px;">
+                            <div class="f8" style="padding:5px;">风云七种“武</div>
+                            <p style="text-indent:2em; line-height:20px;">风云七种”武器知道可怜网络。风云七种武器只打进了可谓精品佛额为放空间是离开房</p>
+                        </div>
+                    </div>
+                </li>
+            	<li>·<a href="">我国企业首次获得国际3A质量批量IT信用</a></li>
+                <li>·<a href="">我国企业首次获得国际3A质量批量IT信用</a></li>
+                <li>·<a href="">我国企业首次获得国际3A质量批量IT信用</a></li>
+                <li>·<a href="">我国企业首次获得国际3A质量批量IT信用</a></li>
+            </ul>
+            <ul class="item_hot">
+            	<li class="cur">
+                	<div class="first">·<a href="">我国企业首次获得国际3A质量批量IT信用</a></div>
+                    <div class="last clearfix">
+                    	<a href="#" class="f_l"><img src="images/ad_1.gif" class="img" width="125" height="90" /></a>
+                        <div class="f_l " style="width:120px;">
+                            <div class="f8" style="padding:5px;">风云七种“武</div>
+                            <p style="text-indent:2em; line-height:20px;">风云七种”武器知道可怜网络。风云七种武器只打进了可谓精品佛额为放空间是离开房</p>
+                        </div>
+                    </div>
+                </li>
+            	<li>·<a href="">我国企业首次获得国际3A质量批量IT信用</a></li>
+                <li>·<a href="">我国企业首次获得国际3A质量批量IT信用</a></li>
+                <li>·<a href="">我国企业首次获得国际3A质量批量IT信用</a></li>
+                <li>·<a href="">我国企业首次获得国际3A质量批量IT信用</a></li>
+            </ul>
+        </div>
+    </div>
+    <div class="blank10"></div>
+  </div>
+  <!--left end-->
+  <!--right start-->
+  <div class="area_r">
+  <div class="article_search">
+  	<form action="{$search_url}" name="search_form" method="post">
+        <input name="keywords" type="text" id="requirement" value="{$search_value}" size="20" class="inputBg" />
+        <input name="id" type="hidden" value="{$cat_id}" />
+        <input name="cur_url" id="cur_url" type="hidden" value="" />
+        <input type="submit" value="&nbsp;" class="btn_search_bg" />
+    </form>
+  </div>
+  <!-- TemplateBeginEditable name="右边广告区域（宽200px）" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
+<!-- TemplateEndEditable -->
+<div class="blank10"></div>
+
+
+    <!--AD end-->
+    <!-- #BeginLibraryItem "/library/box_articles.lbi" --><!-- #EndLibraryItem -->
+  </div>  
+  <!--right end-->
+</div>
+<div class="blank10"></div>
+<div class="block">
+<div class="scroll_box">
+	<a href="#"><img src="images/btn_1_up.gif" /></a>
+    <a href="#"><img src="images/btn_1_down.gif" /></a>
+	<div class=""></div>
+</div>
+</div>
+<div class="blank5"></div>
+<!--帮助-->
+<div class="block">
+    <!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
+</div>
+<div class="blank"></div>
+<!--帮助-->
+<!--友情链接 start-->
+<!--{if $img_links  or $txt_links }-->
+<div id="bottomNav" class="box">
+ <div class="box_1">
+  <div class="links clearfix">
+    <!--开始图片类型的友情链接{foreach from=$img_links item=link}-->
+    <a href="{$link.url}" target="_blank" title="{$link.name}"><img src="{$link.logo}" alt="{$link.name}" border="0" /></a>
+    <!--结束图片类型的友情链接{/foreach}-->
+    <!-- {if $txt_links} -->
+    <!--开始文字类型的友情链接{foreach from=$txt_links item=link}-->
+    [<a href="{$link.url}" target="_blank" title="{$link.name}">{$link.name}</a>] 
+    <!--结束文字类型的友情链接{/foreach}-->
+    <!-- {/if} -->
+  </div>
+ </div>
+</div>
+<!--{/if}-->
+<!--友情链接 end-->
+<div class="blank"></div>
+<!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
+</body>
+<script type="text/javascript">
+document.getElementById('cur_url').value = window.location.href;
+</script>
+</html>

@@ -193,10 +193,10 @@ h6 span{float:left; padding-left:15px;}
 #category_tree li .children .conter .ChildrenLi{ float:left; width:40%;background:url(images/dot3.gif) no-repeat 0px 15px; padding-left:10px;}
 
 .step {float:left;display:inline;width:510px;height:310px;padding:6px;background:#cfcece;position:relative;border:1px solid #dedede; overflow:hidden;}
-.img {width:510px;height:314px;float:left;overflow:hidden; position:relative;}
-.img ul {position:absolute;top:0px;left:0px;}
-.img li {width:510px;height:314px;float:left;}
-.img li.opacity {position:absolute;top:0px;left:0px;opacity:0;filter:alpha(opacity:0)}
+.step .img {width:510px;height:314px;float:left;overflow:hidden; position:relative;}
+.step .img ul {position:absolute;top:0px;left:0px;}
+.step .img li {width:510px;height:314px;float:left;}
+.step .img li.opacity {position:absolute;top:0px;left:0px;opacity:0;filter:alpha(opacity:0)}
 .but {width:105px;height:16px;right:185px;bottom:12px;position:absolute;z-index:1;}
 .but li {width:14px;height:14px;float:left;color:#fff;font-size:10px;text-align:center;line-height:14px;font-family:Verdana;background:#bbb;display:inline;margin:0 5px 0 0;cursor:pointer;border:1px solid #a9abaa;}
 .but li.hove {background:#ff902a;border:1px solid #ff6502;}
@@ -584,6 +584,22 @@ color:#3f3f3f; text-decoration:none; margin:0 0 3px 10px; padding-left:3px;
 font-size:16px; color:#fff;}
 .box_article ul{ padding:10px 15px;}
 .box_article ul li {padding:0px 5px; line-height:30px; border-bottom:1px solid #ccc;}
+
+.box_new { width:647px; padding-bottom:20px; background:url(images/box_new_bg_b.gif) no-repeat bottom; position:relative;}
+.box_new .box_new_tit { height:30px; background:url(images/box_new_bg_t.gif) no-repeat top; overflow:hidden; line-height:30px;}
+.box_new .box_new_tit .tit{padding:4px 16px 0px; background:url(images/blue_top.gif) no-repeat;}
+.box_new .box_new_con { padding:10px 20px 0; width:607px; background:url(images/box_new_bg_m.gif) repeat-y center; overflow:hidden;}
+.box_new .box_new_con .img{ border:1px solid #CCC; margin:10px;}
+.item_new{ height:130px; width:360px; padding:5px;}
+.new_hot_img { position:absolute; top:-2px;right:-2px; background:url(images/new_hot_t.gif) no-repeat;}
+
+.item_list { padding:10px 20px; width:260px; float:left; line-height:20px;}
+.item_hot { padding:10px; width:280px; float:left; line-height:20px;}
+
+.item_hot .last { width:280px; height:115px; overflow:hidden;}
+.item_hot li .last, .item_hot li.cur .first{ display:none;}
+.item_hot li.cur .last { display:block;}
+
 /* ====================
 打印报价单
 ==================== */

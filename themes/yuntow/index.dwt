@@ -41,10 +41,6 @@
         <div class="blank10"></div>
         <div class="ad280">
         <!-- TemplateBeginEditable name="资讯下的右侧广告280" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
-{insert name='ads' id=$ads_id num=$ads_num}
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
         </div>
         <div class="blank10"></div>
@@ -53,10 +49,6 @@
     <div class="blank10"></div>
 <div class="ad960">
 <!-- TemplateBeginEditable name="分类下的横栏广告960" -->
-<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
-
-{insert name='ads' id=$ads_id num=$ads_num}
- <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 </div>
 </div>

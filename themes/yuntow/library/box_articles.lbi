@@ -14,7 +14,7 @@
 </ul>
 <div align="right"><a href="article_cat.php?id={$article_cat.cat_id}" class="f6">更多&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;&nbsp;</a></div>
  </div>
-<div class="block"></div>
+<div class="blank5"></div>
   <!-- {/foreach} -->
 <div class="blank10"></div>
 
