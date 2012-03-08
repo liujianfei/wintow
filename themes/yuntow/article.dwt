@@ -31,9 +31,9 @@
      <div class="box">
      <div class="list">
         <div class="list_t">
-        	<span class="f7 f_l">行业资讯</span>
+        	<span class="f7 f_l">{$article.cat_name}</span>
             <span class="f_r">
-            <a href="article_cat.php?id=1" class="f6">返回资讯列表</a>&nbsp;
+            <a href="article_cat.php?id={$article.cat_id}" class="f6">返回{$article.cat_name}</a>&nbsp;
             <a href="{$next_article.url}" class="f6">{$lang.next_article}</a>&nbsp;
             <a href="{$prev_article.url}" class="f6">{$lang.prev_article}</a></span>
         </div>
