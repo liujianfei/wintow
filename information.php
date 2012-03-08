@@ -30,6 +30,7 @@ clear_cache_files();
 /*------------------------------------------------------ */
 
 /* 获得指定的分类ID */
+/*
 if (!empty($_GET['id']))
 {
     $cat_id = intval($_GET['id']);
@@ -44,7 +45,7 @@ else
 
     exit;
 }
-
+*/
 
 /* 获得当前页码 */
 $page   = !empty($_REQUEST['page'])  && intval($_REQUEST['page'])  > 0 ? intval($_REQUEST['page'])  : 1;
