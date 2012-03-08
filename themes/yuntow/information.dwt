@@ -66,7 +66,7 @@
 <!-- TemplateEndEditable -->
 <div class="blank10"></div>
     <div class="box_new">
-    	<div class="box_new_tit"><span class="f8 tit f_l">互联网动态</span><span class="f_r"><a href="#" class="f6">更多&nbsp;&gt;&gt;&nbsp;&nbsp;&nbsp;</a></span></div>
+    	<div class="box_new_tit"><span class="f8 tit f_l">互联网动态</span></div>
         <div class="box_new_con clearfix">
         	<ul class="item_hot">
             	<li class="cur">
@@ -100,6 +100,7 @@
                 <li>·<a href="">我国企业首次获得国际3A质量批量IT信用</a></li>
                 <li>·<a href="">我国企业首次获得国际3A质量批量IT信用</a></li>
             </ul>
+            <span class="f_r"><a href="#" class="f6">更多&nbsp;&gt;&gt;&nbsp;&nbsp;</a></span>
         </div>
     </div>
     <div class="blank10"></div>
@@ -108,7 +109,7 @@
   <!--right start-->
   <div class="area_r">
   <div class="article_search">
-  	<form action="{$search_url}" name="search_form" method="post">
+  	<form action="article_cat.php?id=1" name="search_form" method="post">
         <input name="keywords" type="text" id="requirement" value="{$search_value}" size="20" class="inputBg" />
         <input name="id" type="hidden" value="{$cat_id}" />
         <input name="cur_url" id="cur_url" type="hidden" value="" />
@@ -122,19 +123,25 @@
  <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 <div class="blank10"></div>
-
-
     <!--AD end-->
     <!-- #BeginLibraryItem "/library/box_articles.lbi" --><!-- #EndLibraryItem -->
   </div>  
   <!--right end-->
 </div>
-<div class="blank10"></div>
+<div class="blank5"></div>
 <div class="block">
 <div class="scroll_box">
-	<a href="#"><img src="images/btn_1_up.gif" /></a>
-    <a href="#"><img src="images/btn_1_down.gif" /></a>
-	<div class=""></div>
+	<a href="javascript:void(0)" class="up"><img src="images/btn_1_up.gif" /></a>
+    <a href="javascript:void(0)" class="down"><img src="images/btn_1_down.gif" /></a>
+	<div class="new_img_list">
+    	<ul>
+        	<li><a href="#"><img src="images/ad_1.gif" width="180" height="116" /></a></li>
+            <li><a href="#"><img src="images/ad_1.gif" width="180" height="116" /></a></li>
+            <li><a href="#"><img src="images/ad_1.gif" width="180" height="116" /></a></li>
+            <li><a href="#"><img src="images/ad_1.gif" width="180" height="116" /></a></li>
+            <li><a href="#"><img src="images/ad_1.gif" width="180" height="116" /></a></li>
+        </ul>
+    </div>
 </div>
 </div>
 <div class="blank5"></div>

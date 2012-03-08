@@ -600,6 +600,14 @@ font-size:16px; color:#fff;}
 .item_hot li .last, .item_hot li.cur .first{ display:none;}
 .item_hot li.cur .last { display:block;}
 
+.scroll_box { width:840px; height:120px; padding:20px 30px; position:relative; border:1px solid #ccc;}
+.scroll_box .up, .scroll_box .down { position:absolute; top:30px; }
+.scroll_box .up { left:-23px;}
+.scroll_box .down { right:-23px;}
+.new_img_list { width:840px; height:120px; overflow:hidden;}
+.new_img_list ul li { float:left; width:180px;padding:0 15px;}
+.new_img_list ul li img{ border:1px solid #ccc;}
+
 /* ====================
 打印报价单
 ==================== */
