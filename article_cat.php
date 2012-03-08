@@ -143,7 +143,7 @@ function index_get_articles()
 {
      	   
 		$sql = 'SELECT a.cat_id, a.cat_name  FROM ' . $GLOBALS['ecs']->table('article_cat') . ' AS a ' .
-		    	' WHERE a.cat_id <> 1 AND a.parent_id =0  ORDER BY  a.cat_id DESC LIMIT 15';
+		    	' WHERE a.cat_id <> 1 AND a.parent_id =0  ORDER BY  a.cat_id DESC LIMIT 3';
 			
 		$res = $GLOBALS['db']->getAll($sql);
 	

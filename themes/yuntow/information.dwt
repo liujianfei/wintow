@@ -31,13 +31,15 @@
     <!--当前位置 end-->
     <div class="box_new">
     	<div class="box_new_tit"><span class="f8 tit">今日新闻</span></div>
+        
         <div class="box_new_con clearfix">
-        	<a href="#" class="f_l"><img src="images/ad_1.gif" class="img" width="184" height="116" /></a>
+        	<a href="{$todayarticle.url}" class="f_l"><img src="{$todayarticle.file_url}" class="img" width="184" height="116" /></a>
         	<div class="f_l item_new">
-            	<div class="f8" style="padding:5px 10px;">风云七种“武器朱一笔置产</div>
-                <p style="text-indent:2em; line-height:20px;">风云七种”武器知道可怜网络。风云七种武器只打进了可谓精品佛额为放空间是离开房间恶劣违反饥饿王府井。关系将拉开机房里开始减肥微积分文件方式离开房间来思考几分。ddha会计分录客机平稳资讯中心是地方法律文件诶哦废品我饿繁荣尾盘日尾盘的方式对方的身份。。。。</p>
+            	<div class="f8" style="padding:5px 10px;">{$todayarticle.title}</div>
+                <p style="text-indent:2em; line-height:20px;">{$todayarticle.content}。。。。</p>
             </div>
         </div>
+         
     </div>
     <div class="blank10"></div>
     <div class="box_new">
@@ -45,20 +47,12 @@
     	<div class="box_new_tit"><span class="f8 tit">热门话题</span></div>
         <div class="box_new_con clearfix">
         	<ul class="item_list">
-            	<li>·<a href="#">我国企业首次获得国际3A质量批量IT信用</a></li>
-                <li>·<a href="#">我国企业首次获得国际3A质量批量IT信用</a></li>
-                <li>·<a href="#">我国企业首次获得国际3A质量批量IT信用</a></li>
-                <li>·<a href="#">我国企业首次获得国际3A质量批量IT信用</a></li>
-                <li>·<a href="#">我国企业首次获得国际3A质量批量IT信用</a></li>
+             <!--{foreach name=message_lists from=$artciles_hotlist item=msg}-->
+            	<li>·<a href="{$msg.url}">{$msg.short_title}</a></li>
+                   <!--{/foreach}-->  
+                
             </ul>
-            <ul class="item_list">
-            	<li>·<a href="#">我国企业首次获得国际3A质量批量IT信用</a></li>
-                <li>·<a href="#">我国企业首次获得国际3A质量批量IT信用</a></li>
-                <li>·<a href="#">我国企业首次获得国际3A质量批量IT信用</a></li>
-                <li>·<a href="#">我国企业首次获得国际3A质量批量IT信用</a></li>
-                <li>·<a href="#">我国企业首次获得国际3A质量批量IT信用</a></li>
-            </ul>
-            <div class=""><a href="#" class="f_r f6">更多&nbsp;&gt;&gt;&nbsp;&nbsp;</a></div>
+            <div class=""><a href="article_cat.php?id=12" class="f_r f6">更多&nbsp;&gt;&gt;&nbsp;&nbsp;</a></div>
         </div>
     </div>
     <div class="blank10"></div>
@@ -70,37 +64,24 @@
         <div class="box_new_con clearfix">
         	<ul class="item_hot">
             	<li class="cur">
-                	<div class="first">·<a href="">我国企业首次获得国际3A质量批量IT信用</a></div>
+                 <!--{foreach name=message_lists from=$get_maparticle item=msg}-->
+                	<div class="first">·<a href="article.php?id={$msg.article_id}">{$msg.short_title}</a></div>
                     <div class="last clearfix">
-                    	<a href="#" class="f_l"><img src="images/ad_1.gif" class="img" width="125" height="90" /></a>
+                    	<a href="article.php?id={$msg.article_id}" class="f_l"><img src="{$msg.file_url}" class="img" width="125" height="90" /></a>
                         <div class="f_l " style="width:120px;">
-                            <div class="f8" style="padding:5px;">风云七种“武</div>
-                            <p style="text-indent:2em; line-height:20px;">风云七种”武器知道可怜网络。风云七种武器只打进了可谓精品佛额为放空间是离开房</p>
+                            <div class="f8" style="padding:5px;">{$msg.short_title}</div>
+                            <p style="text-indent:2em; line-height:20px;">{$msg.content}</p>
                         </div>
                     </div>
+                       <!--{/foreach}--> 
                 </li>
-            	<li>·<a href="">我国企业首次获得国际3A质量批量IT信用</a></li>
-                <li>·<a href="">我国企业首次获得国际3A质量批量IT信用</a></li>
-                <li>·<a href="">我国企业首次获得国际3A质量批量IT信用</a></li>
-                <li>·<a href="">我国企业首次获得国际3A质量批量IT信用</a></li>
+                    <!--{foreach name=message_lists from=$artciles_netlist item=msg}-->
+            	<li>·<a href="{$msg.url}">{$msg.short_title}</a></li>
+                    <!--{/foreach}--> 
+               
             </ul>
-            <ul class="item_hot">
-            	<li class="cur">
-                	<div class="first">·<a href="">我国企业首次获得国际3A质量批量IT信用</a></div>
-                    <div class="last clearfix">
-                    	<a href="#" class="f_l"><img src="images/ad_1.gif" class="img" width="125" height="90" /></a>
-                        <div class="f_l " style="width:120px;">
-                            <div class="f8" style="padding:5px;">风云七种“武</div>
-                            <p style="text-indent:2em; line-height:20px;">风云七种”武器知道可怜网络。风云七种武器只打进了可谓精品佛额为放空间是离开房</p>
-                        </div>
-                    </div>
-                </li>
-            	<li>·<a href="">我国企业首次获得国际3A质量批量IT信用</a></li>
-                <li>·<a href="">我国企业首次获得国际3A质量批量IT信用</a></li>
-                <li>·<a href="">我国企业首次获得国际3A质量批量IT信用</a></li>
-                <li>·<a href="">我国企业首次获得国际3A质量批量IT信用</a></li>
-            </ul>
-            <span class="f_r"><a href="#" class="f6">更多&nbsp;&gt;&gt;&nbsp;&nbsp;</a></span>
+           
+            <span class="f_r"><a href="article_cat.php?id=14" class="f6">更多&nbsp;&gt;&gt;&nbsp;&nbsp;</a></span>
         </div>
     </div>
     <div class="blank10"></div>
@@ -135,11 +116,10 @@
     <a href="javascript:void(0)" class="down"><img src="images/btn_1_down.gif" /></a>
 	<div class="new_img_list">
     	<ul>
-        	<li><a href="#"><img src="images/ad_1.gif" width="180" height="116" /></a></li>
-            <li><a href="#"><img src="images/ad_1.gif" width="180" height="116" /></a></li>
-            <li><a href="#"><img src="images/ad_1.gif" width="180" height="116" /></a></li>
-            <li><a href="#"><img src="images/ad_1.gif" width="180" height="116" /></a></li>
-            <li><a href="#"><img src="images/ad_1.gif" width="180" height="116" /></a></li>
+          <!--{foreach name=message_lists from=$artciles_netlist item=msg}-->
+        	<li><a href="{$msg.url}"><img src="{$msg.file_url}" width="180" height="116" /></a></li>
+             <!--{/foreach}--> 
+           
         </ul>
     </div>
 </div>

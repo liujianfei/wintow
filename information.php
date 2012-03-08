@@ -1,7 +1,7 @@
 <?php
 
 /**
- * ECSHOP 文章分类
+ * ECSHOP 资讯动态
  * ============================================================================
  * 版权所有 2005-2010 上海商派网络科技有限公司，并保留所有权利。
  * 网站地址: http://www.ecshop.com；
@@ -83,20 +83,23 @@ if (!$smarty->is_cached('information.dwt', $cache_id))
 
   
     /* Meta */
+	/*
     $meta = $db->getRow("SELECT keywords, cat_desc FROM " . $ecs->table('article_cat') . " WHERE cat_id = '$cat_id'");
 
     if ($meta === false || empty($meta))
     {
+	    */
         /* 如果没有找到任何记录则返回首页 */
-        ecs_header("Location: ./\n");
-        exit;
-    }
-
-    $smarty->assign('keywords',    htmlspecialchars($meta['keywords']));
-    $smarty->assign('description', htmlspecialchars($meta['cat_desc']));
+       // ecs_header("Location: ./\n");
+      //  exit;
+   // }
+   
+    $smarty->assign('keywords',    '资讯动态');
+    $smarty->assign('description', '资讯动态');
 
     /* 获得文章总数 */
     //$size   = isset($_CFG['article_page_size']) && intval($_CFG['article_page_size']) > 0 ? intval($_CFG['article_page_size']) : 20;
+	/*
 	$size   = 20;
     $count  = get_article_count($cat_id);
     $pages  = ($count > 0) ? ceil($count / $size) : 1;
@@ -108,8 +111,10 @@ if (!$smarty->is_cached('information.dwt', $cache_id))
     $pager['search']['id'] = $cat_id;
     $keywords = '';
     $goon_keywords = ''; //继续传递的搜索关键词
+	*/
 
     /* 获得文章列表 */
+	/*
     if (isset($_POST['keywords']))
     {
         $keywords = addslashes(urldecode(trim($_POST['keywords'])));
@@ -127,14 +132,18 @@ if (!$smarty->is_cached('information.dwt', $cache_id))
 
         $goon_keywords = urlencode($_POST['keywords']);
     }
-    $smarty->assign('artciles_list',    get_cat_articles($cat_id, $page, $size ,$keywords));
-    $smarty->assign('cat_id',    $cat_id);
+	*/
+      $smarty->assign('todayarticle',    get_todayarticle());
+	  $smarty->assign('artciles_hotlist',    get_cat_articles(12, 1, 10 ,''));
+	  $smarty->assign('get_maparticle',   get_maparticle());
+	  $smarty->assign('artciles_netlist',    get_cat_articles(14, 1, 10 ,''));
+   // $smarty->assign('cat_id',    $cat_id);
     /* 分页 */
-    assign_pager('article_cat', $cat_id, $count, $size, '', '', $page, $goon_keywords);
-    assign_dynamic('article_cat');
+   // assign_pager('article_cat', $cat_id, $count, $size, '', '', $page, $goon_keywords);
+    assign_dynamic('information');
 }
 
-$smarty->assign('feed_url',         ($_CFG['rewrite'] == 1) ? "feed-typearticle_cat" . $cat_id . ".xml" : 'feed.php?type=article_cat' . $cat_id); // RSS URL
+//$smarty->assign('feed_url',         ($_CFG['rewrite'] == 1) ? "feed-typearticle_cat" . $cat_id . ".xml" : 'feed.php?type=information' . $cat_id); // RSS URL
 
 $smarty->display('information.dwt', $cache_id);
 
@@ -143,7 +152,7 @@ function index_get_articles()
 {
      	   
 		$sql = 'SELECT a.cat_id, a.cat_name  FROM ' . $GLOBALS['ecs']->table('article_cat') . ' AS a ' .
-		    	' WHERE a.cat_id <> 1 AND a.parent_id =0  ORDER BY  a.cat_id DESC LIMIT 15';
+		    	' WHERE a.cat_id <> 1 AND a.parent_id =0  ORDER BY  a.cat_id DESC LIMIT 3';
 			
 		$res = $GLOBALS['db']->getAll($sql);
 	
@@ -179,6 +188,43 @@ function index_get_articles()
        $app=array('articlercat'=>$articlercat,'articles'=>$articles);
 
     return $app;
+}
+
+function get_todayarticle()
+{
+
+           $sql = 'SELECT  a.title, a.add_time, a.file_url,a.content FROM ' . $GLOBALS['ecs']->table('article') . ' AS a '.
+			 ' WHERE a.is_open = 1 AND a.cat_id =13 ORDER BY  a.add_time DESC LIMIT 1';
+			$todayarticle=array();
+			$res = $GLOBALS['db']->query($sql);
+			while ($row = mysql_fetch_assoc($res)) {
+	
+			$todayarticle['title']=$row['title'];
+		    $todayarticle['file_url']=$row['file_url'];
+			$todayarticle['content']=substr($row['content'],0,300);
+			}
+			
+			return $todayarticle;
+			
+}
+
+function get_maparticle()
+{
+
+           $sql = 'SELECT  a.article_id,a.title, a.add_time, a.file_url,a.content FROM ' . $GLOBALS['ecs']->table('article') . ' AS a '.
+			 ' WHERE a.is_open = 1 AND a.cat_id =14 ORDER BY  a.add_time DESC LIMIT 2';
+			$todayarticles=array();
+			$res = $GLOBALS['db']->query($sql);
+			while ($row = mysql_fetch_assoc($res)) {
+	        $todayarticle['article_id']=$row['article_id'];
+			$todayarticle['title']=$row['title'];
+		    $todayarticle['file_url']=$row['file_url'];
+			$todayarticle['content']=substr($row['content'],0,300);
+			$todayarticles[]=$todayarticle;
+			}
+			
+			return $todayarticles;
+			
 }
 
 
