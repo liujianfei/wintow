@@ -8,7 +8,7 @@
 	<a href="javascript:void(0)" class="up" onMouseDown="ISL_GoDown()" onMouseUp="ISL_StopDown()" onMouseOut="ISL_StopDown()"><img src="images/turnleft.gif" /></a>
     <a href="javascript:void(0)" class="next" onmousedown="ISL_GoUp()" onMouseUp="ISL_StopUp()" onMouseOut="ISL_StopUp()" ><img src="images/turnright.gif" /></a>
     <div class="sales clearfix">
-        <div class="goodBox" id="ISL_Cont">
+        <div id="ISL_Cont">
            <div class="ScrCont">
            	 <div id="List1">
              <!--{foreach from=$promotion_goods item=goods name="promotion_foreach"}-->
