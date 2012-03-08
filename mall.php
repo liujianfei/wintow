@@ -117,7 +117,7 @@ if (!$smarty->is_cached('mall.dwt', $cache_id))
    // $smarty->assign('best_goods',      get_recommend_goods('best'));    // 推荐商品
     $smarty->assign('new_goods',       get_recommend_goods('new'));     // 最新商品
     $smarty->assign('hot_goods',       get_recommend_goods('hot'));     // 热点文章
-    $smarty->assign('promotion_goods', get_promote_goods()); // 特价商品
+   // $smarty->assign('promotion_goods', get_promote_goods()); // 特价商品
    // $smarty->assign('brand_list',      get_brands());
    // $smarty->assign('promotion_info',  get_promotion_info()); // 增加一个动态显示所有促销信息的标签栏
 
