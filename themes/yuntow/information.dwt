@@ -111,13 +111,16 @@
 <div class="scroll_box">
 	<a href="javascript:void(0)" class="up"><img src="images/btn_1_up.gif" /></a>
     <a href="javascript:void(0)" class="down"><img src="images/btn_1_down.gif" /></a>
-	<div class="new_img_list">
+	<div class="new_img_list" id="newlist">
+    	<div id="newlist1" style="float:left;">
     	<ul>
           <!--{foreach name=message_lists from=$artciles_netlist item=msg}-->
         	<li><a href="{$msg.url}"><img src="{$msg.file_url}" width="180" height="116" /></a></li>
              <!--{/foreach}--> 
            
         </ul>
+        </div>
+     	<div id="newlist2"></div>
     </div>
 </div>
 </div>
@@ -149,5 +152,102 @@
 <div class="blank"></div>
 <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
 </body>
-
+<script type="text/javascript">
+      function $(id){  
+        return (document.getElementById) ? document.getElementById(id): document.all[id]
+      }
+      
+      var boxwidth=180;//跟图片的实际尺寸相符
+      
+      var box=$("newlist");
+      var obox=$("newlist1");
+      var dulbox=$("newlist2");
+      obox.style.width=obox.getElementsByTagName("li").length*boxwidth+'px';
+      dulbox.style.width=obox.getElementsByTagName("li").length*boxwidth+'px';
+      box.style.width=obox.getElementsByTagName("li").length*boxwidth*3+'px';
+      var canroll = false;
+      if (obox.getElementsByTagName("li").length >=5) {
+        canroll = true;
+        dulbox.innerHTML=obox.innerHTML;
+      }
+      var step=5;temp=1;speed=50;
+      var awidth=obox.offsetWidth;
+      var mData=0;
+      var isStop = 1;
+      var dir = 1;
+      
+      function s(){
+        if (!canroll) return;
+        if (dir) {
+      if((awidth+mData)>=0)
+      {
+      mData=mData-step;
+      }
+      else
+      {
+      mData=-step;
+      }
+      } else {
+        if(mData>=0)
+        {
+        mData=-awidth;
+        }
+        else
+        {
+        mData+=step;
+        }
+      }
+      
+      obox.style.marginLeft=mData+"px";
+      
+      if (isStop) return;
+      
+      setTimeout(s,speed)
+      }
+      
+      
+      function moveLeft() {
+          var wasStop = isStop;
+          dir = 1;
+          speed = 50;
+          isStop=0;
+          if (wasStop) {
+            setTimeout(s,speed);
+          }
+      }
+      
+      function moveRight() {
+          var wasStop = isStop;
+          dir = 0;
+          speed = 50;
+          isStop=0;
+          if (wasStop) {
+            setTimeout(s,speed);
+          }
+      }
+      
+      function scrollStop() {
+        isStop=1;
+      }
+      
+      function clickLeft() {
+          var wasStop = isStop;
+          dir = 1;
+          speed = 25;
+          isStop=0;
+          if (wasStop) {
+            setTimeout(s,speed);
+          }
+      }
+      
+      function clickRight() {
+          var wasStop = isStop;
+          dir = 0;
+          speed = 25;
+          isStop=0;
+          if (wasStop) {
+            setTimeout(s,speed);
+          }
+      }
+</script>
 </html>

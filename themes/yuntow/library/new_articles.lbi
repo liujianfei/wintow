@@ -8,9 +8,7 @@
      </div>
   </li>
   <li class="br">
-    <div class="NewsTit2" id="ECS_NOTICE">
-   云公告
-    </div>
+    <div class="NewsTit2" id="ECS_NOTICE">云公告</div>
    </li> 
  </ul>
 </div>

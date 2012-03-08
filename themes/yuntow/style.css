@@ -210,8 +210,8 @@ h6 span{float:left; padding-left:15px;}
 .category_list .stair { width:170px; line-height:70px; color:#8d8d8d; font-size:20px; text-align:center;}
 .category_list .second { width:400px; float:left; padding:15px 10px; line-height:20px;}
 
-.NewsTit{background-color:#fff;padding:5px 43px; border-top:5px solid #047db8; float:left;}
-.NewsTit2{ background-color:#f0f0f0;padding:5px 43px; border-top:5px solid #047db8; float:right}
+.NewsTit,.NewsTit2{background-color:#fff; width:142px; height:30px; line-height:30px; text-align:center; border-top:5px solid #047db8; float:left;}
+.NewsTit2{ background-color:#f0f0f0;}
 #newArticleTab ul li{float:left;display:inline;cursor:pointer; font-family:"Microsoft YaHei"; color:#047db8; font-size:14px;}
 #newArticleTab ul li.br {margin-left:4px;}
 .NewsAricle{padding:10px;}
