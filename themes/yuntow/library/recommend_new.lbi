@@ -29,7 +29,7 @@
        </font>
     </div>
   <!--{/foreach}-->
-  <div class="pro"><a href="../search.php?intro=new"><img src="images/new_product.gif" /></a></div>
+
   <!-- {if $cat_rec_sign neq 1} -->
   </div>
 </div>
