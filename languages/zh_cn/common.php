@@ -513,6 +513,9 @@ $_LANG['all_category'] = '所有分类';
 /* 商品分类页 */
 $_LANG['goods_filter'] = '商品筛选';
 
+/* 资讯动态页 */
+$_LANG['information'] = '资讯动态';
+
 /* 客户中心页 */
 $_LANG['contact'] = '客户中心';
 
