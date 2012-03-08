@@ -235,6 +235,15 @@ function assign_ur_here($cat = 0, $str = '')
                 $ur_here   .= ' <code>&gt;</code> <a href="exchange.php">' .
                                 $GLOBALS['_LANG']['exchange'] . '</a>';
             }
+			  /* 资讯动态 */
+            elseif ('information' == $filename)
+            {
+                $page_title = $GLOBALS['_LANG']['information'] . '_' . $page_title;
+                $args       = array('wsid' => '0');
+                $ur_here   .= ' <code>&gt;</code> <a href="information.php">' .
+                                $GLOBALS['_LANG']['information'] . '</a>';
+            }
+			
 			  /* 客户中心 */
             elseif ('contact' == $filename)
             {
