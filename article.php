@@ -56,21 +56,24 @@ if (!$smarty->is_cached('article.dwt', $cache_id))
         exit;
     }
 
-    $smarty->assign('article_categories',   article_categories_tree($article_id)); //文章分类树
-    $smarty->assign('categories',       get_categories_tree());  // 分类树
+   // $smarty->assign('article_categories',   article_categories_tree($article_id)); //文章分类树
+   // $smarty->assign('categories',       get_categories_tree());  // 分类树
     $smarty->assign('helps',            get_shop_help()); // 网店帮助
+   /*
     $smarty->assign('top_goods',        get_top10());    // 销售排行
     $smarty->assign('best_goods',       get_recommend_goods('best'));       // 推荐商品
     $smarty->assign('new_goods',        get_recommend_goods('new'));        // 最新商品
     $smarty->assign('hot_goods',        get_recommend_goods('hot'));        // 热点文章
     $smarty->assign('promotion_goods',  get_promote_goods());    // 特价商品
     $smarty->assign('related_goods',    article_related_goods($_REQUEST['id']));  // 特价商品
+	*/
     $smarty->assign('id',               $article_id);
     $smarty->assign('username',         $_SESSION['user_name']);
     $smarty->assign('email',            $_SESSION['email']);
     $smarty->assign('type',            '1');
-    $smarty->assign('promotion_info', get_promotion_info());
-
+   // $smarty->assign('promotion_info', get_promotion_info());
+    $smarty->assign('index_get_articles', index_get_articles());
+	
     /* 验证码相关设置 */
     if ((intval($_CFG['captcha']) & CAPTCHA_COMMENT) && gd_version() > 0)
     {
@@ -208,6 +211,48 @@ function article_related_goods($id)
     }
 
     return $arr;
+}
+
+function index_get_articles()
+{
+     	   
+		$sql = 'SELECT a.cat_id, a.cat_name  FROM ' . $GLOBALS['ecs']->table('article_cat') . ' AS a ' .
+		    	' WHERE a.cat_id <> 1 AND a.parent_id =0  ORDER BY  a.cat_id DESC LIMIT 3';
+			
+		$res = $GLOBALS['db']->getAll($sql);
+	
+		$articlercat = array();
+		foreach ($res AS $idx => $row)
+		{
+			$articlercat[$idx]['cat_id']          = $row['cat_id'];
+			$articlercat[$idx]['cat_name']       = $row['cat_name'];
+		}
+		
+        $articles = array(); 
+	
+   	   foreach($articlercat AS $cat )
+	   {
+			 $sql = 'SELECT a.article_id,a.cat_id, a.title, a.add_time, a.file_url FROM ' . $GLOBALS['ecs']->table('article') . ' AS a '.
+			 ' WHERE a.is_open = 1 AND a.cat_id ='.$cat['cat_id']. ' ORDER BY  a.add_time DESC LIMIT 5';
+			
+			$res = $GLOBALS['db']->getAll($sql);
+		
+	  		foreach ($res AS $idx => $row)
+			{
+				$arr['cat_id']      = $row['cat_id'];
+				$arr['id']          = $row['article_id'];
+				$arr['short_title'] = $GLOBALS['_CFG']['article_title_length'] > 0 ?
+												sub_str($row['title'], $GLOBALS['_CFG']['article_title_length']) : $row['title'];
+				$arr['url']         = $row['open_type'] != 1 ?
+												build_uri('article', array('aid' => $row['article_id']), $row['title']) : trim($row['file_url']);
+			    $articles[]=$arr;
+			   
+			  }
+		 } 
+		 
+       $app=array('articlercat'=>$articlercat,'articles'=>$articles);
+
+    return $app;
 }
 
 ?>
