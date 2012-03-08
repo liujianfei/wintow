@@ -69,7 +69,7 @@
                         <a href="article.php?id={$msg.article_id}" class="f_l"><img src="{$msg.file_url}" class="img" width="125" height="90" /></a>
                         <div class="f_l " style="width:120px;">
                             <div class="f8" style="padding:5px;">{$msg.title}</div>
-                            <p style="text-indent:2em; line-height:20px;">{$msg.content}</p>
+                            <div style="text-indent:2em; line-height:20px;">{$msg.content}</div>
                         </div>
                     </div>
                 </li>
@@ -87,7 +87,7 @@
   <!--right start-->
   <div class="area_r">
   <div class="article_search">
-  	<form action="{$search_url}" name="search_form" method="post">
+  	<form action="article_cat.php?id=1" name="search_form" method="post">
         <input name="keywords" type="text" id="requirement" value="{$search_value}" size="20" class="inputBg" />
         <input name="id" type="hidden" value="{$cat_id}" />
         <input name="cur_url" id="cur_url" type="hidden" value="article_cat.php?id=1" />
@@ -117,7 +117,6 @@
           <!--{foreach name=message_lists from=$artciles_netlist item=msg}-->
         	<li><a href="{$msg.url}"><img src="{$msg.file_url}" width="180" height="116" /></a></li>
              <!--{/foreach}--> 
-           
         </ul>
         </div>
      	<div id="newlist2"></div>

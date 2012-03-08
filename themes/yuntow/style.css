@@ -229,15 +229,6 @@ h6 span{float:left; padding-left:15px;}
 
 .box_tit {margin-left:6px;height:35px; padding:0px 10px; line-height:35px; background:url(images/blue_top.gif) no-repeat;}
 
-/*销售排行*/
-.hot { position:relative;}
-.hot .Tit { margin:-1px -1px 0 0; height:41px; background:url(images/top1.gif) no-repeat right; line-height:40px;}
-.blue { background-color:#fff; padding:6px 10px; border-top:5px solid #047db8; color:#047db8;line-height:30px;}
-.hot ul { padding:10px 8px;}
-.hot ul li { float:left; width:130px; height:140px;}
-.last { line-height:25px; text-align:center;}
-.imgbox { position:relative; width:110px; height:90px; margin-bottom:5px; border:1px solid #ccc;}
-.imgbox .best { position:absolute; top:-1px; right:-10px; z-index:10;}
 
 /*销售排行*/
 .top_box { width:213px; position:relative;}
