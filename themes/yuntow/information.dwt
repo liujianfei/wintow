@@ -35,7 +35,7 @@
         <div class="box_new_con clearfix">
         	<a href="{$todayarticle.url}" class="f_l"><img src="{$todayarticle.file_url}" class="img" width="184" height="116" /></a>
         	<div class="f_l item_new">
-            	<div class="f8" style="padding:5px 10px;">{$todayarticle.title}</div>
+            	<div style="padding:5px 10px;"><a href="{$todayarticle.url}" class="f8" >{$todayarticle.title}</a></div>
                 <p style="text-indent:2em; line-height:20px;">{$todayarticle.content}。。。。</p>
             </div>
         </div>
@@ -46,7 +46,7 @@
     	<img class="new_hot_img" src="images/new_hot_t.gif" />
     	<div class="box_new_tit"><span class="f8 tit">热门话题</span></div>
         <div class="box_new_con clearfix">
-        	<ul class="item_list">
+        	<ul class="item_hot clearfix">
              <!--{foreach name=message_lists from=$artciles_hotlist item=msg}-->
             	<li>·<a href="{$msg.url}">{$msg.short_title}</a></li>
                    <!--{/foreach}-->  
@@ -62,25 +62,22 @@
     <div class="box_new">
     	<div class="box_new_tit"><span class="f8 tit f_l">互联网动态</span></div>
         <div class="box_new_con clearfix">
-        	<ul class="item_hot">
-            	<li class="cur">
-                 <!--{foreach name=message_lists from=$get_maparticle item=msg}-->
-                	<div class="first">·<a href="article.php?id={$msg.article_id}">{$msg.short_title}</a></div>
+        	<ul class="item_hot clearfix">
+            	<!--{foreach name=message_lists from=$get_maparticle item=msg}-->
+                <li>
                     <div class="last clearfix">
-                    	<a href="article.php?id={$msg.article_id}" class="f_l"><img src="{$msg.file_url}" class="img" width="125" height="90" /></a>
+                        <a href="article.php?id={$msg.article_id}" class="f_l"><img src="{$msg.file_url}" class="img" width="125" height="90" /></a>
                         <div class="f_l " style="width:120px;">
-                            <div class="f8" style="padding:5px;">{$msg.short_title}</div>
+                            <div class="f8" style="padding:5px;">{$msg.title}</div>
                             <p style="text-indent:2em; line-height:20px;">{$msg.content}</p>
                         </div>
                     </div>
-                       <!--{/foreach}--> 
                 </li>
-                    <!--{foreach name=message_lists from=$artciles_netlist item=msg}-->
-            	<li>·<a href="{$msg.url}">{$msg.short_title}</a></li>
-                    <!--{/foreach}--> 
-               
+                <!--{/foreach}--> 
+                <!--{foreach name=message_lists from=$artciles_netlist item=msg}-->
+            	<li>·<a href="{$msg.url}">{$msg.title}</a></li>
+                <!--{/foreach}--> 
             </ul>
-           
             <span class="f_r"><a href="article_cat.php?id=14" class="f6">更多&nbsp;&gt;&gt;&nbsp;&nbsp;</a></span>
         </div>
     </div>
