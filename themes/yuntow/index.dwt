@@ -25,7 +25,7 @@
 			<!-- #BeginLibraryItem "/library/index_ad.lbi" --><!-- #EndLibraryItem -->
         </div>
         <div class="blank10"></div>
-        <!-- #BeginLibraryItem "/library/recommend_hot.lbi" --><!-- #EndLibraryItem -->
+        <!-- #BeginLibraryItem "/library/recommend_best.lbi" --><!-- #EndLibraryItem -->
         <div class="blank10"></div>
         <!-- #BeginLibraryItem "/library/category_list.lbi" --><!-- #EndLibraryItem -->
     </div>

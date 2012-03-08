@@ -201,18 +201,19 @@ h6 span{float:left; padding-left:15px;}
 .but li {width:14px;height:14px;float:left;color:#fff;font-size:10px;text-align:center;line-height:14px;font-family:Verdana;background:#bbb;display:inline;margin:0 5px 0 0;cursor:pointer;border:1px solid #a9abaa;}
 .but li.hove {background:#ff902a;border:1px solid #ff6502;}
 
-.category_list { width:652px; height:374px; background:url(images/softbg.gif) no-repeat;}
-.category_list .list_t { height:30px; padding:20px 40px 20px 40px; color:#fff; line-height:30px;}
+.category_list { width:660px; height:auto;padding-bottom:24px; background:url(images/cate_li_b.gif) no-repeat bottom center;}
+.category_list .list_t { height:30px; padding:20px 40px 32px 40px; color:#fff; line-height:30px; background:url(images/cate_li_t.gif) no-repeat top center;}
 .category_list .list_t span{ font-size:20px;}
 .category_list .list_t a { color:#fff; text-decoration:none;}
-.category_list ul {padding:10px 30px 20px 30px;}
+.category_list ul {padding:0px 30px 0px 30px; background:url(images/cate_li_bg.gif) repeat-y top center;}
 .category_list ul li { height:70px;}
 .category_list .stair { width:170px; line-height:70px; color:#8d8d8d; font-size:20px; text-align:center;}
 .category_list .second { width:400px; float:left; padding:15px 10px; line-height:20px;}
 
-.NewsTit{background-color:#fff;padding:5px 10px;}
-.NewsTit2{ background-color:#f0f0f0;padding:5px 10px; }
-#newArticleTab ul li{float:left;display:inline; background:#047db8; padding-top:5px; margin-right:5px;cursor:pointer; font-family:"Microsoft YaHei"; color:#047db8; font-size:14px;}
+.NewsTit{background-color:#fff;padding:5px 43px; border-top:5px solid #047db8; float:left;}
+.NewsTit2{ background-color:#f0f0f0;padding:5px 43px; border-top:5px solid #047db8; float:right}
+#newArticleTab ul li{float:left;display:inline;cursor:pointer; font-family:"Microsoft YaHei"; color:#047db8; font-size:14px;}
+#newArticleTab ul li.br {margin-left:4px;}
 .NewsAricle{padding:10px;}
 .NewsAricle ul li{ line-height:25px; padding-left:8px;border-bottom:1px dashed #ccc;}
 
@@ -311,9 +312,7 @@ h6 span{float:left; padding-left:15px;}
 .sales .goodList{width:110px; margin:0px 5px 0px 5px; float:left;}
 .sales .goodList img{background:url(images/salesGoodBg.gif) no-repeat; width:100px; height:100px; padding:5px;}
 .sales .goodList p{ margin-top:3px; text-align:center;}
-.ScrCont {
-width: 10000px;
-}
+.ScrCont {width: 10000px;}
 .ScrCont #List1, .ScrCont #List2 {float: left;}
  
 #brands{width:247px; height:199px; *height:201px; padding:1px 0 0 1px; position:relative;}
@@ -570,8 +569,8 @@ color:#3f3f3f; text-decoration:none; margin:0 0 3px 10px; padding-left:3px;
  文章列表页-2009.6.8
 ==================== */
 .article_search{margin:0px auto 8px; padding:15px 20px ; width:237px; height:27px; background:url(images/search_bg.gif) no-repeat;}
-.article_search .inputBg{width:190px;}
-.article_search .btn_search_bg { display:inline-block; height:32px; width:32px; border:none; cursor:pointer; background:url(images/btn_search_bg.gif) no-repeat;}
+.article_search .inputBg{width:180px;}
+.article_search .btn_search_bg { display:inline;height:32px; width:32px; border:none; cursor:pointer; background:url(images/btn_search_bg.gif) no-repeat;}
 
 .box_article {}
 .list { width:652px;padding:0 0 20px 0; background:url(images/list_b.gif) no-repeat 0px bottom;}

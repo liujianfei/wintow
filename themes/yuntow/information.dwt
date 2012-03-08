@@ -90,10 +90,10 @@
   <!--right start-->
   <div class="area_r">
   <div class="article_search">
-  	<form action="article_cat.php?id=1" name="search_form" method="post">
+  	<form action="{$search_url}" name="search_form" method="post">
         <input name="keywords" type="text" id="requirement" value="{$search_value}" size="20" class="inputBg" />
         <input name="id" type="hidden" value="{$cat_id}" />
-        <input name="cur_url" id="cur_url" type="hidden" value="" />
+        <input name="cur_url" id="cur_url" type="hidden" value="article_cat.php?id=1" />
         <input type="submit" value="&nbsp;" class="btn_search_bg" />
     </form>
   </div>
@@ -152,7 +152,5 @@
 <div class="blank"></div>
 <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
 </body>
-<script type="text/javascript">
-document.getElementById('cur_url').value = window.location.href;
-</script>
+
 </html>

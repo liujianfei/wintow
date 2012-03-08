@@ -69,7 +69,7 @@
   	<form action="{$search_url}" name="search_form" method="post">
         <input name="keywords" type="text" id="requirement" value="{$search_value}" size="20" class="inputBg" />
         <input name="id" type="hidden" value="{$cat_id}" />
-        <input name="cur_url" id="cur_url" type="hidden" value="" />
+        <input name="cur_url" id="cur_url" type="hidden" value="article_cat.php?id=1" />
         <input type="submit" value="&nbsp;" class="btn_search_bg" />
     </form>
   </div>
@@ -116,4 +116,5 @@
 <div class="blank"></div>
 <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
 </body>
+
 </html>

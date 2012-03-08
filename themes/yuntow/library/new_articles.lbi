@@ -9,7 +9,7 @@
   </li>
   <li class="br">
     <div class="NewsTit2" id="ECS_NOTICE">
-   {$lang.shop_notice}
+   云公告
     </div>
    </li> 
  </ul>
