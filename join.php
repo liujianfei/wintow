@@ -107,7 +107,7 @@ if ($action == 'default')
     $smarty->assign('page_title', $position['title']);    // 页面标题
     $smarty->assign('ur_here',    $position['ur_here']);  // 当前位置
     $smarty->assign('helps',      get_shop_help());       // 网店帮助
-
+    /*
     $smarty->assign('categories', get_categories_tree()); // 分类树
     $smarty->assign('top_goods',  get_top10());           // 销售排行
     $smarty->assign('cat_list',   cat_list(0, 0, true, 2, false));
@@ -120,16 +120,20 @@ if ($action == 'default')
     $record_count = $db->getOne($sql);
     $sql = "SELECT COUNT(*) FROM " .$GLOBALS['ecs']->table('feedback')." WHERE `msg_area`='1' AND `msg_status` = '1' ";
     $record_count += $db->getOne($sql);
-
+   */
     /* 获取留言的数量 */
+    /*
     $page = isset($_REQUEST['page']) ? intval($_REQUEST['page']) : 1;
     $pagesize = get_library_number('message_list', 'message_board');
     $pager = get_pager('message.php', array(), $record_count, $page, $pagesize);
     $msg_lists = get_msg_list($pagesize, $pager['start']);
-    assign_dynamic('message_board');
+    */
+    assign_dynamic('join');
+	 /*
     $smarty->assign('rand',      mt_rand());
     $smarty->assign('msg_lists', $msg_lists);
     $smarty->assign('pager', $pager);
+	 */
     $smarty->display('join.dwt');
 }
 
