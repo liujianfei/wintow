@@ -171,6 +171,11 @@
               <input name="promote_start_date" type="text" id="promote_start_date" size="12" value='{$goods.promote_start_date}' readonly="readonly" /><input name="selbtn1" type="button" id="selbtn1" onclick="return showCalendar('promote_start_date', '%Y-%m-%d', false, false, 'selbtn1');" value="{$lang.btn_select}" class="button"/> - <input name="promote_end_date" type="text" id="promote_end_date" size="12" value='{$goods.promote_end_date}' readonly="readonly" /><input name="selbtn2" type="button" id="selbtn2" onclick="return showCalendar('promote_end_date', '%Y-%m-%d', false, false, 'selbtn2');" value="{$lang.btn_select}" class="button"/>
             </td>
           </tr>
+           <tr>
+            <td class="label">演示地址</td>
+            <td id="net_address"><input type="text" id="net_address" name="net_address" value="{$goods.net_address}" size="40" /></td>
+          </tr>
+          
           <tr>
             <td class="label">{$lang.lab_picture}</td>
             <td>
