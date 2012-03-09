@@ -5,8 +5,8 @@
 <div class="b d1">
 <h2 class="box_tit"><span class="f8">促销抢购</span></h2>
 <div class="box_cont clearfix">
-	<a href="javascript:void(0)" class="up" onmouseover="clickLeft()" onmouseup="moveLeft()" onmouseout="scrollStop();"><img src="images/turnleft.gif" /></a>
-    <a href="javascript:void(0)" class="next" onmouseover="clickRight()" onmouseup="moveRight()" onmouseout="scrollStop();"><img src="images/turnright.gif" /></a>
+	<a href="javascript:void(0)" class="up" onmouseover="clickLeft()" onmouseup="moveLeft()" onmouseout="scrollStop();"><img src="images/btn_1_up.gif" /></a>
+    <a href="javascript:void(0)" class="next" onmouseover="clickRight()" onmouseup="moveRight()" onmouseout="scrollStop();"><img src="images/btn_1_down.gif" /></a>
     <div class="sales clearfix">
     	<div id="shoplist">
         <div id="shoplist1" style="float:left">

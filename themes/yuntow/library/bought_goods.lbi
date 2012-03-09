@@ -1,8 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!-- {if $bought_goods} -->
-     <div class="box">
-     <div class="box_1">
-      <h3><span class="text">{$lang.shopping_and_other}</span></h3>
       <div class="boxCenterList clearfix ie6">
        <!--{foreach from=$bought_goods item=bought_goods_data}-->
         <div class="goodsItem">
@@ -16,7 +13,5 @@
         </div>
         <!-- {/foreach} -->
       </div>
-     </div>
-    </div>
     <div class="blank5"></div>
     <!-- {/if} -->

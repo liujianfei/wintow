@@ -49,6 +49,10 @@
     <div class="blank10"></div>
 <div class="ad960">
 <!-- TemplateBeginEditable name="分类下的横栏广告960" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 </div>
 </div>

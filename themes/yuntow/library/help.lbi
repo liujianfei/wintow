@@ -2,7 +2,6 @@
 <div class="block">
 <!--{if $helps}-->
 <div class="help clearfix">
-<div class="bottom_tell"><img src="../images/tel.gif" ></div>
 <!-- {foreach from=$helps item=help_cat} -->
 <dl {if helps eq 1}style="background:none"{/if}>
 <dt>{$help_cat.cat_name}</dt>
@@ -11,6 +10,7 @@
  <!-- {/foreach} -->
 </dl>
 <!-- {/foreach} -->
+<div class="bottom_tell"><img src="../images/tel.gif" ></div>
 </div>
 <!--{/if}-->
 </div>

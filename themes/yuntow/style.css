@@ -154,11 +154,11 @@ h6 span{float:left; padding-left:15px;}
 .menu li.cur a,.menu li.cur a:visited,.menu li a:hover,.menu li.cur a:active
 {position:relative; top:0px; background:url(images/nav_avtive.gif) repeat-x 0px 1px; overflow:hidden;}
 /*购物车*/
-.cart{ width:60px; margin:0px; padding:0px;position:relative;color:#292929; cursor:pointer;}
+.cart{ width:60px; margin:0px; padding-left:30px;position:relative;color:#292929; cursor:pointer;}
 #all-links, #flying{display:none;margin-left:0px;position:absolute;right:0;top:30px; background:#fff;}
 #flying{border:1px solid #ba2b09;top:36px;}
 #cartInfo{text-align:center;line-height:30px;color:#666;background:url(images/cart.gif) no-repeat 0px 5px;text-align:right;}
-#ECS_CARTINFO{border:2px solid #ba2b09; padding:5px 8px;line-height:20px;width:330px;text-align:center;}
+#ECS_CARTINFO{border:2px solid #F8AC35; padding:5px 8px;line-height:20px;width:330px;text-align:center;}
 #ECS_CARTINFO a{color:#000;}
 #ECS_CARTINFO a:hover{color:#ff0000;}
 /*当前位置*/
@@ -283,8 +283,8 @@ h6 span{float:left; padding-left:15px;}
 .links .link { width:130px;float:left; _display:inline; padding:5px 10px; text-align:center;}
 .links img{width:125px; height:75px;border:1px solid #ccc;}
 .help{ clear:both;height:134px; width:935px; margin:10px auto; padding:20px 10px; background:url(images/help_bg.gif) no-repeat; overflow:hidden;}
-.help .bottom_tell {float:left; width:150px; height:135px;}
-.help dl{float:left;width:130px; height:140px; background:url(images/help_dl.gif) no-repeat left;}
+.help .bottom_tell {float:right; width:150px; height:135px;}
+.help dl{float:left;width:130px; height:140px; background:url(images/help_dl.gif) no-repeat right;}
 .help dl dt{color:#4f4f4f;font-weight:700;padding-left:24px; height:24px; line-height:25px;}
 .help dl dd{background: url(images/help_list.gif) no-repeat 15px 8px;padding-left:14px;}
 .help dl dd a{padding-left:12px; color:#666; text-decoration:none;}
@@ -363,7 +363,7 @@ font-size:12px; text-align:center; color:#006ace; font-weight:100; padding:0px 1
 .goodImg .up{ width:300px; padding-top:10px; margin-right:50px;}
 .GoodsDetails .goodTextInfo{width:259px;font-size:12px;line-height:24px;color:#424242;}
 .fontg{ color:#9b9a9a;}
-.GoodsDetails .goodTextInfo li{ float:left; line-height:24px; width:49%; padding-left:2px;}
+.GoodsDetails .goodTextInfo li{line-height:24px; width:99%; padding-left:2px;}
 .GoodsDetails .goodTextInfo .Points{ background:url(images/line.gif) repeat-x bottom; padding-left:5px; clear:both; width:100%;}
 .GoodsDetails .goodTextInfo li img{ vertical-align:middle;}
 .GoodsDetails .goodsName{position:relative;font-family:"微软雅黑";font-size:18px;font-weight:300;padding:10px;line-height:22px;color:#1489bf;_margin-right:-5px;margin-top:-1px;}

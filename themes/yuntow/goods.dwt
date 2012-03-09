@@ -208,46 +208,16 @@ document.getElementById('history_list').innerHTML = '{$lang.no_history}';
    </div>
    <!-- {/if} -->
 	 <div class="GoodBlank clearfix">
-  <ul>
-   <!-- {if $cfg.show_goodssn} 显示商品货号-->
-  <li>
-   {$lang.goods_sn}<font class="fontg">{$goods.goods_sn}</font>
-  </li>
-   <!-- {/if} -->
-   
-   <!-- {if $goods.goods_number neq "" and $cfg.show_goodsnumber} 商品库存-->
-  <li>
-   <!-- {if $goods.goods_number eq 0} -->
-   {$lang.goods_number}<img src="images/wuhuo.gif" /><br />
-   <!-- {else} -->
-   {$lang.goods_number} <font class="fontg">{$goods.goods_number} {$goods.measure_unit}</font>
-   <!-- {/if} -->
-  </li>
-   <!-- {/if} -->
-   
-   <!-- {if $goods.goods_brand neq "" and $cfg.show_brand} 显示商品品牌-->
-  <li>
-   {$lang.goods_brand}<a href="{$goods.goods_brand_url}" ><u>{$goods.goods_brand}</u></a>
-  </li>
-   <!--{/if}-->
-   
-   <!-- {if $cfg.show_goodsweight} 商品重量-->
-  <li>
-   {$lang.goods_weight}<font class="fontg">{$goods.goods_weight}</font>
-  </li>
-   <!-- {/if} -->
-   
-   <!-- {if $cfg.show_addtime} 上架时间-->
-  <li>
-   {$lang.add_time}<font class="fontg">{$goods.add_time}</font>
-  </li>
-   <!-- {/if} -->   
+  <ul> 
    <!--点击数-->
   <li>
    {$lang.goods_click_count}：<font class="fontg">{$goods.click_count}</font>
   </li>
   <li>
    {$lang.goods_rank} <img src="images/stars{$goods.comment_rank}.gif" alt="comment rank {$goods.comment_rank}" />
+  </li>
+  <li>
+   演示地址：<font class="fontg">{$goods.click_count}</font>
   </li>  
   </ul>
 	</div>
@@ -269,83 +239,20 @@ document.getElementById('history_list').innerHTML = '{$lang.no_history}';
    {$lang.market_price}<span class="market">{$goods.market_price}</span><br />
    <!-- {/if} -->
    {$lang.shop_price}<font class="PointPrice" id="ECS_SHOPPRICE">{$goods.shop_price_formated}</font><br />
-   <!-- {foreach from=$rank_prices item=rank_price key=key} 会员等级对应的价格-->
-   {$rank_price.rank_name}：<font class="PointPrice" id="ECS_RANKPRICE_{$key}">{$rank_price.price}</font><br />
-   <!--{/foreach}-->
+
    <!--{if $goods.is_promote and $goods.gmt_end_time} 促销价格-->
    {$lang.promote_price}<font class="PointPrice">{$goods.promote_price}</font><br />
    <!--{/if}-->
-  {$lang.amount}：<span id="ECS_GOODS_AMOUNT" class="price"></span><br />
-  
-  
-  
-  
-  <table border="0" cellspacing="0" cellpadding="0">
-                  <tr>
-                  <td><span class="f12b">{$lang.number}：</span></td>
-                    <td><input name="number" type="text" value="1" size="4" onblur="changePrice()" id="number" style="vertical-align:middle;border:1px solid #CCC;width:35px;font-size:12px;color:#32424F; text-align:right;" /></td>
-                    <td>
-     <script>
-{literal}
-                    function add()
-                    {
-                      var num = document.getElementById("number");
-                      if( !Utils.isNumber(num.value))
-                        return;
-                      else
-                      {
-                        num.value = parseInt(num.value) + 1;
-                      }
-                    }
-                    
-                    function decrease()
-                    {
-                      var num = document.getElementById("number");
-                      if( !Utils.isNumber(num.value))
-                        return;
-                      else
-                      {
-                        if (parseInt(num.value) == 1) return;
-                        num.value = parseInt(num.value) - 1;
-                      }
-                    }
-                    {/literal}
-                    </script>
-                      <table width="16" border="0" cellspacing="0" cellpadding="0">
-                        <tr>
-                          <td style="padding:0px 8px; line-height:10px;" height="10"><img src="images/goods_up.gif"  alt="加一个" onclick="add()" style="cursor:hand;"></td>
-                        </tr>
-                        <tr>
-                          <td style="padding:0px 8px; line-height:10px;"height="10"><img src="images/goods_down.gif"  alt="减一个" onclick="decrease()" style="cursor:hand;"></td>
-                        </tr>
-                      </table>
-           </td>               
-                  </tr>
-              </table>
-  
   <!-- {if $goods.is_shipping} 为免运费商品则显示-->      
      <font style="color:#FF0000;"> {$lang.goods_free_shipping}</font><br />      
       <!-- {/if} -->
       <!-- {* 开始循环所有可选属性 *} -->
 
    <!-- {foreach from=$specification item=spec key=spec_key} -->
-   {$spec.name}：<br />
    <!-- {* 判断属性是复选还是单选 *} -->
    <!-- {if $spec.attr_type eq 1} -->
    <!-- {if $cfg.goodsattr_style eq 1} -->
-   <!-- {foreach from=$spec.values item=value key=key} -->
-   <label for="spec_value_{$value.id}">
-   <input type="radio" name="spec_{$spec_key}" value="{$value.id}" id="spec_value_{$value.id}" {if $key eq 0}checked{/if} onClick="changePrice()" />
-   {$value.label} [{if $value.price gt 0}{$lang.plus}{elseif $value.price lt 0}{$lang.minus}{/if} {$value.format_price|abs}] </label><br />
-   <!-- {/foreach} -->
-   <input type="hidden" name="spec_list" value="{$key}" />
-   <!-- {else} -->
-   <select name="spec_{$spec_key}" onChange="changePrice()" class="InputBorder">
-    <!-- {foreach from=$spec.values item=value key=key} -->
-    <option label="{$value.label}" value="{$value.id}">{$value.label} {if $value.price gt 0}{$lang.plus}{elseif $value.price lt 0}{$lang.minus}{/if}{if $value.price neq 0}{$value.format_price}{/if}</option>
-    <!-- {/foreach} -->
-   </select>
-   <br />
+   
    <input type="hidden" name="spec_list" value="{$key}" />
    <!-- {/if} -->
    <!-- {else} -->
@@ -368,22 +275,7 @@ document.getElementById('history_list').innerHTML = '{$lang.no_history}';
    <!-- {if $goods.bonus_money} 红包-->
    {$lang.goods_bonus}<font class="price">{$goods.bonus_money}</font><br />
    <!-- {/if} -->
-   
-   <!--{if $volume_price_list } -->
-   {$lang.volume_price}：<br />
-   <table width="100%" border="0" cellpadding="2" cellspacing="1" bgcolor="#ccc">
-    <tr>
-    <td align="center" bgcolor="#FFFFFF">{$lang.number_to}</td>
-    <td align="center" bgcolor="#FFFFFF">{$lang.Preferences_price}</td>
-    </tr>
-    <!-- {foreach from=$volume_price_list item=price_list key=price_key} -->
-    <tr>
-    <td align="center" bgcolor="#FFFFFF" class="shop">{$price_list.number}</td>
-    <td align="center" bgcolor="#FFFFFF" class="shop">{$price_list.format_price}</td>
-    </tr>
-    <!-- {/foreach} -->
-   </table>
-   <!--{/if}-->   
+    
   </form>
  <div class="action">
    <a href="javascript:addToCart({$goods.goods_id})"><img src="images/bnt_buy.gif" /></a>

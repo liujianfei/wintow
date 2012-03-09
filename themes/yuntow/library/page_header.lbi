@@ -18,7 +18,7 @@ var select_spe = "{$lang.select_spe}";
         <div id="ECS_MEMBERZONE">{* ECSHOP 提醒您：根据用户id来调用member_info.lbi显示不同的界面  *}{insert name='member_info'}</div>
         <!-- 登录 注册 end-->
     </div>
-    <div class="cart f_r" id="enter">
+    <div class="cart f_l" id="enter">
       <div id="cartInfo">购物车</div>
       <div id="flying"></div>
       <div id=all-links style="display:none;">

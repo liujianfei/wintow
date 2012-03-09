@@ -1,8 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!-- {if $fittings} -->
-<div class="box">
- <div class="box_1">
-  <h3><span>{$lang.accessories_releate}</span></h3>
   <div class="boxCenterList clearfix">
     <!--{foreach from=$fittings item=goods}-->
     <ul class="clearfix">
@@ -16,8 +13,6 @@
     </ul>
     <!--{/foreach}-->
   </div>
- </div>
-</div>
 <div class="blank5"></div>
 <!-- {/if} -->
 

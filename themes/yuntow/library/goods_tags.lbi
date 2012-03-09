@@ -1,8 +1,5 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 
-     <div class="box">
-     <div class="box_1">
-      <h3><span class="text">{$lang.goods_tag}</span></h3>
       <div class="boxCenterList clearfix ie6">
        <form name="tagForm" action="javascript:;" onSubmit="return submitTag(this)" id="tagForm">
         <p id="ECS_TAGS" style="margin-bottom:5px;">
@@ -66,6 +63,4 @@
                 </script>
               </form>
       </div>
-     </div>
-    </div>
     <div class="blank5"></div>
