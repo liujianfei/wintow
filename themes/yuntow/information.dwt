@@ -68,14 +68,14 @@
                     <div class="last clearfix">
                         <a href="article.php?id={$msg.article_id}" class="f_l"><img src="{$msg.file_url}" class="img" width="125" height="90" /></a>
                         <div class="f_l " style="width:120px;">
-                            <div class="f8" style="padding:5px;">{$msg.title}</div>
+                            <div class="f8" style="padding:5px;">{$msg.short_title}</div>
                             <div style="text-indent:2em; line-height:20px;">{$msg.content}</div>
                         </div>
                     </div>
                 </li>
                 <!--{/foreach}--> 
                 <!--{foreach name=message_lists from=$artciles_netlist item=msg}-->
-            	<li>·<a href="{$msg.url}">{$msg.title}</a></li>
+            	<li>·<a href="{$msg.url}">{$msg.short_title}</a></li>
                 <!--{/foreach}--> 
             </ul>
             <span class="f_r"><a href="article_cat.php?id=14" class="f6">更多&nbsp;&gt;&gt;&nbsp;&nbsp;</a></span>
