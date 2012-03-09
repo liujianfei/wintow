@@ -228,7 +228,12 @@ h6 span{float:left; padding-left:15px;}
 .d1{background:#fff;}
 
 .box_tit {margin-left:6px;height:35px; padding:0px 10px; line-height:35px; background:url(images/blue_top.gif) no-repeat;}
-
+.hot_tit { height:30px;}
+.hot_tit .tit{ background:url(images/blue_top.gif) no-repeat; padding:5px 16px; line-height:30px;}
+.hot10_con li{ float:left; width:140px;height:140px;}
+.hot10_con .last { width:120px; height:140px;}
+.hot10_con .last .imgbox{ position:relative; width:120px; height:100px; border:1px solid #ccc; margin-bottom:5px;}
+.hot10_con .last .imgbox .best { position:absolute; top:-3px; right:-10px;}
 
 /*销售排行*/
 .top_box { width:213px; position:relative;}

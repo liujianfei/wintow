@@ -1,8 +1,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--{if $top_goods}-->
-<div class="hot b_gray clearfix">
-<h2 class="Tit"><span class="blue">热门应用</span></h2>
-<ul id="top10">
+<div class="b_gray clearfix">
+<h2 class="hot_tit"><span class="f8 tit">热门应用</span></h2>
+<ul id="top10" class="hot10_con">
  <!-- {foreach name=top_goods from=$top_goods item=goods}-->
  {if $smarty.foreach.top_goods.index <= 5}
  <li>
@@ -18,6 +18,5 @@
  <!-- {/foreach} --> 
  </ul>
  </div>
-<script>elems("top10","cur");</script>
 <!--{/if}-->
 <div class="blank10"></div>

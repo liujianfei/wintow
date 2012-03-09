@@ -13,7 +13,7 @@
         	<ul>
         	<!--{foreach from=$promotion_goods item=goods name="promotion_foreach"}-->
             <li>
-             {if $smarty.foreach.promotion_foreach.index <= 3}
+             {if $smarty.foreach.promotion_foreach.index <= 20}
                <div class="goodList">
                <a href="{$goods.url}"><img src="{$goods.thumb}" border="0" alt="{$goods.name|escape:html}"/></a><br />
                          <p><a href="{$goods.url}" title="{$goods.name|escape:html}">{$goods.short_name|escape:html}</a></p>
