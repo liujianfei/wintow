@@ -361,7 +361,7 @@ font-size:12px; text-align:center; color:#006ace; font-weight:100; padding:0px 1
 .picture img.onbg{background:url(images/bg_pic.gif) no-repeat 0 0;padding:8px 2px 2px 2px;}
 .picture img.autobg{background:url(images/bg_pic_1.gif) no-repeat 0 0;padding:8px 2px 2px 2px;}
 .goodImg .up{ width:300px; padding-top:10px; margin-right:50px;}
-.GoodsDetails .goodTextInfo{width:259px;font-size:12px;line-height:24px;color:#424242;}
+.GoodsDetails .goodTextInfo{width:258px;font-size:12px;line-height:24px;color:#424242;}
 .fontg{ color:#9b9a9a;}
 .GoodsDetails .goodTextInfo li{line-height:24px; width:99%; padding-left:2px;}
 .GoodsDetails .goodTextInfo .Points{ background:url(images/line.gif) repeat-x bottom; padding-left:5px; clear:both; width:100%;}

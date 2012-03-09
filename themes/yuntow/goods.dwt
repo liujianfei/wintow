@@ -217,7 +217,7 @@ document.getElementById('history_list').innerHTML = '{$lang.no_history}';
    {$lang.goods_rank} <img src="images/stars{$goods.comment_rank}.gif" alt="comment rank {$goods.comment_rank}" />
   </li>
   <li>
-   演示地址：<font class="fontg">{$goods.click_count}</font>
+   演示地址：<a href="#" class="f6">在线演示</a>
   </li>  
   </ul>
 	</div>
@@ -287,6 +287,7 @@ document.getElementById('history_list').innerHTML = '{$lang.no_history}';
    </div>   
   </div>
 </div> 
+<div class="blank10"></div>
   <!--商品描述 start-->
 <div class="tagtitw">
  <div class="tagTit clearfix" id="goods_b">
