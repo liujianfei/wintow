@@ -594,7 +594,7 @@ font-size:16px; color:#fff;}
 
 .item_hot .last { width:280px; height:115px; overflow:hidden;}
 
-.scroll_box { width:840px; height:120px; padding:20px 30px; position:relative; border:1px solid #ccc;}
+.scroll_box { width:840px; height:120px; padding:20px 30px; position:relative; border:1px solid #ccc; }
 .scroll_box .up, .scroll_box .down { position:absolute; top:30px; }
 .scroll_box .up { left:-23px;}
 .scroll_box .down { right:-23px;}

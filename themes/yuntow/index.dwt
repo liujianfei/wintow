@@ -31,7 +31,7 @@
     </div>
     <div class="area_r">
     	<div class="">
-        {if $user_info}
+        {if $smarty.session.user_name}
         <a href="http://bbs.cncloudol.com/Desktop.php"><img src="images/btn_lib_work.gif" /></a>
         {else}
         <a href="user.php?act=register"><img src="images/btn_lib_reg.gif" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="user.php"><img src="images/btn_lib_login.gif" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://bbs.cncloudol.com/Desktop.php"><img src="images/btn_lib_work.gif" /></a>
