@@ -111,7 +111,8 @@
 <div class="scroll_box">
 	<a href="javascript:void(0)" class="up"><img src="images/btn_1_up.gif" /></a>
     <a href="javascript:void(0)" class="down"><img src="images/btn_1_down.gif" /></a>
-	<div class="new_img_list" id="newlist">
+	<div class="new_img_list">
+    <div id="newlist">
     	<div id="newlist1" style="float:left;">
     	<ul>
           <!--{foreach name=message_lists from=$artciles_netlist item=msg}-->
@@ -120,6 +121,7 @@
         </ul>
         </div>
      	<div id="newlist2"></div>
+    </div>
     </div>
 </div>
 </div>
