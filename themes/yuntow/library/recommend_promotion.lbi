@@ -5,13 +5,14 @@
 <div class="b d1">
 <h2 class="box_tit"><span class="f8">促销抢购</span></h2>
 <div class="box_cont clearfix">
-	<a href="javascript:void(0)" class="up" id="LeftArr"><img src="images/btn_1_up.gif" /></a>
-    <a href="javascript:void(0)" class="next" id="RightArr"><img src="images/btn_1_down.gif" /></a>
+	<a href="javascript:void(0)" class="up" onmouseover="clickLeft()" onmouseup="moveLeft()" onmouseout="scrollStop();"><img src="images/turnleft.gif" /></a>
+    <a href="javascript:void(0)" class="next" onmouseover="clickRight()" onmouseup="moveRight()" onmouseout="scrollStop();"><img src="images/turnright.gif" /></a>
     <div class="sales clearfix">
     	<div id="shoplist">
-        	<ul id="ISL_Cont">
+        <div id="shoplist1" style="float:left">
+        	<ul>
         	<!--{foreach from=$promotion_goods item=goods name="promotion_foreach"}-->
-            <li  style="float:left">
+            <li>
              {if $smarty.foreach.promotion_foreach.index <= 20}
                <div class="goodList">
                <a href="{$goods.url}"><img src="{$goods.thumb}" border="0" alt="{$goods.name|escape:html}"/></a><br />
@@ -22,6 +23,8 @@
              </li>
              <!--{/foreach}-->
              </ul>
+        </div>
+        <div id="shoplist2" style="display:inline; overflow:visible;"></div>
        </div>
     </div>
 </div>
@@ -31,21 +34,101 @@
 </div>
 <div class="blank10"></div>
 <!-- {/if} -->
-<SCRIPT src="../js/ScrollPic.js" type=text/javascript></SCRIPT>
-<SCRIPT language=javascript type=text/javascript>
-		var scrollPic_02 = new ScrollPic();
-		scrollPic_02.scrollContId   = "ISL_Cont"; //内容容器ID
-		scrollPic_02.arrLeftId      = "LeftArr";//左箭头ID
-		scrollPic_02.arrRightId     = "RightArr"; //右箭头ID
-
-		scrollPic_02.frameWidth     = 500;//显示框宽度
-		scrollPic_02.pageWidth      = 152; //翻页宽度
-
-		scrollPic_02.speed          = 10; //移动速度(单位毫秒，越小越快)
-		scrollPic_02.space          = 10; //每次移动像素(单位px，越大越快)
-		scrollPic_02.autoPlay       = true;//false; //自动播放
-		scrollPic_02.autoPlayTime   = 3; //自动播放间隔时间(秒)
-
-		scrollPic_02.initialize(); //初始化
-							
-</SCRIPT>
+<script type="text/javascript">
+      function $(id){  
+        return (document.getElementById) ? document.getElementById(id): document.all[id]
+      }
+      
+      var boxwidth=180;//跟图片的实际尺寸相符
+      
+      var box=$("shoplist");
+      var obox=$("shoplist1");
+      var dulbox=$("shoplist2");
+      obox.style.width=obox.getElementsByTagName("li").length*boxwidth+'px';
+      dulbox.style.width=obox.getElementsByTagName("li").length*boxwidth+'px';
+      box.style.width=obox.getElementsByTagName("li").length*boxwidth*3+'px';
+      var canroll = false;
+      if (obox.getElementsByTagName("li").length >=5) {
+        canroll = true;
+        dulbox.innerHTML=obox.innerHTML;
+      }
+      var step=5;temp=1;speed=50;
+      var awidth=obox.offsetWidth;
+      var mData=0;
+      var isStop = 1;
+      var dir = 1;
+      
+      function s(){
+        if (!canroll) return;
+        if (dir) {
+      if((awidth+mData)>=0)
+      {
+      mData=mData-step;
+      }
+      else
+      {
+      mData=-step;
+      }
+      } else {
+        if(mData>=0)
+        {
+        mData=-awidth;
+        }
+        else
+        {
+        mData+=step;
+        }
+      }
+      
+      obox.style.marginLeft=mData+"px";
+      
+      if (isStop) return;
+      
+      setTimeout(s,speed)
+      }
+      
+      
+      function moveLeft() {
+          var wasStop = isStop;
+          dir = 1;
+          speed = 50;
+          isStop=0;
+          if (wasStop) {
+            setTimeout(s,speed);
+          }
+      }
+      
+      function moveRight() {
+          var wasStop = isStop;
+          dir = 0;
+          speed = 50;
+          isStop=0;
+          if (wasStop) {
+            setTimeout(s,speed);
+          }
+      }
+      
+      function scrollStop() {
+        isStop=1;
+      }
+      
+      function clickLeft() {
+          var wasStop = isStop;
+          dir = 1;
+          speed = 25;
+          isStop=0;
+          if (wasStop) {
+            setTimeout(s,speed);
+          }
+      }
+      
+      function clickRight() {
+          var wasStop = isStop;
+          dir = 0;
+          speed = 25;
+          isStop=0;
+          if (wasStop) {
+            setTimeout(s,speed);
+          }
+      }
+      </script>

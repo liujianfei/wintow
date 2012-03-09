@@ -45,7 +45,7 @@ if (isset($_SERVER['PHP_SELF']))
 }
 else
 {
-    define('PHP_SELF', $_SERVER['SCRIPT_NAME']);
+    define('PHP_SELF', $_SERVER['script_NAME']);
 }
 
 $root_path = preg_replace('/includes(.*)/i', '', PHP_SELF);

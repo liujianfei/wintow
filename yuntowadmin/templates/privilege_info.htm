@@ -78,8 +78,8 @@
         <td align="center">
          <input type="button" class="button" value="{$lang.move_up}" id="btnMoveUp" onclick="moveOptions('up')" disabled="true" />
          <input type="button" class="button" value="{$lang.move_down}" id="btnMoveDown" onclick="moveOptions('down')" disabled="true" />
-         <input type="button" value="{$lang.add_nav}" id="btnAdd" onclick="JavaScript:addItem(theForm.all_menu_list,theForm.menus_navlist); this.disabled=true; " class="button" disabled="true" /><br />
-         <input type="button" value="{$lang.remove_nav}" onclick="JavaScript:delItem(theForm.menus_navlist); toggleButtonSatus()" class="button" disabled="true" id="btnRemove" /></td>
+         <input type="button" value="{$lang.add_nav}" id="btnAdd" onclick="Javascript:addItem(theForm.all_menu_list,theForm.menus_navlist); this.disabled=true; " class="button" disabled="true" /><br />
+         <input type="button" value="{$lang.remove_nav}" onclick="Javascript:delItem(theForm.menus_navlist); toggleButtonSatus()" class="button" disabled="true" id="btnRemove" /></td>
         <td>
           <select id="all_menu_list" name="all_menu_list" size="15" multiple="true" style="width:150px; height: 180px" onchange="toggleAddButton()">
             {foreach from=$menus item=menu key=key}
@@ -106,7 +106,7 @@
 </form>
 </div>
 {insert_scripts files="../js/utils.js,validator.js"}
-<script language="JavaScript">
+<script language="Javascript">
 var action = "{$action}";
 <!--
 {literal}

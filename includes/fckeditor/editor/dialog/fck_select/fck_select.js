@@ -18,7 +18,7 @@
  *
  * == END LICENSE ==
  *
- * Scripts for the fck_select.html page.
+ * scripts for the fck_select.html page.
  */
 
 function Select( combo )

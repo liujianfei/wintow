@@ -168,7 +168,7 @@ var Transport =
 
               case 409: // Conflict
                 /*
-                 * Perhaps your JavaScript request attempted to
+                 * Perhaps your Javascript request attempted to
                  * update a Database record
                  * but failed due to a conflict
                  * (eg: a field that must be unique)
@@ -452,7 +452,7 @@ Ajax.call = Transport.run;
 
     Public Domain
 
-    This file adds these methods to JavaScript:
+    This file adds these methods to Javascript:
 
         array.toJSONString()
         boolean.toJSONString()
@@ -460,7 +460,7 @@ Ajax.call = Transport.run;
         number.toJSONString()
         object.toJSONString()
         string.toJSONString()
-            These methods produce a JSON text from a JavaScript value.
+            These methods produce a JSON text from a Javascript value.
             It must not contain any cyclical references. Illegal values
             will be excluded.
 
@@ -488,8 +488,8 @@ Ajax.call = Transport.run;
             });
 
     It is expected that these methods will formally become part of the
-    JavaScript Programming Language in the Fourth Edition of the
-    ECMAScript standard in 2008.
+    Javascript Programming Language in the Fourth Edition of the
+    ECMAscript standard in 2008.
 */
 
 // Augment the basic prototypes if they have not already been augmented.
@@ -527,8 +527,8 @@ if ( ! Object.prototype.toJSONString) {
             case 'unknown':
                 break;
 
-            // Serialize a JavaScript object value. Ignore objects thats lack the
-            // toJSONString method. Due to a specification error in ECMAScript,
+            // Serialize a Javascript object value. Ignore objects thats lack the
+            // toJSONString method. Due to a specification error in ECMAscript,
             // typeof null is 'object', so watch out for that case.
 
             case 'object':
@@ -616,8 +616,8 @@ if ( ! Object.prototype.toJSONString) {
                 case 'unknown':
                     break;
 
-                // Serialize a JavaScript object value. Ignore objects that lack the
-                // toJSONString method. Due to a specification error in ECMAScript,
+                // Serialize a Javascript object value. Ignore objects that lack the
+                // toJSONString method. Due to a specification error in ECMAscript,
                 // typeof null is 'object', so watch out for that case.
 
                 case 'object':
@@ -674,8 +674,8 @@ if ( ! Object.prototype.toJSONString) {
                         test(this)) {
 
                     // In the second stage we use the eval function to compile the text into a
-                    // JavaScript structure. The '{' operator is subject to a syntactic ambiguity
-                    // in JavaScript: it can begin a block or an object literal. We wrap the text
+                    // Javascript structure. The '{' operator is subject to a syntactic ambiguity
+                    // in Javascript: it can begin a block or an object literal. We wrap the text
                     // in parens to eliminate the ambiguity.
 
                     var j = eval('(' + this + ')');

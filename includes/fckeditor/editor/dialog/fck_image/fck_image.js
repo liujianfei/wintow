@@ -18,7 +18,7 @@
  *
  * == END LICENSE ==
  *
- * Scripts related to the Image dialog window (see fck_image.html).
+ * scripts related to the Image dialog window (see fck_image.html).
  */
 
 var dialog		= window.parent ;

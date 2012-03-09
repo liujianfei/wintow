@@ -38,7 +38,7 @@ window.onload = function()
 	document.getElementById('txtHtml').value = oEditor.FCK.EditorDocument.body.innerHTML ;
 
 	var oSpeller = new spellChecker( document.getElementById('txtHtml') ) ;
-	oSpeller.spellCheckScript = oEditor.FCKConfig.SpellerPagesServerScript || 'server-scripts/spellchecker.php' ;
+	oSpeller.spellCheckscript = oEditor.FCKConfig.SpellerPagesServerscript || 'server-scripts/spellchecker.php' ;
 	oSpeller.OnFinished = oSpeller_OnFinished ;
 	oSpeller.openChecker() ;
 }

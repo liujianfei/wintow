@@ -105,7 +105,7 @@ var FCK_IS_CUSTOM_DOMAIN = ( FCK_ORIGINAL_DOMAIN != FCK_RUNTIME_DOMAIN ) ;
 // otherwise external scripts and inline scripts could be executed in an
 // unwanted order (IE).
 
-function LoadScript( url )
+function Loadscript( url )
 {
 	document.write( '<scr' + 'ipt type="text/javascript" src="' + url + '"><\/scr' + 'ipt>' ) ;
 }
@@ -113,17 +113,17 @@ function LoadScript( url )
 // Main editor scripts.
 var sSuffix = ( /*@cc_on!@*/false ) ? 'ie' : 'gecko' ;
 
-LoadScript( 'js/fckeditorcode_' + sSuffix + '.js' ) ;
+Loadscript( 'js/fckeditorcode_' + sSuffix + '.js' ) ;
 
 // Base configuration file.
-LoadScript( '../fckconfig.js' ) ;
+Loadscript( '../fckconfig.js' ) ;
 
 	</script>
 	<script type="text/javascript">
 
 // Adobe AIR compatibility file.
 if ( FCKBrowserInfo.IsAIR )
-	LoadScript( 'js/fckadobeair.js' ) ;
+	Loadscript( 'js/fckadobeair.js' ) ;
 
 if ( FCKBrowserInfo.IsIE )
 {
@@ -155,7 +155,7 @@ FCKConfig.ProcessHiddenField() ;
 
 // Load the custom configurations file (if defined).
 if ( FCKConfig.CustomConfigurationsPath.length > 0 )
-	LoadScript( FCKConfig.CustomConfigurationsPath ) ;
+	Loadscript( FCKConfig.CustomConfigurationsPath ) ;
 
 	</script>
 	<script type="text/javascript">
@@ -167,7 +167,7 @@ FCKConfig_PreProcess() ;
 
 // Load the full debug script.
 if ( FCKConfig.Debug )
-	LoadScript( '_source/internals/fckdebug.js' ) ;
+	Loadscript( '_source/internals/fckdebug.js' ) ;
 
 	</script>
 	<script type="text/javascript">
@@ -186,7 +186,7 @@ document.write( FCKTools.GetStyleHtml( FCKConfig.SkinEditorCSS ) ) ;
 
 // Load the language file.
 FCKLanguageManager.Initialize() ;
-LoadScript( 'lang/' + FCKLanguageManager.ActiveLanguage.Code + '.js' ) ;
+Loadscript( 'lang/' + FCKLanguageManager.ActiveLanguage.Code + '.js' ) ;
 
 	</script>
 	<script type="text/javascript">

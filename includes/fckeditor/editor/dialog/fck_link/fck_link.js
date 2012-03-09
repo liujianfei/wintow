@@ -18,7 +18,7 @@
  *
  * == END LICENSE ==
  *
- * Scripts related to the Link dialog window (see fck_link.html).
+ * scripts related to the Link dialog window (see fck_link.html).
  */
 
 var dialog	= window.parent ;

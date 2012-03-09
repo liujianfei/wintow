@@ -27,7 +27,7 @@ define('CLIENT_PATH', substr(__FILE__, 0, -17));
 /* 设置maifou.net所在的根目录 */
 define('ROOT_PATH', substr(__FILE__, 0, -28));
 
-$php_self = isset($_SERVER['PHP_SELF']) ? $_SERVER['PHP_SELF'] : $_SERVER['SCRIPT_NAME'];
+$php_self = isset($_SERVER['PHP_SELF']) ? $_SERVER['PHP_SELF'] : $_SERVER['script_NAME'];
 if ('/' == substr($php_self, -1))
 {
     $php_self .= 'index.php';
