@@ -124,7 +124,7 @@ h6 span{float:left; padding-left:15px;}
 .header{ height:251px;/*overflow:hidden;*/padding-top:31px; position:relative;}
 .header .topnav{width:100%;heiht:31px;position:absolute; top:0px; left:0px; background:url(images/top_bg.gif) repeat-x;line-height:30px}
 .login { line-height:30px;}
-.nue{ width:400px;}
+.nue{ width:450px;}
 .nue li{ background:url(images/topnvline.gif) no-repeat right; float:left; padding:0 10px;}
 .login a {color: #F8AC35; font-size: 14px; text-decoration:none;}
 .head_t {width: 960px;height:87px;background: url(images/headbg.jpg) no-repeat;}
