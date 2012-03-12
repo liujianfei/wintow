@@ -107,7 +107,7 @@ var FCK_IS_CUSTOM_DOMAIN = ( FCK_ORIGINAL_DOMAIN != FCK_RUNTIME_DOMAIN ) ;
 // otherwise external scripts and inline scripts could be executed in an
 // unwanted order (IE).
 
-function LoadScript( url )
+function Loadscript( url )
 {
 	document.write( '<scr' + 'ipt type="text/javascript" src="' + url + '"><\/scr' + 'ipt>' ) ;
 }
@@ -116,117 +116,117 @@ function LoadScript( url )
 var sSuffix = ( /*@cc_on!@*/false ) ? 'ie' : 'gecko' ;
 
 /* @Packager.RemoveLine
-LoadScript( 'js/fckeditorcode_' + sSuffix + '.js' ) ;
+Loadscript( 'js/fckeditorcode_' + sSuffix + '.js' ) ;
 @Packager.RemoveLine */
 // @Packager.Remove.Start
 
-LoadScript( '_source/fckconstants.js' ) ;
-LoadScript( '_source/fckjscoreextensions.js' ) ;
+Loadscript( '_source/fckconstants.js' ) ;
+Loadscript( '_source/fckjscoreextensions.js' ) ;
 
 if ( sSuffix == 'ie' )
-	LoadScript( '_source/classes/fckiecleanup.js' ) ;
+	Loadscript( '_source/classes/fckiecleanup.js' ) ;
 
-LoadScript( '_source/internals/fckbrowserinfo.js' ) ;
-LoadScript( '_source/internals/fckurlparams.js' ) ;
-LoadScript( '_source/classes/fckevents.js' ) ;
-LoadScript( '_source/classes/fckdataprocessor.js' ) ;
-LoadScript( '_source/internals/fck.js' ) ;
-LoadScript( '_source/internals/fck_' + sSuffix + '.js' ) ;
-LoadScript( '_source/internals/fckconfig.js' ) ;
+Loadscript( '_source/internals/fckbrowserinfo.js' ) ;
+Loadscript( '_source/internals/fckurlparams.js' ) ;
+Loadscript( '_source/classes/fckevents.js' ) ;
+Loadscript( '_source/classes/fckdataprocessor.js' ) ;
+Loadscript( '_source/internals/fck.js' ) ;
+Loadscript( '_source/internals/fck_' + sSuffix + '.js' ) ;
+Loadscript( '_source/internals/fckconfig.js' ) ;
 
-LoadScript( '_source/internals/fckdebug_empty.js' ) ;
-LoadScript( '_source/internals/fckdomtools.js' ) ;
-LoadScript( '_source/internals/fcktools.js' ) ;
-LoadScript( '_source/internals/fcktools_' + sSuffix + '.js' ) ;
-LoadScript( '_source/fckeditorapi.js' ) ;
-LoadScript( '_source/classes/fckimagepreloader.js' ) ;
-LoadScript( '_source/internals/fckregexlib.js' ) ;
-LoadScript( '_source/internals/fcklistslib.js' ) ;
-LoadScript( '_source/internals/fcklanguagemanager.js' ) ;
-LoadScript( '_source/internals/fckxhtmlentities.js' ) ;
-LoadScript( '_source/internals/fckxhtml.js' ) ;
-LoadScript( '_source/internals/fckxhtml_' + sSuffix + '.js' ) ;
-LoadScript( '_source/internals/fckcodeformatter.js' ) ;
-LoadScript( '_source/internals/fckundo.js' ) ;
-LoadScript( '_source/classes/fckeditingarea.js' ) ;
-LoadScript( '_source/classes/fckkeystrokehandler.js' ) ;
+Loadscript( '_source/internals/fckdebug_empty.js' ) ;
+Loadscript( '_source/internals/fckdomtools.js' ) ;
+Loadscript( '_source/internals/fcktools.js' ) ;
+Loadscript( '_source/internals/fcktools_' + sSuffix + '.js' ) ;
+Loadscript( '_source/fckeditorapi.js' ) ;
+Loadscript( '_source/classes/fckimagepreloader.js' ) ;
+Loadscript( '_source/internals/fckregexlib.js' ) ;
+Loadscript( '_source/internals/fcklistslib.js' ) ;
+Loadscript( '_source/internals/fcklanguagemanager.js' ) ;
+Loadscript( '_source/internals/fckxhtmlentities.js' ) ;
+Loadscript( '_source/internals/fckxhtml.js' ) ;
+Loadscript( '_source/internals/fckxhtml_' + sSuffix + '.js' ) ;
+Loadscript( '_source/internals/fckcodeformatter.js' ) ;
+Loadscript( '_source/internals/fckundo.js' ) ;
+Loadscript( '_source/classes/fckeditingarea.js' ) ;
+Loadscript( '_source/classes/fckkeystrokehandler.js' ) ;
 
-LoadScript( 'dtd/fck_xhtml10transitional.js' ) ;
-LoadScript( '_source/classes/fckstyle.js' ) ;
-LoadScript( '_source/internals/fckstyles.js' ) ;
+Loadscript( 'dtd/fck_xhtml10transitional.js' ) ;
+Loadscript( '_source/classes/fckstyle.js' ) ;
+Loadscript( '_source/internals/fckstyles.js' ) ;
 
-LoadScript( '_source/internals/fcklisthandler.js' ) ;
-LoadScript( '_source/classes/fckelementpath.js' ) ;
-LoadScript( '_source/classes/fckdomrange.js' ) ;
-LoadScript( '_source/classes/fckdocumentfragment_' + sSuffix + '.js' ) ;
-LoadScript( '_source/classes/fckw3crange.js' ) ;
-LoadScript( '_source/classes/fckdomrange_' + sSuffix + '.js' ) ;
-LoadScript( '_source/classes/fckdomrangeiterator.js' ) ;
-LoadScript( '_source/classes/fckenterkey.js' ) ;
+Loadscript( '_source/internals/fcklisthandler.js' ) ;
+Loadscript( '_source/classes/fckelementpath.js' ) ;
+Loadscript( '_source/classes/fckdomrange.js' ) ;
+Loadscript( '_source/classes/fckdocumentfragment_' + sSuffix + '.js' ) ;
+Loadscript( '_source/classes/fckw3crange.js' ) ;
+Loadscript( '_source/classes/fckdomrange_' + sSuffix + '.js' ) ;
+Loadscript( '_source/classes/fckdomrangeiterator.js' ) ;
+Loadscript( '_source/classes/fckenterkey.js' ) ;
 
-LoadScript( '_source/internals/fckdocumentprocessor.js' ) ;
-LoadScript( '_source/internals/fckselection.js' ) ;
-LoadScript( '_source/internals/fckselection_' + sSuffix + '.js' ) ;
+Loadscript( '_source/internals/fckdocumentprocessor.js' ) ;
+Loadscript( '_source/internals/fckselection.js' ) ;
+Loadscript( '_source/internals/fckselection_' + sSuffix + '.js' ) ;
 
-LoadScript( '_source/internals/fcktablehandler.js' ) ;
-LoadScript( '_source/internals/fcktablehandler_' + sSuffix + '.js' ) ;
-LoadScript( '_source/classes/fckxml.js' ) ;
-LoadScript( '_source/classes/fckxml_' + sSuffix + '.js' ) ;
+Loadscript( '_source/internals/fcktablehandler.js' ) ;
+Loadscript( '_source/internals/fcktablehandler_' + sSuffix + '.js' ) ;
+Loadscript( '_source/classes/fckxml.js' ) ;
+Loadscript( '_source/classes/fckxml_' + sSuffix + '.js' ) ;
 
-LoadScript( '_source/commandclasses/fcknamedcommand.js' ) ;
-LoadScript( '_source/commandclasses/fckstylecommand.js' ) ;
-LoadScript( '_source/commandclasses/fck_othercommands.js' ) ;
-LoadScript( '_source/commandclasses/fckshowblocks.js' ) ;
-LoadScript( '_source/commandclasses/fckspellcheckcommand_' + sSuffix + '.js' ) ;
-LoadScript( '_source/commandclasses/fcktextcolorcommand.js' ) ;
-LoadScript( '_source/commandclasses/fckpasteplaintextcommand.js' ) ;
-LoadScript( '_source/commandclasses/fckpastewordcommand.js' ) ;
-LoadScript( '_source/commandclasses/fcktablecommand.js' ) ;
-LoadScript( '_source/commandclasses/fckfitwindow.js' ) ;
-LoadScript( '_source/commandclasses/fcklistcommands.js' ) ;
-LoadScript( '_source/commandclasses/fckjustifycommands.js' ) ;
-LoadScript( '_source/commandclasses/fckindentcommands.js' ) ;
-LoadScript( '_source/commandclasses/fckblockquotecommand.js' ) ;
-LoadScript( '_source/commandclasses/fckcorestylecommand.js' ) ;
-LoadScript( '_source/commandclasses/fckremoveformatcommand.js' ) ;
-LoadScript( '_source/internals/fckcommands.js' ) ;
+Loadscript( '_source/commandclasses/fcknamedcommand.js' ) ;
+Loadscript( '_source/commandclasses/fckstylecommand.js' ) ;
+Loadscript( '_source/commandclasses/fck_othercommands.js' ) ;
+Loadscript( '_source/commandclasses/fckshowblocks.js' ) ;
+Loadscript( '_source/commandclasses/fckspellcheckcommand_' + sSuffix + '.js' ) ;
+Loadscript( '_source/commandclasses/fcktextcolorcommand.js' ) ;
+Loadscript( '_source/commandclasses/fckpasteplaintextcommand.js' ) ;
+Loadscript( '_source/commandclasses/fckpastewordcommand.js' ) ;
+Loadscript( '_source/commandclasses/fcktablecommand.js' ) ;
+Loadscript( '_source/commandclasses/fckfitwindow.js' ) ;
+Loadscript( '_source/commandclasses/fcklistcommands.js' ) ;
+Loadscript( '_source/commandclasses/fckjustifycommands.js' ) ;
+Loadscript( '_source/commandclasses/fckindentcommands.js' ) ;
+Loadscript( '_source/commandclasses/fckblockquotecommand.js' ) ;
+Loadscript( '_source/commandclasses/fckcorestylecommand.js' ) ;
+Loadscript( '_source/commandclasses/fckremoveformatcommand.js' ) ;
+Loadscript( '_source/internals/fckcommands.js' ) ;
 
-LoadScript( '_source/classes/fckpanel.js' ) ;
-LoadScript( '_source/classes/fckicon.js' ) ;
-LoadScript( '_source/classes/fcktoolbarbuttonui.js' ) ;
-LoadScript( '_source/classes/fcktoolbarbutton.js' ) ;
-LoadScript( '_source/classes/fckspecialcombo.js' ) ;
-LoadScript( '_source/classes/fcktoolbarspecialcombo.js' ) ;
-LoadScript( '_source/classes/fcktoolbarstylecombo.js' ) ;
-LoadScript( '_source/classes/fcktoolbarfontformatcombo.js' ) ;
-LoadScript( '_source/classes/fcktoolbarfontscombo.js' ) ;
-LoadScript( '_source/classes/fcktoolbarfontsizecombo.js' ) ;
-LoadScript( '_source/classes/fcktoolbarpanelbutton.js' ) ;
-LoadScript( '_source/internals/fcktoolbaritems.js' ) ;
-LoadScript( '_source/classes/fcktoolbar.js' ) ;
-LoadScript( '_source/classes/fcktoolbarbreak_' + sSuffix + '.js' ) ;
-LoadScript( '_source/internals/fcktoolbarset.js' ) ;
-LoadScript( '_source/internals/fckdialog.js' ) ;
-LoadScript( '_source/classes/fckmenuitem.js' ) ;
-LoadScript( '_source/classes/fckmenublock.js' ) ;
-LoadScript( '_source/classes/fckmenublockpanel.js' ) ;
-LoadScript( '_source/classes/fckcontextmenu.js' ) ;
-LoadScript( '_source/internals/fck_contextmenu.js' ) ;
-LoadScript( '_source/classes/fckhtmliterator.js' ) ;
-LoadScript( '_source/classes/fckplugin.js' ) ;
-LoadScript( '_source/internals/fckplugins.js' ) ;
+Loadscript( '_source/classes/fckpanel.js' ) ;
+Loadscript( '_source/classes/fckicon.js' ) ;
+Loadscript( '_source/classes/fcktoolbarbuttonui.js' ) ;
+Loadscript( '_source/classes/fcktoolbarbutton.js' ) ;
+Loadscript( '_source/classes/fckspecialcombo.js' ) ;
+Loadscript( '_source/classes/fcktoolbarspecialcombo.js' ) ;
+Loadscript( '_source/classes/fcktoolbarstylecombo.js' ) ;
+Loadscript( '_source/classes/fcktoolbarfontformatcombo.js' ) ;
+Loadscript( '_source/classes/fcktoolbarfontscombo.js' ) ;
+Loadscript( '_source/classes/fcktoolbarfontsizecombo.js' ) ;
+Loadscript( '_source/classes/fcktoolbarpanelbutton.js' ) ;
+Loadscript( '_source/internals/fcktoolbaritems.js' ) ;
+Loadscript( '_source/classes/fcktoolbar.js' ) ;
+Loadscript( '_source/classes/fcktoolbarbreak_' + sSuffix + '.js' ) ;
+Loadscript( '_source/internals/fcktoolbarset.js' ) ;
+Loadscript( '_source/internals/fckdialog.js' ) ;
+Loadscript( '_source/classes/fckmenuitem.js' ) ;
+Loadscript( '_source/classes/fckmenublock.js' ) ;
+Loadscript( '_source/classes/fckmenublockpanel.js' ) ;
+Loadscript( '_source/classes/fckcontextmenu.js' ) ;
+Loadscript( '_source/internals/fck_contextmenu.js' ) ;
+Loadscript( '_source/classes/fckhtmliterator.js' ) ;
+Loadscript( '_source/classes/fckplugin.js' ) ;
+Loadscript( '_source/internals/fckplugins.js' ) ;
 
 // @Packager.Remove.End
 
 // Base configuration file.
-LoadScript( '../fckconfig.js' ) ;
+Loadscript( '../fckconfig.js' ) ;
 
 	</script>
 	<script type="text/javascript">
 
 // Adobe AIR compatibility file.
 if ( FCKBrowserInfo.IsAIR )
-	LoadScript( 'js/fckadobeair.js' ) ;
+	Loadscript( 'js/fckadobeair.js' ) ;
 
 if ( FCKBrowserInfo.IsIE )
 {
@@ -258,7 +258,7 @@ FCKConfig.ProcessHiddenField() ;
 
 // Load the custom configurations file (if defined).
 if ( FCKConfig.CustomConfigurationsPath.length > 0 )
-	LoadScript( FCKConfig.CustomConfigurationsPath ) ;
+	Loadscript( FCKConfig.CustomConfigurationsPath ) ;
 
 	</script>
 	<script type="text/javascript">
@@ -270,7 +270,7 @@ FCKConfig_PreProcess() ;
 
 // Load the full debug script.
 if ( FCKConfig.Debug )
-	LoadScript( '_source/internals/fckdebug.js' ) ;
+	Loadscript( '_source/internals/fckdebug.js' ) ;
 
 	</script>
 	<script type="text/javascript">
@@ -293,7 +293,7 @@ document.write( FCKTools.GetStyleHtml( FCKConfig.SkinEditorCSS ) ) ;
 
 // Load the language file.
 FCKLanguageManager.Initialize() ;
-LoadScript( 'lang/' + FCKLanguageManager.ActiveLanguage.Code + '.js' ) ;
+Loadscript( 'lang/' + FCKLanguageManager.ActiveLanguage.Code + '.js' ) ;
 
 	</script>
 	<script type="text/javascript">

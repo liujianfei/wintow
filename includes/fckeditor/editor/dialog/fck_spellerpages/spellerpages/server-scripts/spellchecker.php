@@ -18,7 +18,7 @@ $word_win_src    = '../wordWindow.js';                            // by FredCK
 $textinputs        = $_POST['textinputs']; # array
 $input_separator = "A";
 
-# set the JavaScript variable to the submitted text.
+# set the Javascript variable to the submitted text.
 # textinputs is an array, each element corresponding to the (url-encoded)
 # value of the text control submitted for spell-checking
 function print_textinputs_var() {
@@ -35,13 +35,13 @@ function print_textindex_decl( $text_input_idx ) {
     echo "suggs[$text_input_idx] = [];\n";
 }
 
-# set an element of the JavaScript 'words' array to a misspelled word
+# set an element of the Javascript 'words' array to a misspelled word
 function print_words_elem( $word, $index, $text_input_idx ) {
     echo "words[$text_input_idx][$index] = '" . escape_quote( $word ) . "';\n";
 }
 
 
-# set an element of the JavaScript 'suggs' array to a list of suggestions
+# set an element of the Javascript 'suggs' array to a list of suggestions
 function print_suggs_elem( $suggs, $index, $text_input_idx ) {
     echo "suggs[$text_input_idx][$index] = [";
     foreach( $suggs as $key=>$val ) {

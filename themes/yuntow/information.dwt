@@ -68,8 +68,8 @@
                     <div class="last clearfix">
                         <a href="article.php?id={$msg.article_id}" class="f_l"><img src="{$msg.file_url}" class="img" width="125" height="90" /></a>
                         <div class="f_l " style="width:120px;">
-                            <div class="f8" style="padding:5px;">{$msg.short_title}</div>
-                            <div style="text-indent:2em; line-height:20px;">{$msg.content}</div>
+                            <div class="f8" style="padding:5px;">{$msg.title}</div>
+                            <div  class="new_info">{$msg.content}</div>
                         </div>
                     </div>
                 </li>
@@ -111,7 +111,8 @@
 <div class="scroll_box">
 	<a href="javascript:void(0)" class="up"><img src="images/btn_1_up.gif" /></a>
     <a href="javascript:void(0)" class="down"><img src="images/btn_1_down.gif" /></a>
-	<div class="new_img_list" id="newlist">
+	<div class="new_img_list">
+    <div id="newlist">
     	<div id="newlist1" style="float:left;">
     	<ul>
           <!--{foreach name=message_lists from=$artciles_netlist item=msg}-->
@@ -120,6 +121,7 @@
         </ul>
         </div>
      	<div id="newlist2"></div>
+    </div>
     </div>
 </div>
 </div>

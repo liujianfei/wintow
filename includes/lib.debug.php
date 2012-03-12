@@ -350,7 +350,7 @@ if (USE_DEBUGLIB) {
             } else {
 
                         print '
-                <script type="text/javascript" language="JavaScript">
+                <script type="text/javascript" language="Javascript">
                 var debugwindow;
                 debugwindow = window.open("", "T_'.md5($_SERVER['HTTP_HOST']).(is_string($mode)  ? $mode : '').'", "menubar=no,scrollbars=yes,resizable=yes,width=640,height=480");
                 debugwindow.document.open();
@@ -365,7 +365,7 @@ if (USE_DEBUGLIB) {
 
         if($mode == 3) {
             print '
-                <script type="text/javascript" language="JavaScript">
+                <script type="text/javascript" language="Javascript">
                     var debugwindow;
                     debugwindow = window.open("", "S_'.md5($_SERVER['HTTP_HOST']).'", "menubar=yes,scrollbars=yes,resizable=yes,width=640,height=480");
                     debugwindow.document.open();
@@ -410,7 +410,7 @@ if (USE_DEBUGLIB) {
                     font-size:7pt;
                 }
             </style>
-            <script type="text/javascript" language="JavaScript">
+            <script type="text/javascript" language="Javascript">
                 var lastID;
                 function highlight(id) {
                     if(lastID) {

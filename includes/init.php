@@ -65,7 +65,7 @@ if (PHP_VERSION >= '5.1' && !empty($timezone))
     date_default_timezone_set($timezone);
 }
 
-$php_self = isset($_SERVER['PHP_SELF']) ? $_SERVER['PHP_SELF'] : $_SERVER['SCRIPT_NAME'];
+$php_self = isset($_SERVER['PHP_SELF']) ? $_SERVER['PHP_SELF'] : $_SERVER['script_NAME'];
 if ('/' == substr($php_self, -1))
 {
     $php_self .= 'index.php';

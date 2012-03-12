@@ -76,7 +76,7 @@ if (isset($_SERVER['PHP_SELF']))
 }
 else
 {
-    define('PHP_SELF', $_SERVER['SCRIPT_NAME']);
+    define('PHP_SELF', $_SERVER['script_NAME']);
 }
 
 require(ROOT_PATH . 'includes/inc_constant.php');

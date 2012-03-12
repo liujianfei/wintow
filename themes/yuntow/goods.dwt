@@ -217,7 +217,12 @@ document.getElementById('history_list').innerHTML = '{$lang.no_history}';
    {$lang.goods_rank} <img src="images/stars{$goods.comment_rank}.gif" alt="comment rank {$goods.comment_rank}" />
   </li>
   <li>
-   演示地址：<a href="#" class="f6">在线演示</a>
+   演示地址：
+   {if $goods.net_address }
+   <a href="{$goods.net_address}" target="_blank" class="f6">在线演示</a>
+   {else}
+   <font style=" color:#ccc;">暂无演示地址！</font>
+   {/if}
   </li>  
   </ul>
 	</div>

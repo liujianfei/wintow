@@ -9,15 +9,15 @@ xmlns:widget="http://www.netvibes.com/ns/">
 <meta name="author" content="ECSHOP"/>
 <meta name="website" content="http://www.ecshop.com" />
 <meta name="version" content="0.2" />
-<meta name="keyword" content="ECSHOP Âô·ñ Ãâ·ÑÉÌµê Ãâ·ÑÍøµê Ãâ·Ñ¿ªµê" />
+<meta name="keyword" content="ECSHOP  Ìµ  Ñ¿" />
 <meta name="screenshot" content="http://widget.maifou.net/widget/images/screenshot.jpg" />
 <meta name="thumbnail" content="http://widget.maifou.net/widget/images/thumbnail.jpg" />
 <meta name="debugMode" content="false" />
-<meta name="description" content="ÕâÊÇECSHOPÒ»¸öÉÌÆ·Õ¹Ê¾µÄwidget.Í¨¹ıÕâ¸öwidget,ÄúÖ»ÒªÌîĞ´ÄúµÄÍøµêÓòÃû,¾Í¿ÉÒÔÇáËÉµÄÔÚÄúµÄBlogÉÏÕ¹Ê¾ÄúµÄÉÌÆ·ÁË!(×¢:×î¶àËæ»úÕ¹Ê¾10¸öÉÌÆ·)" />
+<meta name="description" content="ECSHOPÒ»Æ·Õ¹Ê¾widget.Í¨widget,Ö»ÒªĞ´,Í¿ÉµBlogÕ¹Ê¾Æ·!(×¢:Õ¹Ê¾10Æ·)" />
 <widget:preferences>
-  <preference type="text" name="domain" label="ÍøÖ·" />
-  <preference type="text" name="title" label="±êÌâ" />
-  <preference type="text" name="number" label="ÏÔÊ¾Êı" />
+  <preference type="text" name="domain" label="Ö·" />
+  <preference type="text" name="title" label="" />
+  <preference type="text" name="number" label="Ê¾" />
 </widget:preferences>
 
 <style type="text/css">
@@ -60,7 +60,7 @@ xmlns:widget="http://www.netvibes.com/ns/">
     domain = 'http://' + domain;
     if (!title)
     {
-        title = "ÎÒµÄĞ¡µê";
+        title = "ÒµĞ¡";
     }
     if (domain)
     {
@@ -83,20 +83,20 @@ xmlns:widget="http://www.netvibes.com/ns/">
         var goods_link = obj.domain + 'goods.php?id=' + goods[i].goods_id;
         var content = '<dl>';
         content += '<dt><a href="' + goods_link + '" target="_blank"><img src="' + obj.domain + goods[i].goods_thumb + '" alt="' + goods[i].goods_name + '" /></a></dt>';
-        content += '<dd class="name">ÉÌÆ·Ãû³Æ:&nbsp;&nbsp;<a href="' + goods_link + '">' + goods[i].goods_name + '</a></dd>';
-        content += '<dd>ÉÌÆ·¼Û¸ñ:&nbsp;&nbsp;<span class="price">' + goods[i].shop_price + '</span></dd>';
+        content += '<dd class="name">Æ·:&nbsp;&nbsp;<a href="' + goods_link + '">' + goods[i].goods_name + '</a></dd>';
+        content += '<dd>Æ·Û¸:&nbsp;&nbsp;<span class="price">' + goods[i].shop_price + '</span></dd>';
         if (goods[i].promote_price > 0)
         {
-          content += '<dd>´ÙÏú¼Û¸ñ:&nbsp;&nbsp;<span class="price">' + goods[i].shop_price + '</span></dd>';
+          content += '<dd>Û¸:&nbsp;&nbsp;<span class="price">' + goods[i].shop_price + '</span></dd>';
         }
         if (goods[i].goods_brief)
         {
-          content += '<dd class="desc">ÉÌÆ·¼ò½é:&nbsp;&nbsp;' + goods[i].goods_brief + '</dd>';
+          content += '<dd class="desc">Æ·:&nbsp;&nbsp;' + goods[i].goods_brief + '</dd>';
         }
         content += '</dl>';
         div.addContent(content);
       }
-      content = '<p class="more"><a href="' + obj.domain + '">&gt;&gt;¸ü¶àÉÌÆ·</a></p>';
+      content = '<p class="more"><a href="' + obj.domain + '">&gt;&gt;Æ·</a></p>';
       div.addContent(content);
     }
   }
@@ -105,8 +105,8 @@ xmlns:widget="http://www.netvibes.com/ns/">
 </head>
 <body>
 <div id="goods_list">
-µã»÷"ÉèÖÃ",ÌîĞ´ÄúµÄÍøµêÓòÃû(º¬http://)¼°ÏÔÊ¾ÊıÁ¿,¾Í¿ÉÒÔÕ¹Ê¾ÄúµÄÍøµêÉÌÆ·À­!×î¶àÏÔÊ¾10¸öÉÌÆ·.<br />
-Èç¹ûÄú»¹Ã»ÓĞÍøµê,Çëµ½<a href="http://www.maifou.net" target="_blank">http://www.maifou.net</a>Ãâ·ÑÉêÇë×¢²áÒ»¸ö¼´¿É!
+"",Ğ´(http://)Ê¾,Í¿Õ¹Ê¾Æ·!Ê¾10Æ·.<br />
+Ã»,ëµ½<a href="http://www.maifou.net" target="_blank">http://www.maifou.net</a>×¢Ò»!
 </div>
 </body>
 </html>

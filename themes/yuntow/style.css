@@ -124,7 +124,7 @@ h6 span{float:left; padding-left:15px;}
 .header{ height:251px;/*overflow:hidden;*/padding-top:31px; position:relative;}
 .header .topnav{width:100%;heiht:31px;position:absolute; top:0px; left:0px; background:url(images/top_bg.gif) repeat-x;line-height:30px}
 .login { line-height:30px;}
-.nue{ width:400px;}
+.nue{ width:450px;}
 .nue li{ background:url(images/topnvline.gif) no-repeat right; float:left; padding:0 10px;}
 .login a {color: #F8AC35; font-size: 14px; text-decoration:none;}
 .head_t {width: 960px;height:87px;background: url(images/headbg.jpg) no-repeat;}
@@ -592,9 +592,10 @@ font-size:16px; color:#fff;}
 .item_hot { padding:10px;line-height:20px;}
 .item_hot li { width:280px; float:left}
 
-.item_hot .last { width:280px; height:115px; overflow:hidden;}
+.item_hot .last { width:280px; height:114px; overflow:hidden;}
+.item_hot .last .new_info{ font:none; text-indent:-2em;}
 
-.scroll_box { width:840px; height:120px; padding:20px 30px; position:relative; border:1px solid #ccc;}
+.scroll_box { width:840px; height:120px; padding:20px 30px; position:relative; border:1px solid #ccc; }
 .scroll_box .up, .scroll_box .down { position:absolute; top:30px; }
 .scroll_box .up { left:-23px;}
 .scroll_box .down { right:-23px;}
@@ -629,3 +630,47 @@ font-size:16px; color:#fff;}
 
 /*  积分兑换样式修改 */
 .point li{float:left;width:300px;}
+
+.featureContainer {
+	WIDTH: 923px; FONT-SIZE: 80%; BORDER-TOP: #999 0px dotted;
+}
+
+.feature {
+	POSITION: relative;MARGIN-TOP: 5px; MARGIN-BOTTOM: 20px;
+}
+.feature .button {
+	POSITION: absolute;WIDTH: 920px;TOP: 72px;LEFT: 0px
+}
+.feature .prev {
+	TEXT-INDENT: -9999px; WIDTH: 30px; DISPLAY: block; BACKGROUND: url(images/feature_left.gif) center top; FLOAT: left; HEIGHT: 48px;
+}
+.feature .next {
+	TEXT-INDENT: -9999px; WIDTH: 30px; DISPLAY: block; BACKGROUND: url(images/feature_right.gif) center top; FLOAT: right; HEIGHT: 48px;
+}
+.feature .prev:hover {
+	BACKGROUND-POSITION: center bottom
+}
+.feature .next:hover {
+	BACKGROUND-POSITION: center bottom
+}
+.featureUL {
+	POSITION: relative;PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 2800px; PADDING-RIGHT: 0px; FLOAT: left;
+}
+.featureBox {
+	BACKGROUND-IMAGE: url(images/bg-featurebox.jpg); WIDTH: 280px; BACKGROUND-REPEAT: no-repeat; FLOAT: left; HEIGHT: 230px; OVERFLOW: hidden;PADDING-TOP: 10px
+}
+#botton-scroll {
+	Z-INDEX: 0;MARGIN: 0px auto; WIDTH: 840px; FLOAT: left; HEIGHT: 200px;
+}
+.box_block {
+	Z-INDEX: 0; BORDER-BOTTOM: #999 0px dotted; POSITION: relative; MARGIN: 0px auto; PADDING-LEFT: 0px; WIDTH: 840px;HEIGHT: 180px; FONT-SIZE: 70%; OVERFLOW: hidden;
+}
+.box_block .box {
+	PADDING-BOTTOM: 10px; MARGIN: 0px 10px; PADDING-LEFT: 10px; WIDTH: 240px; PADDING-RIGHT: 10px; FLOAT: left; HEIGHT: 150px; PADDING-TOP: 10px
+}
+.box_block .box .feature-title {
+	FONT-SIZE: 140%; FONT-WEIGHT: normal
+}
+.box_block .box .feature-thumb {
+	WIDTH: 240px; MARGIN-BOTTOM: 5px; FLOAT: left; HEIGHT: 150px
+}

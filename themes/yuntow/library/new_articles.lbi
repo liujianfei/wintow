@@ -19,7 +19,7 @@
     <div id="ECS_ARTICLE_BODY" >
       <ul>
         <!-- {foreach name=new_articles from=$new_articles item=article} -->       
-        <li class="dot">[<a href="{$article.cat_url}" style="color:#000;">{$article.cat_name}</a>] <a href="{$article.url}" title="{$article.title|escape:html}">{$article.short_title|truncate:25}</a></li>
+        <li class="dot">[<a href="{$article.cat_url}" style="color:#000;">{$article.cat_name}</a>] <a href="{$article.url}" title="{$article.title|escape:html}">{$article.short_title|truncate:14}</a></li>
         <!-- {/foreach} -->
       </ul>
     </div>

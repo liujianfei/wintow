@@ -4,14 +4,14 @@
 /**
  * Converts to and from JSON format.
  *
- * JSON (JavaScript Object Notation) is a lightweight data-interchange
+ * JSON (Javascript Object Notation) is a lightweight data-interchange
  * format. It is easy for humans to read and write. It is easy for machines
- * to parse and generate. It is based on a subset of the JavaScript
+ * to parse and generate. It is based on a subset of the Javascript
  * Programming Language, Standard ECMA-262 3rd Edition - December 1999.
  * This feature can also be found in  Python. JSON is a text format that is
  * completely language independent but uses conventions that are familiar
  * to programmers of the C-family of languages, including C, C++, C#, Java,
- * JavaScript, Perl, TCL, and many others. These properties make JSON an
+ * Javascript, Perl, TCL, and many others. These properties make JSON an
  * ideal data-interchange language.
  *
  * This package provides a simple encoder and decoder for JSON notation. It
@@ -383,7 +383,7 @@ class Services_JSON
                 * have any string as a property. Unfortunately due to
                 * a hole in the ECMA specification if the key is a
                 * ECMA reserved word or starts with a digit the
-                * parameter is only accessible using ECMAScript's
+                * parameter is only accessible using ECMAscript's
                 * bracket notation.
                 */
 

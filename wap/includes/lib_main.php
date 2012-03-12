@@ -92,7 +92,7 @@ function get_wap_pager($num, $perpage, $curr_page, $mpurl,$pvar)
  */
 function get_footer()
 {
-    if (substr($_SERVER['SCRIPT_NAME'], strrpos($_SERVER['SCRIPT_NAME'], '/')) == '/index.php')
+    if (substr($_SERVER['script_NAME'], strrpos($_SERVER['script_NAME'], '/')) == '/index.php')
     {
         $footer = "<br/>Powered by ECShop[".local_date('H:i')."]";
     }

@@ -18,7 +18,7 @@
  *
  * == END LICENSE ==
  *
- * This is the integration file for JavaScript.
+ * This is the integration file for Javascript.
  *
  * It defines the FCKeditor class that can be used to create editor
  * instances in a HTML page in the client side. For server side

@@ -389,7 +389,7 @@
   </tr>
   </table>
      </form>
-      <script language="JavaScript">
+      <script language="Javascript">
       var elements = document.forms['theForm'].elements;
       var url = '{$url}';
       var u   = '{$user_id}';
@@ -588,7 +588,7 @@
     </tr>
     <!-- {/if} -->
   </table>
- <script type="text/javascript" language="JavaScript">
+ <script type="text/javascript" language="Javascript">
 <!--
 {literal}
 function selectPage(sel)

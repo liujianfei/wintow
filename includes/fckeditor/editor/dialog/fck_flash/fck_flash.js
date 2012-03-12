@@ -18,7 +18,7 @@
  *
  * == END LICENSE ==
  *
- * Scripts related to the Flash dialog window (see fck_flash.html).
+ * scripts related to the Flash dialog window (see fck_flash.html).
  */
 
 var dialog		= window.parent ;
