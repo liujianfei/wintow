@@ -30,17 +30,14 @@
         <!-- #BeginLibraryItem "/library/category_list.lbi" --><!-- #EndLibraryItem -->
     </div>
     <div class="area_r">
-    	<div class="">
-        {if $smarty.session.user_name}
-        <a href="http://bbs.cncloudol.com/Desktop.php"><img src="images/btn_lib_work.gif" /></a>
-        {else}
-        <a href="user.php?act=register"><img src="images/btn_lib_reg.gif" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="user.php"><img src="images/btn_lib_login.gif" /></a>&nbsp;&nbsp;&nbsp;&nbsp;<a href="http://bbs.cncloudol.com/Desktop.php"><img src="images/btn_lib_work.gif" /></a>
-        {/if}
-        </div>
-        <!-- #BeginLibraryItem "/library/new_articles.lbi" --><!-- #EndLibraryItem -->
+        <!-- #BeginLibraryItem "/library/member_login.lbi" --><!-- #EndLibraryItem -->
         <div class="blank10"></div>
         <div class="ad280">
         <!-- TemplateBeginEditable name="资讯下的右侧广告280" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
         </div>
         <div class="blank10"></div>

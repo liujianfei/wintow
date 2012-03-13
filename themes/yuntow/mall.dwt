@@ -19,6 +19,11 @@
 </head>
 <body>
 <!-- #BeginLibraryItem "/library/page_header.lbi" --><!-- #EndLibraryItem -->
+<!--当前位置 start-->
+ <div id="ur_here" class="block">
+  <!-- #BeginLibraryItem "/library/ur_here.lbi" --><!-- #EndLibraryItem -->
+ </div>
+<!--当前位置 end-->
 <div class="block clearfix">
 <div class="mall_l f_l">
 	<div class="clearfix" style="width:730px;">
@@ -41,6 +46,10 @@
         <div class="blank10"></div>
 	<!-- #BeginLibraryItem "/library/top10.lbi" --><!-- #EndLibraryItem -->
 <!-- TemplateBeginEditable name="热门排行下的广告200" -->
+<!-- #BeginLibraryItem "/library/ad_position.lbi" -->
+
+{insert name='ads' id=$ads_id num=$ads_num}
+ <!-- #EndLibraryItem -->
 <!-- TemplateEndEditable -->
 
 <!-- #BeginLibraryItem "/library/free.lbi" --><!-- #EndLibraryItem -->

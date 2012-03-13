@@ -1,0 +1,55 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<div class="featureContainer">
+<div class="feature">
+    <div class="box_block">
+    <div id="botton-scroll">
+        <div class="featureUL" id="ISL_Cont_1">
+          <div class="featureBox">
+          <div class=box><A href="http://www.lanrentuku.com/" target="_blank"><IMG alt=Paracletos  src="images/01.jpg" width=240 height=150> </A></div>
+          <!-- /box --></div>
+          <div class="featureBox">
+          <div class=box><A href="http://www.lanrentuku.com/" target="_blank"><IMG alt="Natural Touch Soap" src="images/02.jpg" width=240 height=150> </A></div>
+          <!-- /box --></div>
+          <div class="featureBox">
+          <div class=box><A href="http://www.lanrentuku.com/" target="_blank"><IMG alt="LRTK" src="images/03.jpg" width=240 height=150> </A></div>
+          <!-- /box --></div>
+          <div class="featureBox">
+          <div class=box><A href="http://www.lanrentuku.com/" target="_blank"><IMG alt="Natadive Reid" src="images/04.jpg" width=240 height=150> </A></div>
+          <!-- /box --></div>
+          <div class="featureBox">
+          <div class=box><A href="http://www.lanrentuku.com/" target="_blank"><IMG alt="xixi" src="images/05.jpg" width=240 height=150> </A></div>
+          <!-- /box --></div>
+          <div class="featureBox">
+          <div class=box><A href="http://www.lanrentuku.com/" target="_blank"><IMG alt="Catherine Sherwood" src="images/06.jpg" width=240 height=150> </A></div>
+          <!-- /box -->
+          </div>
+        </div>
+    </div><!-- /botton-scroll -->
+    </div><!-- /block -->
+  <div class="button">
+  <A class=prev href="javascript:void();" id="LeftArr">Previous</A>
+  <A class=next href="javascript:void();" id="RightArr">Next</A> 
+  </div>
+</div>
+<!-- /feature -->
+</div><!-- /featureContainer -->
+<SCRIPT language=javascript type=text/javascript>
+
+		var scrollPic_02 = new ScrollPic();
+		scrollPic_02.scrollContId   = "ISL_Cont_1"; //内容容器ID
+		scrollPic_02.arrLeftId      = "LeftArr";//左箭头ID
+		scrollPic_02.arrRightId     = "RightArr"; //右箭头ID
+
+		scrollPic_02.frameWidth     = 908;//显示框宽度
+		scrollPic_02.pageWidth      = 152; //翻页宽度
+
+		scrollPic_02.speed          = 10; //移动速度(单位毫秒，越小越快)
+		scrollPic_02.space          = 10; //每次移动像素(单位px，越大越快)
+		scrollPic_02.autoPlay       = true; //自动播放
+		scrollPic_02.autoPlayTime   = 3; //自动播放间隔时间(秒)
+
+		scrollPic_02.initiadivze(); //初始化
+							
+
+</SCRIPT>
+<SCRIPT src="../js/ScrollPic.js" type=text/javascript></SCRIPT>

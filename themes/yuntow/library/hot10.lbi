@@ -1,7 +1,8 @@
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
 <!--{if $top_goods}-->
-<div class="b_gray clearfix">
+<div class="b_gray hot10 clearfix">
 <h2 class="hot_tit"><span class="f8 tit">热门应用</span></h2>
+<img src="images/top.gif" class="top_img" >
 <ul id="top10" class="hot10_con">
  <!-- {foreach name=top_goods from=$top_goods item=goods}-->
  {if $smarty.foreach.top_goods.index <= 5}
