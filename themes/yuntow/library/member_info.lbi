@@ -5,6 +5,7 @@
     <font>
     {$lang.hello}，<font class="f4_b">{$user_info.username}</font>, {$lang.welcome_return}！
     <a href="user.php">{$lang.user_center}</a>|
+    <a href="http://bbs.cncloudol.com/Desktop.php" class="work">进入工作台</a>|
      <a href="user.php?act=logout">{$lang.user_logout}</a>
     </font>
     {else}

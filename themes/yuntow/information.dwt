@@ -35,8 +35,8 @@
         <div class="box_new_con clearfix">
         	<a href="{$todayarticle.url}" class="f_l"><img src="{$todayarticle.file_url}" class="img" width="184" height="116" /></a>
         	<div class="f_l item_new">
-            	<div style="padding:5px 10px;"><a href="{$todayarticle.url}" class="f8" >{$todayarticle.title}</a></div>
-                <p style="text-indent:2em; line-height:20px;">{$todayarticle.content}。。。。</p>
+            	<div style="padding:5px 10px;"><a href="{$todayarticle.url}" class="f8" >{$todayarticle.title|truncate:20}</a></div>
+                <div class="text_cont">{$todayarticle.content}。。。</div>
             </div>
         </div>
          
@@ -68,8 +68,8 @@
                     <div class="last clearfix">
                         <a href="article.php?id={$msg.article_id}" class="f_l"><img src="{$msg.file_url}" class="img" width="125" height="90" /></a>
                         <div class="f_l " style="width:120px;">
-                            <div class="f8" style="padding:5px;">{$msg.title}</div>
-                            <div  class="new_info">{$msg.content}</div>
+                            <div class="f8" style="padding:5px;">{$msg.title|truncate:5}</div>
+                            <div  class="new_info text_cont">{$msg.content}</div>
                         </div>
                     </div>
                 </li>

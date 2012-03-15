@@ -31,8 +31,7 @@
     </div>
     <div class="area_r">
         <!-- #BeginLibraryItem "/library/member_login.lbi" --><!-- #EndLibraryItem -->
-        <div class="blank10"></div>
-        <div class="ad280">
+        <div class="ad280" style="width:280px;">
         <!-- TemplateBeginEditable name="资讯下的右侧广告280" -->
 <!-- #BeginLibraryItem "/library/ad_position.lbi" -->
 
@@ -43,7 +42,6 @@
         <div class="blank10"></div>
         <!-- #BeginLibraryItem "/library/hot10.lbi" --><!-- #EndLibraryItem -->
     </div>
-    <div class="blank10"></div>
 <div class="ad960">
 <!-- TemplateBeginEditable name="分类下的横栏广告960" -->
 <!-- #BeginLibraryItem "/library/ad_position.lbi" -->

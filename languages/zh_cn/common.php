@@ -31,6 +31,7 @@ $_LANG['please_waiting'] = '请稍等, 正在载入中...';
 $_LANG['icp_number'] = 'ICP备案证书号';
 $_LANG['plugins_not_found'] = "插件 %s 无法定位";
 $_LANG['home'] = '首&nbsp;页';
+$_LANG['mall'] = '软件商城';
 $_LANG['back_up_page'] = '返回上一页';
 $_LANG['close_window'] = '关闭窗口';
 $_LANG['back_home'] = '返回首页';

@@ -108,7 +108,7 @@ border:1px solid #fff; padding-right:10px;
 h6 span{float:left; padding-left:15px;}
 
 /*页面留白*/
-.blank10{ height:10px; line-height:5px;/* _margin:-3px 0;*/ clear:both; visibility:hidden;}
+.blank10{ height:8px; line-height:5px;/* _margin:-3px 0;*/ clear:both; visibility:hidden;}
 .blank{height:8px; line-height:8px; clear:both; visibility:hidden;}
 .blank5{height:5px; line-height:5px;/* _margin:-3px 0;*/ clear:both; visibility:hidden;}
   /*布局*/
@@ -178,9 +178,11 @@ h6 span{float:left; padding-left:15px;}
 
 
 /** 登录box **/
-.login_box { line-height:30px;}
-.login_bar { height:31px; text-align:center; padding:10px 0px;}
-.login_bar input{ float:left; margin-right:15px; display:inline;}
+.login_box {line-height:30px;padding-bottom:5px;background:url(images/login_box_bottom.gif) no-repeat bottom;}
+.login_box .login_tit{ height:37px; background:url(images/login_box_top.gif) no-repeat center;}
+.login_box .login_cont {padding:15px 15px 0px 15px; background:url(images/login_box_bg.gif) repeat-y center;}
+.login_bar { height:31px; text-align:center;padding:10px 0px;}
+.login_bar input{ float:left; margin-right:10px; display:inline;}
 
 /* ====================
      模块
@@ -194,12 +196,12 @@ h6 span{float:left; padding-left:15px;}
 #category_tree li{ background:url(images/arrow.gif) no-repeat right; border-bottom:1px solid #71a7d0; line-height:35px; height:35px; padding-left:10px;position:relative;}
 #category_tree li a{ background:url(images/dot3.gif) no-repeat 0 5px; padding-left: 10px;color:#2282cc;}
 #category_tree li.cctv{background:url(images/FenHover.gif) no-repeat 4px 0; height:35px;}
-#category_tree li.cctv a{color:#000;}
-#category_tree li .children{background:#d5e9f7;position:absolute; left:165px;top:-15px;display:none; width:303px; padding:10px 0; z-index:999999; border:3px solid #71a7d0;}
-#category_tree li .children span{ width:303px; height:12px; display:block;}
+#category_tree li.cctv a:hover{color:#444;}
+#category_tree li .children{background:#d5e9f7;position:absolute; left:165px;top:-15px;display:none; width:300px; padding:10px 10px; z-index:999999; border:3px solid #71a7d0;}
+#category_tree li .children span{ width:300px; height:12px; display:block;}
 #category_tree li .children .conter{background-color:#d5e9f7; width:282px;}
 #category_tree li .children .conter .suq{ width:15px; height:35px; position:absolute;top:12px; left:-6px; background-color:#d5e9f7;}
-#category_tree li .children .conter .ChildrenLi{ float:left; width:40%;background:url(images/dot3.gif) no-repeat 0px 15px; padding-left:10px;}
+#category_tree li .children .conter .ChildrenLi{ float:left; width:45%;background:url(images/dot3.gif) no-repeat 0px 15px; padding-left:10px; border-bottom:1px dashed #ccc;}
 
 .step {float:left;display:inline;width:510px;height:310px;padding:6px;background:#cfcece;position:relative;border:1px solid #dedede; overflow:hidden;}
 .step .img {width:510px;height:314px;float:left;overflow:hidden; position:relative;}
@@ -217,7 +219,8 @@ h6 span{float:left; padding-left:15px;}
 .category_list ul {padding:0px 30px 0px 30px; background:url(images/cate_li_bg.gif) repeat-y top center;font-family:"MicroSoft YaHei";}
 .category_list ul li { height:70px;}
 .category_list .stair { width:170px; line-height:70px; color:#8d8d8d; font-size:20px; text-align:center;}
-.category_list .second { width:400px; float:left; padding:15px 10px; line-height:20px;}
+.category_list .second { width:410px; float:left; padding:15px 10px; line-height:20px;}
+.category_list .second span{ float:left;padding-right:10px;}
 
 .NewsTit,.NewsTit2{background-color:#fff; width:142px; height:30px; line-height:30px; text-align:center; border-top:5px solid #047db8; float:left;}
 .NewsTit2{ background-color:#f0f0f0;}
@@ -304,9 +307,6 @@ h6 span{float:left; padding-left:15px;}
 
 .banq{ width:960px; padding:10px 0;text-align:center; color:#bebebd;}
 .box_cont { padding:0px 15px 10px 15px; position:relative;}
-.box_cont .up,.box_cont .next { position:absolute; top:10px;z-index:1;}
-.box_cont .up { left:20px;}
-.box_cont .next { right:20px;}
 
 /*今日特价和品牌*/
 .sales{width:820px; overflow:hidden;}
@@ -444,28 +444,35 @@ margin:6px 5px 0 0; border:none;
 .colle a{background:none; padding:0px; color:#3f3f3f; text-decoration:none;}
 .colle a:hover{background:none; padding:0px; color:#ff6600; text-decoration:none;}
 /* ====================
- 商品详情页面部分模块
+     商品详情页面部分模块
 ==================== */
-#goodsInfo{padding:8px; _height:1%;}
-#goodsInfo .imgInfo{width:230px; float:left; margin-right:10px; overflow:hidden;}
-#goodsInfo .imgInfo .thumb{width:230px; height:230px; display:block;}/*商品详情图片*/
-#goodsInfo span{width:4px; height:48px; background:url(images/bg.gif) no-repeat 0 -527px; float:left;}
-#goodsInfo span.spanR{width:4px; height:48px; background:url(images/bg.gif) no-repeat -5px -527px; float:right;}
-#goodsInfo .gallery{width:204px; float:left; margin-left:10px; _margin-left:5px; overflow:hidden;}
-#goodsInfo .gallery ul{width:auto;}
-#goodsInfo .gallery li{float:left; width:48px; margin:0 2px;}
-#goodsInfo .gallery li img{width:46px; height:46px; display:block;}
-/*文字信息*/
-#goodsInfo .textInfo{background:#fff; width:473px; float:left; padding:10px;}
-#goodsInfo .textInfo p{font-size:14px; font-weight:bold; padding:0 5px 5px 8px;}
-#goodsInfo .textInfo ul{border-top:1px solid #ccc;}
-#goodsInfo .textInfo li{background:url(images/lineBg.gif) repeat-x left bottom; padding:0px 8px; _height:1%;}
-#goodsInfo .textInfo li.padd{padding:7px 0px 7px 8px;}
-#goodsInfo .textInfo li dd{width:50%; float:left; padding:7px 0px;}
-#goodsInfo .textInfo li dd.ddR{border-left:1px solid #eeecec; width:48%; padding-left:8px;}
-#goodsInfo .textInfo li dd.ddL{border-right:1px solid #eeecec;}
-#goodsInfo .textInfo a{color:#006bce; text-decoration:underline;}
-#goodsInfo .textInfo .loop{background:#f7f7f7; margin-top:8px;}
+   #goodsInfo{  _height:1%;}
+   #goodsInfo .imgInfo{width:310px; float:left; padding-right:10px; }
+   #goodsInfo .imgInfo .thumb{width:230px; height:230px; display:block;}/*商品详情图片*/
+   #goodsInfo span{width:4px; height:48px; background:url(images/bg.gif) no-repeat 0 -527px; float:left;}
+   #goodsInfo span.spanR{width:4px; height:48px; background:url(images/bg.gif) no-repeat -5px -527px; float:right;}
+   #goodsInfo .gallery{width:204px; float:left; margin-left:10px; _margin-left:5px; overflow:hidden;}
+   #goodsInfo .gallery ul{width:auto;}
+   #goodsInfo .gallery li{float:left; width:48px; margin:0 2px;}
+   #goodsInfo .gallery li img{width:46px; height:46px; display:block;}
+  .textInfo ul strong{ font-weight:normal}
+   /*文字信息*/
+   #goodsInfo .textInfo{background:#fff; width:393px; float:left; padding:0 10px; }
+   #goodsInfo .textInfo p{font-size:14px; font-weight:bold; padding:0 5px 5px 8px;}
+   #goodsInfo .textInfo ul{border-top:1px solid #ccc;}
+   #goodsInfo .textInfo li{background:url(images/lineBg.gif) repeat-x left bottom; padding:0px 8px; _height:1%;}
+   #goodsInfo .textInfo li.padd{padding:7px 0px 7px 8px;}
+   #goodsInfo .textInfo li dd{width:50%; float:left; padding:7px 0px;}
+   #goodsInfo .textInfo li dd.ddR{border-left:1px solid #eeecec; width:48%; padding-left:8px;}
+     #goodsInfo .textInfo li dd.ddL{border-right:1px solid #eeecec;}
+   #goodsInfo .textInfo a{ text-decoration:underline;}
+   #goodsInfo .textInfo .loop{background:#f7f7f7; margin-top:8px;}
+   
+   .shuxin dt{ border:1px solid #ccc; text-align:center; font-weight:bold; color:#990000; margin-bottom:3px;}
+	.shuxin dd{ width:50%; float:left}
+	.shuxin dd span{ float:left; background:#eee; margin:3px;}
+	.shuxin dd .span1{width:125px;padding-left:5px;}
+	.shuxin dd .span2{width:220px; padding-left:5px;}
 /*用户评论*/
 .ie6{padding-left:25px; _padding-left:15px; height:1%;}/*购买此商品的人还购买的商品*/
 .comments li{background:url(images/lineBg.gif) repeat-x left bottom; padding:3px 8px; width:97%; _height:1%; text-align:left; position:relative;
@@ -575,7 +582,7 @@ color:#3f3f3f; text-decoration:none; margin:0 0 3px 10px; padding-left:3px;
 /* ====================
  文章列表页-2009.6.8
 ==================== */
-.article_search{margin:0px auto 8px; padding:15px 20px ; width:237px; height:27px; background:url(images/search_bg.gif) no-repeat;}
+.article_search{margin:0px auto; padding:15px 20px ; width:237px; height:27px; background:url(images/search_bg.gif) no-repeat;}
 .article_search .inputBg{width:180px;}
 .article_search .btn_search_bg { display:inline;height:32px; width:32px; border:none; cursor:pointer; background:url(images/btn_search_bg.gif) no-repeat;}
 
@@ -598,6 +605,7 @@ font-size:16px; color:#fff;}
 .box_new .box_new_con .img{ border:1px solid #CCC; margin:10px;}
 .item_new{ height:130px; width:360px; padding:5px;}
 .new_hot_img { position:absolute; top:-2px;right:-2px; background:url(images/new_hot_t.gif) no-repeat;}
+.text_cont {line-height:20px; font: 12px ; color:#666;}
 
 .item_list { padding:10px 20px; width:260px; float:left; line-height:20px;}
 .item_hot { padding:10px;line-height:20px;}
@@ -642,15 +650,8 @@ font-size:16px; color:#fff;}
 /*  积分兑换样式修改 */
 .point li{float:left;width:300px;}
 
-.featureContainer {
-	WIDTH: 923px; FONT-SIZE: 80%; BORDER-TOP: #999 0px dotted;
-}
-
 .feature {
-	POSITION: relative;MARGIN-TOP: 5px; MARGIN-BOTTOM: 20px;
-}
-.feature .button {
-	POSITION: absolute;WIDTH: 920px;TOP: 72px;LEFT: 0px
+	POSITION: absolute;WIDTH: 930px;TOP: 52px;LEFT: 10px
 }
 .feature .prev {
 	TEXT-INDENT: -9999px; WIDTH: 30px; DISPLAY: block; BACKGROUND: url(images/feature_left.gif) center top; FLOAT: left; HEIGHT: 48px;
@@ -664,24 +665,148 @@ font-size:16px; color:#fff;}
 .feature .next:hover {
 	BACKGROUND-POSITION: center bottom
 }
-.featureUL {
-	POSITION: relative;PADDING-BOTTOM: 0px; LIST-STYLE-TYPE: none; MARGIN: 0px; PADDING-LEFT: 0px; WIDTH: 2800px; PADDING-RIGHT: 0px; FLOAT: left;
+
+/* Copyright 2008 MagicToolBox.com. To use this code on your own site, visit http://magictoolbox.com */
+
+/* CSS class for zoomed area */
+.MagicZoomBigImageCont {
+	border:			1px solid #cccccc;
 }
-.featureBox {
-	BACKGROUND-IMAGE: url(images/bg-featurebox.jpg); WIDTH: 280px; BACKGROUND-REPEAT: no-repeat; FLOAT: left; HEIGHT: 230px; OVERFLOW: hidden;PADDING-TOP: 10px
+
+/* Header look and feel CSS class */
+/* header is shown if "title" attribute is present in the <A> tag */
+.MagicZoomHeader {
+	font:			12px Tahoma, Verdana, Arial, sans-serif;
+	color:			#fff;
+	background:		#91b817;
+	text-align:     center !important; 
 }
-#botton-scroll {
-	Z-INDEX: 0;MARGIN: 0px auto; WIDTH: 840px; FLOAT: left; HEIGHT: 200px;
+
+
+/* CSS class for small looking glass square under mouse */
+.MagicZoomPup {
+	border: 		1px solid #aaa;
+	background: 	#ffffff;
+	cursor:			hand;
 }
-.box_block {
-	Z-INDEX: 0; BORDER-BOTTOM: #999 0px dotted; POSITION: relative; MARGIN: 0px auto; PADDING-LEFT: 0px; WIDTH: 840px;HEIGHT: 180px; FONT-SIZE: 70%; OVERFLOW: hidden;
+
+/* CSS style for loading animation box - ok-moban.com */
+.MagicZoomLoading {
+	text-align:		center;
+	background: 	#ffffff;
+	color:			#444;
+	border: 		1px solid #ccc;
+	opacity:		0.8;
+	padding:		3px 3px 3px 3px !important;
+	display: 		none; /* do not edit this line please */
 }
-.box_block .box {
-	PADDING-BOTTOM: 10px; MARGIN: 0px 10px; PADDING-LEFT: 10px; WIDTH: 240px; PADDING-RIGHT: 10px; FLOAT: left; HEIGHT: 150px; PADDING-TOP: 10px
+
+/* CSS style for gif image in the loading animation box */
+.MagicZoomLoading img {
+	padding-top:	3px !important;
 }
-.box_block .box .feature-title {
-	FONT-SIZE: 140%; FONT-WEIGHT: normal
+/* ©2008 MagicToolbox.com. To use this code on your own site, visit http://www.magictoolbox.com */
+
+/* CSS class for thumbnail link <A> */
+.MagicThumb {
+    cursor: url(images/zoomin.cur), pointer;
+    outline: none;
 }
-.box_block .box .feature-thumb {
-	WIDTH: 240px; MARGIN-BOTTOM: 5px; FLOAT: left; HEIGHT: 150px
+
+/* CSS class for the thumbnail link <A> when the big image is zoomed mo ban tang ban quan suo you */
+.MagicThumb-zoomed { cursor: default; }
+
+/* CSS class for span inside the thumbnail <A> */
+.MagicThumb span { display: none; }
+
+/* CSS class for the thumbnail image */
+.MagicThumb img { border: 1px solid #cccccc; outline: none; }
+
+/* CSS class for the big image while zooming */
+.MagicThumb-image { border: 1px solid #cccccc; outline: none; }
+
+/* CSS class for the zoomed big image */
+.MagicThumb-image-zoomed { cursor: url(images/zoomout.cur), pointer; }
+
+/* CSS class for the caption under the big zoomed image */
+.MagicThumb-caption {
+    color: #333333;
+    background-color: #F0F0F0;
+    border: 1px solid #CCCCCC;
+    border-top: none;
+    font-family: Verdana, Helvetica;
+    font-size: 11px;
+    padding: 8px 16px;
 }
+
+/* CSS class for the control bar  */
+.MagicThumb-controlbar {
+	display: block;
+	height: 18px;
+}
+
+.MagicThumb-controlbar a {
+	display: block;
+	width: 18px;
+	height: 18px;
+	margin: 0px 1px;
+	outline: none;
+	float: left;
+	overflow: hidden;
+}
+
+.MagicThumb-controlbar a span {
+	display: block;
+	width: 1000px;
+	height: 1000px;
+	background: transparent url(images/controlbar.png) no-repeat 0 0;
+	outline: none;
+	position: absolute;
+	left: 0px;
+	top: 0px;
+}
+
+/* CSS class for the loading message box */
+.MagicThumb-loading {
+	border: 1px solid #000000;
+	background: #ffffff url(images/loader.gif) no-repeat 2px 50%;
+	padding: 2px 2px 2px 22px;
+	margin: 0;
+	text-decoration: none;
+	text-align: left;
+	font-size: 8pt;
+	font-family: sans-serif;
+}
+	.picture{
+
+	margin-top:10px;
+	text-align:left;
+
+	}
+	 .picture img{
+	width:50px;
+	height:50px;
+	cursor:pointer; 
+	margin:0 3px;
+	}
+	.picture img.onbg{ border:2px solid #990000;
+	
+	}
+	.picture img.autobg{
+	border:2px solid #fff;
+	
+	}
+
+	.left_help{ border:1px solid #e2e2e2;}
+	.left_help dl{ padding:10px;}
+	.left_help dl dt{ font-weight:bold; font-size:12px; background:#e5e5e5; height:24px;line-height:24px; padding-left:10px;}
+	.left_help dl dt img{ vertical-align:middle }
+	.left_help dl dd{ padding-left:10px; padding-top:5px;}
+	.left_help dl a{ color:#666; text-decoration:none}
+	.left_help dl a:hover{ color:#1c7b3b}
+	.art_cat_box{}
+	.art_cat_box th{ height:26px;line-height:26px; }
+	.art_cat_box td{ border-bottom:1px solid #dbdbdb; font-weight:normal}
+	.art_cat_box td a{ font-weight:bold; color:#3f3f3f; padding-left:20px; }
+.zhuyao{width:980px; height:auto;background-color:#FFFFFF; clear:both;}
+.zhuyaoer{width:980px; height:410px;padding-bottom:13px; margin:0px auto;padding-top:10px;  }

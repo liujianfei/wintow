@@ -17,7 +17,7 @@ function showMenu(menuID,index) {
        <!--{if $cat.cat_id}-->
        <div class="second">
        <!--{foreach name=cat_child  from=$cat.cat_id item=child}-->
-        &nbsp;&nbsp;<a href="{$child.url}" class="ChildrenLi">{$child.name|escape:html}</a>
+        <a href="{$child.url}" class="ChildrenLi"><span>{$child.name|escape:html}</span></a>
        <!--{/foreach}-->
        </div> 
        <!--{/if}-->     
@@ -25,4 +25,3 @@ function showMenu(menuID,index) {
    <!--{/foreach}-->
   </ul>
 </div>
-<div class="blank10"></div>
