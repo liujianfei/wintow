@@ -30,7 +30,11 @@
         <!-- #BeginLibraryItem "/library/category_list.lbi" --><!-- #EndLibraryItem -->
     </div>
     <div class="area_r">
+    	{if $smarty.session.user_name}
+        <!-- #BeginLibraryItem "/library/new_articles.lbi" --><!-- #EndLibraryItem -->
+        {else}
         <!-- #BeginLibraryItem "/library/member_login.lbi" --><!-- #EndLibraryItem -->
+        {/if}
         <div class="ad280" style="width:280px;">
         <!-- TemplateBeginEditable name="资讯下的右侧广告280" -->
 <!-- #BeginLibraryItem "/library/ad_position.lbi" -->
