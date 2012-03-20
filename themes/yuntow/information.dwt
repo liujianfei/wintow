@@ -33,9 +33,9 @@
     	<div class="box_new_tit"><span class="f8 tit">今日新闻</span></div>
         
         <div class="box_new_con clearfix">
-        	<a href="{$todayarticle.url}" class="f_l"><img src="{$todayarticle.file_url}" class="img" width="184" height="116" /></a>
+        	<a href="article.php?id={$todayarticle.article_id}" class="f_l"><img src="{$todayarticle.file_url}" class="img" width="184" height="116" /></a>
         	<div class="f_l item_new">
-            	<div style="padding:5px 10px;"><a href="{$todayarticle.url}" class="f8" >{$todayarticle.title|truncate:20}</a></div>
+            	<div style="padding:5px 10px;"><a href="article.php?id={$todayarticle.article_id}" class="f8" >{$todayarticle.title|truncate:20}</a></div>
                 <div class="text_cont">{$todayarticle.content}。。。</div>
             </div>
         </div>
@@ -68,7 +68,7 @@
                     <div class="last clearfix">
                         <a href="article.php?id={$msg.article_id}" class="f_l"><img src="{$msg.file_url}" class="img" width="125" height="90" /></a>
                         <div class="f_l " style="width:120px;">
-                            <div class="f8" style="padding:5px;">{$msg.title|truncate:5}</div>
+                            <div style="padding:5px;"><a href="article.php?id={$msg.article_id}" class="f8" >{$msg.title|truncate:5}</a></div>
                             <div  class="new_info text_cont">{$msg.content}</div>
                         </div>
                     </div>
@@ -108,24 +108,26 @@
 </div>
 <div class="blank5"></div>
 <div class="block">
-<div class="scroll_box">
-	<a href="javascript:void(0)" class="up"><img src="images/btn_1_up.gif" /></a>
-    <a href="javascript:void(0)" class="down"><img src="images/btn_1_down.gif" /></a>
-	<div class="new_img_list">
-    <div id="newlist">
-    	<div id="newlist1" style="float:left;">
-    	<ul>
-          <!--{foreach name=message_lists from=$artciles_netlist item=msg}-->
-        	<li><a href="{$msg.url}"><img src="{$msg.file_url}" width="180" height="116" /></a></li>
-             <!--{/foreach}--> 
-        </ul>
-        </div>
-     	<div id="newlist2"></div>
+<div id="swap_pic">
+	<div id="prev" class="scroll">PREV</div>
+    <div class="box">
+    <ul style="LEFT: 0px" id="pics" class="pics">
+      <li>
+          <!--{foreach name=message_lists from=$artciles_netlist item=msg key=key}-->
+          <p><a href="{$msg.url}" target="_blank"><img alt="" src="{$msg.file_url}" height="135" width="190" ><span>{$msg.title}</span></a></p>
+          {if ($smarty.foreach.message_lists.index >1 and ($smarty.foreach.message_lists.index+1) % 4 ==0)}
+          </li><li>
+          {/if}
+          <!--{/foreach}--> 
+          </li>
+      </ul>
     </div>
-    </div>
-</div>
+	<div id="next" class="scroll">NEXT</div>
 </div>
 <div class="blank5"></div>
+</div>
+
+
 <!--帮助-->
 <div class="block">
     <!-- #BeginLibraryItem "/library/help.lbi" --><!-- #EndLibraryItem -->
@@ -154,101 +156,94 @@
 <!-- #BeginLibraryItem "/library/page_footer.lbi" --><!-- #EndLibraryItem -->
 </body>
 <script type="text/javascript">
-      function $(id){  
-        return (document.getElementById) ? document.getElementById(id): document.all[id]
-      }
-      
-      var boxwidth=180;//跟图片的实际尺寸相符
-      
-      var box=$("newlist");
-      var obox=$("newlist1");
-      var dulbox=$("newlist2");
-      obox.style.width=obox.getElementsByTagName("li").length*boxwidth+'px';
-      dulbox.style.width=obox.getElementsByTagName("li").length*boxwidth+'px';
-      box.style.width=obox.getElementsByTagName("li").length*boxwidth*3+'px';
-      var canroll = false;
-      if (obox.getElementsByTagName("li").length >=5) {
-        canroll = true;
-        dulbox.innerHTML=obox.innerHTML;
-      }
-      var step=5;temp=1;speed=50;
-      var awidth=obox.offsetWidth;
-      var mData=0;
-      var isStop = 1;
-      var dir = 1;
-      
-      function s(){
-        if (!canroll) return;
-        if (dir) {
-      if((awidth+mData)>=0)
-      {
-      mData=mData-step;
-      }
-      else
-      {
-      mData=-step;
-      }
-      } else {
-        if(mData>=0)
-        {
-        mData=-awidth;
-        }
-        else
-        {
-        mData+=step;
-        }
-      }
-      
-      obox.style.marginLeft=mData+"px";
-      
-      if (isStop) return;
-      
-      setTimeout(s,speed)
-      }
-      
-      
-      function moveLeft() {
-          var wasStop = isStop;
-          dir = 1;
-          speed = 50;
-          isStop=0;
-          if (wasStop) {
-            setTimeout(s,speed);
-          }
-      }
-      
-      function moveRight() {
-          var wasStop = isStop;
-          dir = 0;
-          speed = 50;
-          isStop=0;
-          if (wasStop) {
-            setTimeout(s,speed);
-          }
-      }
-      
-      function scrollStop() {
-        isStop=1;
-      }
-      
-      function clickLeft() {
-          var wasStop = isStop;
-          dir = 1;
-          speed = 25;
-          isStop=0;
-          if (wasStop) {
-            setTimeout(s,speed);
-          }
-      }
-      
-      function clickRight() {
-          var wasStop = isStop;
-          dir = 0;
-          speed = 25;
-          isStop=0;
-          if (wasStop) {
-            setTimeout(s,speed);
-          }
-      }
+(function(){
+	var vari={
+		width:960,
+		pics:document.getElementById("pics"),
+		prev:document.getElementById("prev"),
+		next:document.getElementById("next"),
+		len:document.getElementById("pics").getElementsByTagName("li").length,
+		intro:document.getElementById("pics").getElementsByTagName("p"),
+		now:1,
+		step:5,
+		dir:null,
+		span:null,
+		span2:null,
+		begin:null,
+		begin2:null,
+		end2:null,
+		move:function(){
+			if(parseInt(vari.pics.style.left,10)>vari.dir*vari.now*vari.width&&vari.dir==-1){
+				vari.step=(vari.step<2)?1:(parseInt(vari.pics.style.left,10)-vari.dir*vari.now*vari.width)/5;
+				vari.pics.style.left=parseInt(vari.pics.style.left,10)+vari.dir*vari.step+"px";
+			}
+			else if(parseInt(vari.pics.style.left,10)<-vari.dir*(vari.now-2)*vari.width&&vari.dir==1){
+				vari.step=(vari.step<2)?1:(-vari.dir*(vari.now-2)*vari.width-parseInt(vari.pics.style.left,10))/5;
+				vari.pics.style.left=parseInt(vari.pics.style.left,10)+vari.dir*vari.step+"px";
+			}
+			else{
+				vari.now=vari.now-vari.dir;
+				clearInterval(vari.begin);
+				vari.begin=null;
+				vari.step=5;
+				vari.width=960;
+			}
+		},
+		scr:function(){
+			if(parseInt(vari.span.style.top,10)>-31){
+				vari.span.style.top=parseInt(vari.span.style.top,10)-5+"px";
+			}
+			else{
+				clearInterval(vari.begin2);
+				vari.begin2=null;
+			}
+		},
+		stp:function(){
+			if(parseInt(vari.span2.style.top,10)<0){
+				vari.span2.style.top=parseInt(vari.span2.style.top,10)+10+"px";
+			}
+			else{
+				clearInterval(vari.end2);
+				vari.end2=null;
+			}
+		}
+	};
+	vari.prev.onclick=function(){
+		if(!vari.begin&&vari.now!=1){
+			vari.dir=1;
+			vari.begin=setInterval(vari.move,20);
+		}
+		else if(!vari.begin&&vari.now==1){
+			vari.dir=-1
+			vari.width*=vari.len-1;
+			vari.begin=setInterval(vari.move,20);
+		};
+	};
+	vari.next.onclick=function(){
+		if(!vari.begin&&vari.now!=vari.len){
+			vari.dir=-1;
+			vari.begin=setInterval(vari.move,20);
+		}
+		else if(!vari.begin&&vari.now==vari.len){
+			vari.dir=1
+			vari.width*=vari.len-1;
+			vari.begin=setInterval(vari.move,20);
+		};
+	};
+	for(var i=0;i<vari.intro.length;i++){
+		vari.intro[i].onmouseover=function(){
+			vari.span=this.getElementsByTagName("span")[0];
+			vari.span.style.top=0+"px";
+			if(vari.begin2){clearInterval(vari.begin2);}
+			vari.begin2=setInterval(vari.scr,20);
+		};
+		vari.intro[i].onmouseout=function(){
+			vari.span2=this.getElementsByTagName("span")[0];
+			if(vari.begin2){clearInterval(vari.begin2);}
+			if(vari.end2){clearInterval(vari.end2);}
+			vari.end2=setInterval(vari.stp,5);
+		};
+	}
+})();
 </script>
 </html>

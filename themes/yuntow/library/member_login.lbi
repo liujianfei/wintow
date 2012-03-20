@@ -2,7 +2,7 @@
  {if $smarty.session.user_name}
  
   {else}
- <div class="login_box clearfix">
+ <div class="login_box clearfix" id="ECS_BOX">
 {insert_scripts files='transport.js'}
   <form id="ECS_LOGINFORM" name="ECS_LOGINFORM" method="post" action="javascript:signIn()">
   <div class="login_tit"></div>
@@ -68,6 +68,7 @@ function signinResponse(result)
 {
   var userName = document.forms['ECS_LOGINFORM'].elements['username'].value;
   var mzone = document.getElementById("ECS_MEMBERZONE");
+  var loginbox = document.getElementById['ECS_BOX'];
   var res   = result.parseJSON();
 
   if (res.error > 0)
@@ -85,7 +86,8 @@ function signinResponse(result)
     if (mzone)
     {
       mzone.innerHTML = res.content;
-   evalscript(res.ucdata);
+	  evalscript(res.ucdata);
+	  window.location.reload();
     }
     else
     {

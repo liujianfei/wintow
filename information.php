@@ -195,15 +195,15 @@ function index_get_articles()
 function get_todayarticle()
 {
 
-           $sql = 'SELECT  a.title,  a.file_url,a.content FROM ' . $GLOBALS['ecs']->table('article') . ' AS a '.
+           $sql = 'SELECT  a.article_id, a.title,  a.file_url,a.content FROM ' . $GLOBALS['ecs']->table('article') . ' AS a '.
 			 ' WHERE a.is_open = 1 AND a.cat_id =13 ORDER BY  a.add_time DESC LIMIT 1';
 			$todayarticle=array();
 			$res = $GLOBALS['db']->query($sql);
 			while ($row = mysql_fetch_assoc($res)) {
-	
-			$todayarticle['title']=$row['title'];
-		    $todayarticle['file_url']=$row['file_url'];
-			$todayarticle['content']=substr($row['content'],0,400);
+				$todayarticle['article_id']=$row['article_id'];
+				$todayarticle['title']=$row['title'];
+				$todayarticle['file_url']=$row['file_url'];
+				$todayarticle['content']=substr($row['content'],0,400);
 			}
 			
 			return $todayarticle;
@@ -218,11 +218,11 @@ function get_maparticle()
 			$todayarticles=array();
 			$res = $GLOBALS['db']->query($sql);
 			while ($row = mysql_fetch_assoc($res)) {
-	        $todayarticle['article_id']=$row['article_id'];
-			$todayarticle['title']=substr($row['title'],0,30);
-		    $todayarticle['file_url']=$row['file_url'];
-			$todayarticle['content']=substr($row['content'],0,300);
-			$todayarticles[]=$todayarticle;
+				$todayarticle['article_id']=$row['article_id'];
+				$todayarticle['title']=substr($row['title'],0,30);
+				$todayarticle['file_url']=$row['file_url'];
+				$todayarticle['content']=substr($row['content'],0,300);
+				$todayarticles[]=$todayarticle;
 			}
 			
 			return $todayarticles;

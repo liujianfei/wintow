@@ -140,7 +140,8 @@ function assign_ur_here($cat = 0, $str = '')
     }
 
     /* 初始化“页面标题”和“当前位置” */
-    $page_title = $GLOBALS['_CFG']['shop_title'] . ' - ' . 'Powered by WinTow';
+    $page_title = $GLOBALS['_CFG']['shop_title'];
+	//$page_title .= ' - ' . 'Powered by WinTow';
     $ur_here    = '<a href=".">' . $GLOBALS['_LANG']['home'] . '</a>';
 
     /* 根据文件名分别处理中间的部分 */
@@ -240,8 +241,8 @@ function assign_ur_here($cat = 0, $str = '')
             {
                 $page_title = $GLOBALS['_LANG']['information'] . '_' . $page_title;
                 $args       = array('wsid' => '0');
-                $ur_here   .= ' <code>&gt;</code> <a href="information.php">' .
-                                $GLOBALS['_LANG']['information'] . '</a>';
+                $ur_here   .= ' <code>&gt;</code> ' .
+                                $GLOBALS['_LANG']['information'];
             }
 			
 			  /* 客户中心 */
@@ -249,16 +250,15 @@ function assign_ur_here($cat = 0, $str = '')
             {
                 $page_title = $GLOBALS['_LANG']['contact'] . '_' . $page_title;
                 $args       = array('wsid' => '0');
-                $ur_here   .= ' <code>&gt;</code> <a href="contact.php">' .
-                                $GLOBALS['_LANG']['contact'] . '</a>';
+                $ur_here   .= ' <code>&gt;</code>' .
+                                $GLOBALS['_LANG']['contact'];
             }
 			  /* 加盟中心 */
             elseif ('join' == $filename)
             {
                 $page_title = $GLOBALS['_LANG']['join'] . '_' . $page_title;
                 $args       = array('wsid' => '0');
-                $ur_here   .= ' <code>&gt;</code> <a href="join.php">' .
-                                $GLOBALS['_LANG']['join'] . '</a>';
+                $ur_here   .= ' <code>&gt;</code> ' .$GLOBALS['_LANG']['join'] ;
             }
 			
             /* 其他的在这里补充 */

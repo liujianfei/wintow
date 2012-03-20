@@ -125,7 +125,7 @@ h6 span{float:left; padding-left:15px;}
 
 /* ======页面头部 ====== */
 .header{ height:251px;/*overflow:hidden;*/padding-top:31px; position:relative;}
-.header .topnav{width:100%;heiht:31px;position:absolute; top:0px; left:0px; background:url(images/top_bg.gif) repeat-x;line-height:30px}
+.header .topnav{width:100%;heiht:31px;position:absolute; top:0px; left:0px; background:url(images/top_bg.gif) repeat-x;line-height:30px;color:#666;}
 .login { line-height:30px;}
 .nue{ width:450px;}
 .nue li{ background:url(images/topnvline.gif) no-repeat right; float:left; padding:0 10px;}
@@ -622,6 +622,59 @@ font-size:16px; color:#fff;}
 .new_img_list ul li { float:left; width:180px;padding:0 15px;}
 .new_img_list ul li img{ border:1px solid #ccc;}
 
+#swap_pic {
+	WIDTH: 900px; HEIGHT: 155px;PADDING-TOP: 20px; border:1px solid #ccc; position:relative;
+}
+#swap_pic .box {
+	POSITION: relative; WIDTH: 850px; HEIGHT: 140px;OVERFLOW: hidden;
+}
+
+#prev {
+	TEXT-INDENT: -100px; WIDTH: 50px; HEIGHT: 140px; BACKGROUND: url(images/btn_1_up.gif) no-repeat center;OVERFLOW: hidden; position:absolute; left:-25px;top:10px;
+}
+#next {
+	TEXT-INDENT: -100px; WIDTH: 50px; HEIGHT: 140px; BACKGROUND: url(images/btn_1_down.gif) no-repeat center; OVERFLOW: hidden; position:absolute; right:-25px;top:10px;
+}
+.scroll {
+	CURSOR: pointer
+}
+.unable {
+	CURSOR: default
+}
+.pics {
+	POSITION: absolute; WIDTH: 9000px; TOP: 0px
+}
+.pics LI {
+	WIDTH: 960px; FLOAT: left; HEIGHT: 140px; OVERFLOW: hidden
+}
+.pics LI P {
+	BORDER: #ccc 1px solid; POSITION: relative;FLOAT: left; OVERFLOW: hidden;MARGIN-RIGHT: 27px;
+}
+.pics LI P SPAN {
+	POSITION: absolute; FILTER: alpha(opacity=60); LINE-HEIGHT: 30px; TEXT-INDENT: 10px; WIDTH: 100%; DISPLAY: block; BACKGROUND: url(http://tgideas.qq.com/wp-content/uploads/2010/07/sprites1.png) repeat-x 0px 140px; HEIGHT: 30px; COLOR: #fff; TOP: 0px; CURSOR: pointer; TEXT-DECORATION: none; PADDING-TOP: 140px; LEFT: 0px; opacity: 0.6
+}
+
+
+.feature {
+	POSITION: relative;
+}
+.feature .button {
+	POSITION: absolute;WIDTH: 840px;TOP: 72px;LEFT: 0px
+}
+.feature .prev {
+	TEXT-INDENT: -9999px; WIDTH: 30px; DISPLAY: block; BACKGROUND: url(images/feature_left.gif) center top; HEIGHT: 48px; position:absolute; top:40px; left:0px;
+}
+.feature .next {
+	TEXT-INDENT: -9999px; WIDTH: 30px; DISPLAY: block; BACKGROUND: url(images/feature_right.gif) center top;HEIGHT: 48px; position:absolute; top:40px; right:0px;
+}
+.feature .prev:hover {
+	BACKGROUND-POSITION: center bottom
+}
+.feature .next:hover {
+	BACKGROUND-POSITION: center bottom
+}
+
+
 /* ====================
 打印报价单
 ==================== */
@@ -650,28 +703,14 @@ font-size:16px; color:#fff;}
 /*  积分兑换样式修改 */
 .point li{float:left;width:300px;}
 
-.feature {
-	POSITION: absolute;WIDTH: 930px;TOP: 52px;LEFT: 10px
-}
-.feature .prev {
-	TEXT-INDENT: -9999px; WIDTH: 30px; DISPLAY: block; BACKGROUND: url(images/feature_left.gif) center top; FLOAT: left; HEIGHT: 48px;
-}
-.feature .next {
-	TEXT-INDENT: -9999px; WIDTH: 30px; DISPLAY: block; BACKGROUND: url(images/feature_right.gif) center top; FLOAT: right; HEIGHT: 48px;
-}
-.feature .prev:hover {
-	BACKGROUND-POSITION: center bottom
-}
-.feature .next:hover {
-	BACKGROUND-POSITION: center bottom
-}
-
 /* Copyright 2008 MagicToolBox.com. To use this code on your own site, visit http://magictoolbox.com */
 
 /* CSS class for zoomed area */
 .MagicZoomBigImageCont {
 	border:			1px solid #cccccc;
 }
+
+
 
 /* Header look and feel CSS class */
 /* header is shown if "title" attribute is present in the <A> tag */
