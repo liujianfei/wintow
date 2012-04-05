@@ -126,17 +126,17 @@ h6 span{float:left; padding-left:15px;}
 /* ======页面头部 ====== */
 .header{ height:251px;/*overflow:hidden;*/padding-top:31px; position:relative;}
 .header .topnav{width:100%;heiht:31px;position:absolute; top:0px; left:0px; background:url(images/top_bg.gif) repeat-x;line-height:30px;color:#666;}
-.login { line-height:30px;}
+.login { line-height:30px; font-size:12px;}
 .nue{ width:450px;}
 .nue li{ background:url(images/topnvline.gif) no-repeat right; float:left; padding:0 10px;}
 .login a {color: #F8AC35; font-size: 14px; text-decoration:none;}
 .head_t {width: 960px;height:87px;background: url(images/headbg.jpg) no-repeat;}
-.head_t .telnumber {width:400px; height:57px; float:left; padding-top:30px; padding-right:60px; text-align:right;font-weight:bold; font-family:"SimSun";}
+.head_t .telnumber {width:400px; height:57px; float:left; padding-top:30px; padding-right:50px; text-align:right;font-weight:bold; font-family:"SimSun";}
 .head_t .tel01{color:#b7b4b4; font-size:18px;}
 .head_t .tel02{color:#f8bf66; font-size:22px;}
-.head_t .logo{float:left;width:500px;text-align:center;padding-top:15px;_padding-top:5px;*padding-top:5px;}
+.head_t .logo{float:left;width:510px;text-align:center;padding-top:15px;}
 .head_t .logo img{*margin-top: expression(( 69 - this.height ) / 2);vertical-align:middle;}
-.head_t .tell { float:left;text-align:center;padding-top:5px;_padding-top:2px;*padding-top:2px;}
+.head_t .tell { float:left;text-align:center;padding-top:5px;_padding-top:2px;*padding-top:2px; display:inline;}
 .head_b { height:131px; padding-top:40px; background:url(images/head_bg.jpg) repeat-x bottom; }
 .searchbox{ position:relative; height:50px; padding:0;}
 .searchbox .sear{ padding:5px 10px 0 10px;}
@@ -157,7 +157,7 @@ h6 span{float:left; padding-left:15px;}
 .menu li.cur a,.menu li.cur a:visited,.menu li a:hover,.menu li.cur a:active
 {position:relative; top:0px; background:url(images/nav_avtive.gif) repeat-x 0px 1px; overflow:hidden;}
 /*购物车*/
-.cart{ width:60px; margin:0px; padding-left:30px;position:relative;color:#292929; cursor:pointer;}
+.cart{ width:60px; padding-left:30px;position:relative;color:#292929; cursor:pointer;}
 #all-links, #flying{display:none;margin-left:0px;position:absolute;right:0;top:30px; background:#fff;}
 #flying{border:1px solid #ba2b09;top:36px;}
 #cartInfo{text-align:center;line-height:30px;color:#666;background:url(images/cart.gif) no-repeat 0px 5px;text-align:right;}
